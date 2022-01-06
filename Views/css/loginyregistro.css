@@ -7,7 +7,14 @@
   text-decoration: none;
 }
 
-
+ 
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;
+}
 
 body,
 input {

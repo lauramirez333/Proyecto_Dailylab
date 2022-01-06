@@ -91,11 +91,15 @@ function registro()
 {
     $usuario = new Usuario();
     $rol = new Rol();
+    $RH = new RH();
     $barrio=new Barrio();
     $usuarios=$usuario->list();
+    $RH=$RH->list();
+    $roles=$rol->list();
     if(isset($_GET['Id_Usuario'])){
         $usuario = $usuario->getById($_GET['Id_Usuario']); 
     }
+    
     require "Views/usuario/registro.php";
    // require"views/header.php";
   //  require"views/footer.php";
@@ -158,3 +162,4 @@ function logout()
     header("location:?c=user");
 }*/
 }
+
