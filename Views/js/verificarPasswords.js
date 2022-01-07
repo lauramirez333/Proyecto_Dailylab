@@ -1,5 +1,5 @@
 function verificarPasswords() {
- 
+ /*
     // Ontenemos los valores de los campos de contraseñas 
     pass1 = document.getElementById('pass');
     pass2 = document.getElementById('passConfir');
@@ -30,5 +30,29 @@ function verificarPasswords() {
  
         return true;
     }
+ */
+    $(document).ready(function(){
  
+        $('#pass2').keyup(function(){
+        var pass = $('#pass').val();
+        var passConfir = $('#passConfir').val();
+    
+        if ( pass == passConfir ) {
+            $('#error2').text("Coinciden!").css("color","green");
+            alert("Enviando el formulario");
+            formulario.submit();
+            return true;
+        } else {
+            $('#error2').text("No coinnciden!").css("color","red");
+            alert("No coinciden");
+            return false;
+        }
+        if ( passConfir == " "){
+            $('#error2').text("No se puede dejar en blanco!").css("color","red");
+            alert("No se puede dejar en blanco el formulario");
+            return false;
+        }
+    });
+    
+    });
 }
