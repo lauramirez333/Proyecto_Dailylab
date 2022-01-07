@@ -6,13 +6,15 @@
 <link rel="stylesheet" href="Views\css\loginyregistro.css">
 <script src="https://kit.fontawesome.com/64d58efce2.js"
 crossorigin="anonymous"></script>
+<script src="Views\js\verificarPasswords.js"></script>
+
 <div class="home">
 <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
         <!--<form action="?c=usuario&a=validate" method="post"> -->
         
-          <form action="?c=usuario&a=save" id="registro" method="post" onsubmit="verificarPasswords();" >
+          <form action="?c=usuario&a=save" id="registro" method="post" onsubmit="verificarPasswords(); " >
             <h2 class="title">Registrate</h2>
  
             <label  class="guia" for="">nombre</label>
@@ -84,6 +86,7 @@ crossorigin="anonymous"></script>
 </select>
 </div>
             <input type="submit"  id="login" class="btn solid" />
+            <span id="error2"></span>
             <p class="social-text">siguenos en nuestras redes sociales</p>
             <div class="social-media">
               <a href="#" class="social-icon">
