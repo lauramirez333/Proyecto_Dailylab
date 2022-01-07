@@ -7,14 +7,14 @@
   text-decoration: none;
 }
 
- 
-.ocultar {
-    display: none;
+izq {
+  margin-right: 85px;
+  margin-left: 85px;
 }
- 
-.mostrar {
-    display: block;
+label, input{
+  display: block;
 }
+
 
 body,
 input {

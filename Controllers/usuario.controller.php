@@ -4,6 +4,7 @@ require_once "Models/usuario.php";
 require_once "Models/barrio.php";
 require_once "Models/rol.php";
 require_once "Models/RH.php";
+require_once "Models/cita.php";
 
 
 class UsuarioController
@@ -25,6 +26,7 @@ function index()//
     require "Views/empleado/menu.php";
     require "Views/footer.php";
 }
+
 
 function verPerfil()// 
 {
@@ -123,7 +125,7 @@ function validate()
       //  die(var_dump($Id_Rol));
         if($Id_Rol == 1 || $Id_Rol == 2)
         {
-            header('location: ?c=citas&a=index');
+            header('location: ?c=usuario&a=index');
         }
         if($Id_Rol == 4 || $Id_Rol == 5)
         {

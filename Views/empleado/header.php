@@ -87,15 +87,16 @@
              
             <i class='fas fa-user-cog' style='color:#fdfdfd' ></i>
             
-              <h3>
-                  
-                  <?php 
-                  require_once "../../Models/usuario.php";
-                  session_start ();
-                  $_SESSION['user']->getNombres_Usuario();
+            <h3>
+                  Bienvenid@
+                  <?=
+                   $_SESSION['user']->getCorreo_Electronico();
+                   
+                 
                   ?>
-              
+                 
             </h3>
+            
               <p> 
             Empleado
               </p> 

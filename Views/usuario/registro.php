@@ -15,7 +15,7 @@ crossorigin="anonymous"></script>
           <form action="?c=usuario&a=save" id="registro" method="post" onsubmit="verificarPasswords();" >
             <h2 class="title">Registrate</h2>
  
-            <label  class="guia" for="">nombre</label>
+            <label  class="guia" for="">Nombre</label>
             <div class="input-field">
             
               <i class="fas fa-user"></i>
@@ -23,27 +23,32 @@ crossorigin="anonymous"></script>
             </div>
 
 
-            <label class="guia" for="">apellido</label>
+            <label class="guia" for="">Apellido</label>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input  name="Apellidos_Usuario" type="text" required   />
             </div>
 
-            <label class="guia"  for="">docuemnto</label>
+            <label class="guia"  for="">Docuemnto</label>
             <div class="input-field">
             <i class="fas fa-id-card-alt"></i>
               <input name="Documento_Identificacion" type="number" required  />
             </div>
 
 
-            <label  class="guia" for="">correo</label>
+            <label  class="guia" for="">Correo</label>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input name="Correo_Electronico" type="email" required  />
             </div>
 
+            <label  class="guia" for="">Confirma tu correo</label>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input name="Correo_Electronico2" type="email" required  />
+            </div>
 
-            <label  class="guia" for="">telefono</label>
+            <label  class="guia" for="">Telefono</label>
             <div class="input-field">
             <i class="fas fa-phone-alt"></i>
               <input name="Telefono_Usuario" type="number" required />
@@ -51,17 +56,18 @@ crossorigin="anonymous"></script>
             <label  class="guia" for="pass" >Contraseña</label>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input name="Contrasena_Usuario" type="password" id="pass" placeholder="contrasena" required/>
+              <input name="Contrasena_Usuario" type="password" id="password" placeholder="contrasena" required/>
             </div>
 
             <label  class="guia" for="passConfir" >Confirme Contraseña</label>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input name="Contrasena_Confirm" type="password" id="passConfir" placeholder="contrasenaConfirm" required />
+              <input name="Contrasena_Confirm" type="password" id="password2" placeholder="contrasenaConfirm" required />
             </div>
-
+<br>
             <div id="msg"></div>
 
+            <label  class="guia" for="rol" >Selecciona tu rol</label>
             <div class="col-md-8">
             <select  name="Id_Rol" class="form-select">
 <option>Seleccione Rol</option>
@@ -72,7 +78,8 @@ crossorigin="anonymous"></script>
     <?php endforeach;?>
 </select>
 </div>
-
+<br>
+<label  class="guia" for="RH" >Selecciona tu RH</label>
 <div class="col-md-8">
             <select  name="Id_RH" class="form-select">
 <option>Seleccione RH</option>
@@ -83,8 +90,10 @@ crossorigin="anonymous"></script>
     <?php endforeach;?>
 </select>
 </div>
+<br>
             <input type="submit"  id="login" class="btn solid" />
-            <p class="social-text">siguenos en nuestras redes sociales</p>
+            <span id="error2"></span>
+            <p class="social-text">Siguenos en nuestras redes sociales</p>
             <div class="social-media">
               <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
@@ -105,13 +114,13 @@ crossorigin="anonymous"></script>
         <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>  ¿ ya tienes una cuenta ?</h3>
+            <h3>  ¿Ya tienes una cuenta?</h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
               ex ratione. Aliquid!
             </p>
             <a class="boton" id="sign-up-btn" href="./index.php?c=usuario&a=login">
-              INICIA
+              Inicia sesion
              </a>
           </div>
           <img src="Views/multimedia/logo.png" class="image" alt="" />
