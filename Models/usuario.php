@@ -68,6 +68,29 @@ public function insert()
                     }
                         
 }
+
+public function insertPac()
+{
+    try{
+    $query = "INSERT INTO usuario (Correo_Electronico,Contrasena_Usuario,Documento_Identificacion,Telefono_Usuario,Id_RH,Nombres_Usuario,Apellidos_Usuario,Id_Rol) VALUES (?,?,?,?,?,?,?,?);";
+    $this -> connection-> prepare($query)
+                        ->execute(array(
+                            $this->Correo_Electronico,
+                            $this->Contrasena_Usuario,
+                            $this->Documento_Identificacion,
+                            $this->Telefono_Usuario,
+                            $this->Id_RH,
+                            $this->Nombres_Usuario,
+                            $this->Apellidos_Usuario,
+                            $this->Id_Rol
+                        ));
+                        $this->Id_Usuario=$this->connection->lastInsertId();
+                        return $this;
+                    }catch(Exception $e){
+                        die($e->getMessage());
+                    }
+                        
+}
 public function login ($Correo_Electronico, $Contrasena_Usuario) 
     {
           //  die(var_dump($this));

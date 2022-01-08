@@ -7,6 +7,17 @@
   text-decoration: none;
 }
 
+.containerL{
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+  margin-right: 899px;
+  margin-left: 85px;
+  margin-top:-130px;
+}
+
 izq {
   margin-right: 85px;
   margin-left: 85px;

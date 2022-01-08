@@ -1,4 +1,4 @@
-<h4><?=$cita->getId_Cita() ? 'Editar' : 'Nuevo'?>Agendamiento </h4>
+<h4><?=$cita->getId_Cita() ? 'Editar' : 'Nuevo'?> Agendamiento </h4>
 <!DOCTYPE html>
 <html lang="en">
 <head>

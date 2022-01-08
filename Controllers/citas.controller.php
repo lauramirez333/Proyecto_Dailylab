@@ -48,6 +48,22 @@ public function viewAgendar(){
     require "Views/paciente/agendar.php";
     require "Views/footer.php";
 }
+
+public function viewAgendarPac(){
+  $cita = new Cita();
+  $sucursal = new Sucursal();
+  $sucursales=$sucursal->list();
+  $examen = new Examen();
+  $examenes=$examen->list();
+  $usuario = new Usuario();
+  if(isset($_GET['Id_Cita'])){
+      $cita = $cita ->getById($_GET['Id_Cita']); 
+  }
+  require "Views/empleado/header.php";
+  require "Views/paciente/agendar.php";
+  require "Views/footer.php";
+}
+
 public function saveAgendar(){
     $cita = new Cita();
       /*  $Id_Cita = intval($_POST['Id_Cita']);
@@ -132,6 +148,21 @@ function resultados()// arreglar, no sirve
     require "Views/footer.php";
  */   
 
+}
+function resultadosPac()// arreglar, no sirve
+{
+    $cita = new Cita(); //?
+    $cital = $this->model->listUnic();//esta linea no sirve, este mal
+    
+    $sucursal = new Sucursal();
+    $usuario = new Usuario();//
+    $RH = new RH();
+    $examen = new Examen();
+    $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
+    
+    require "Views/empleado/header.php";
+    require "Views/empleado/resultados.php";
+    require "Views/footer.php";
 }
 function changeState(){
     

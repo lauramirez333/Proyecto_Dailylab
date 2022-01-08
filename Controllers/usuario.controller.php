@@ -1,3 +1,4 @@
+
 <?php
 
 require_once "Models/usuario.php";
@@ -89,6 +90,44 @@ function save()
 }
 }
 
+function savePac()
+{
+    $Correo_Electronico= $_POST['Correo_Electronico'];
+    $Documento_Identificacion= $_POST['Documento_Identificacion'];
+
+     if($this->model-> dupli($Correo_Electronico,$Documento_Identificacion))
+    {
+
+            header('location:?c=usuario&a=registroPac');
+            ?> 
+            alert("ya existe este usuario en la base de datos"); 
+            <?php
+    }else{ 
+       
+    $usuario = new Usuario();
+    $Id_Usuario=intval($_POST['Id_Usuario']);   
+    if($Id_Usuario)
+    {
+        $usuario= $usuario->getById($Id_Usuario);
+    }  
+    $usuario->setCorreo_Electronico($_POST['Correo_Electronico']);
+    $usuario->setContrasena_Usuario($_POST['Contrasena_Usuario']);//(password_hash($_POST['Contrasena_Usuario'],PASSWORD_BCRYPT));//ciframos el id
+    $usuario->setDocumento_Identificacion($_POST['Documento_Identificacion']);
+    $usuario->setTelefono_Usuario($_POST['Telefono_Usuario']);
+    $usuario->setId_RH($_POST['Id_RH']);
+    $usuario->setNombres_Usuario($_POST['Nombres_Usuario']);
+    $usuario->setApellidos_Usuario($_POST['Apellidos_Usuario']);
+    $usuario->setId_Rol(3);
+    $Id_Usuario?$usuario->update(): $usuario->insertPac();
+    header("location:?c=usuario&a=login");
+
+    ?> 
+    Window.alert("registro exitoso"); 
+    <?php
+
+}
+}
+
 function registro()
 {
     $usuario = new Usuario();
@@ -105,6 +144,26 @@ function registro()
     require "Views/usuario/registro.php";
    // require"views/header.php";
   //  require"views/footer.php";
+}
+
+function registroPac()
+{
+    $usuario = new Usuario();
+    $rol = new Rol();
+    $RH = new RH();
+    $barrio=new Barrio();
+    $usuarios=$usuario->list();
+    $RH=$RH->list();
+    $roles=$rol->list();
+    if(isset($_GET['Id_Usuario'])){
+        $usuario = $usuario->getById($_GET['Id_Usuario']); 
+    }
+ 
+    require "Views/empleado/header.php";
+    require "Views/empleado/registroPac.php";
+    require "Views/footer.php";
+
+
 }
 
 function login()
