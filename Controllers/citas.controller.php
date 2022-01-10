@@ -127,9 +127,9 @@ function agendarPac()//del metodo save
     $cita->setEstado_Cita(1);
     $cita->setId_Sucursal($_POST['Id_Sucursal']);
     $cita->setId_Examen($_POST['Id_Examen']);
-    $cita->setId_Usuario($_SESSION['user']->getId_Usuario());
+    //$cita->setId_Usuario($_SESSION['user']->getId_Usuario());
     
-    $cita->agendarUnic();
+    $cita->agendarUnicPac();
     //$Id_Cita?$cita->update(): $cita->agendarUnic();
      header("location:?c=citas");
   //  header("location:?c=citas&a=index");

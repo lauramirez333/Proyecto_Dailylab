@@ -60,6 +60,28 @@ class Cita
                         }
                             
     }
+
+    public function agendarUnicPac()
+    {
+        try{
+     //   $query = "INSERT INTO `cita` (`Id_Cita`, `Fecha_Cita`, `Hora_Cita`, `Estado_Cita`, `Id_Sucursal`, `Id_Examen`, `Id_Usuario`) VALUES (NULL, '2021-12-12', '12:12:12', 'agendado', '1', '1', '2');";
+        $query = "INSERT INTO cita ( Fecha_Cita, Hora_Cita, Estado_Cita, Id_Sucursal, Id_Examen) VALUES (?,?,?,?,?) where Id_Usuario=?;";
+        $this -> connection-> prepare($query)
+                            ->execute(array(
+                                $this->Fecha_Cita,
+                                $this->Hora_Cita,
+                                $this->Estado_Cita,
+                                $this->Id_Sucursal,
+                                $this->Id_Examen
+                            )); //esto funciona bien hasta aca lo de abajo es solo otra forma de hacerlo para devolver el id
+                            $this->Id_Cita=$this->connection->lastInsertId();
+                            return $this;
+                        }catch(Exception $e){
+                            die($e->getMessage());
+                        }
+                            
+    }
+    
     public function update()//ACTUALICZR
     {
         try{

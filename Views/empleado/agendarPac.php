@@ -20,7 +20,7 @@
 </head>
 <body>
     
-<h1>Agenda tu cita </h1>
+<h1>Agenda cita </h1>
 
 <div class="container">
 <form action= "?c=citas&a=agendarPac" method ="post">
@@ -31,7 +31,7 @@
 
 <input type="hidden" name="Id_Cita" value="<?=$cita->getId_Cita() ?>">
 
-<label for="Cedula"> Cedula: </label>
+<label for="Documento_Identificacion"> Cedula: </label>
 <br>
 <input type="number" name="Documento_Identificacion" required >
 <br>

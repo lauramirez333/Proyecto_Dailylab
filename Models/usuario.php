@@ -144,6 +144,19 @@ public function update()
     }
 }
 
+public function buscarId($Documento_Identificacion){
+    try{
+        $query= "SELECT Id_Usuario FROM usuario where Documento_Identificacion=?;";
+        $query= $this-> connection-> prepare($query);
+        $query->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
+        $query->execute(array($Documento_Identificacion));
+        return $query->fetch();
+    
+    }catch(Exception $e){
+        die($e->getMessage());
+        }
+}
+
 public function getById($Id_Usuario){
     try{
     $query= "SELECT * FROM usuario where Id_Usuario=?;";
