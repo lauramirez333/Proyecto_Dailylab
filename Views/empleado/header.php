@@ -119,23 +119,27 @@
 
             
             <li id="usuarios">
-            <a href="?c=usuario&a=registro" >
+            <a href="?c=usuario&a=registroPac" >
                     <span class="icon"><i class='bx bx-band-aid'></i></span>
-                    <span  class="item">Registrar Pacientes</span>
+                    <span  class="item">Registrar Paciente</span>
                 </a>
             </li>
+
+            <li id="citas">
+            <a href="?c=citas&a=viewAgendarPac" >
+                    <span class="icon"><i class='bx bx-band-aid'></i></span>
+                    <span  class="item">Agendar Cita</span>
+                </a>
+            </li>
+
             <li id="nuevo">
-                <a href="#" >
+                <a href="?c=citas&a=resultadosPac" >
                     <span class="icon"><i class='bx bxs-calendar-check' ></i></span>
                     <span class="item">historial general</span>
                 </a>
   
 
-          
-   
-          
-
-                <a href="../../?c=usuario&a=logout"  class="Cerrar_sesion">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a> </div>
+                <a href="?c=usuario&a=logout"  class="Cerrar_sesion">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a> </div>
 
            <!--contenido de la pagina -->
 
@@ -144,5 +148,4 @@
       
 
       
-
 
