@@ -48,6 +48,22 @@ public function viewAgendar(){
     require "Views/paciente/agendar.php";
     require "Views/footer.php";
 }
+
+public function viewAgendarPac(){
+  $cita = new Cita();
+  $sucursal = new Sucursal();
+  $sucursales=$sucursal->list();
+  $examen = new Examen();
+  $examenes=$examen->list();
+  $usuario = new Usuario();
+  if(isset($_GET['Id_Cita'])){
+      $cita = $cita ->getById($_GET['Id_Cita']); 
+  }
+  require "Views/empleado/header.php";
+  require "Views/empleado/agendarPac.php";
+  require "Views/footer.php";
+}
+
 public function saveAgendar(){
     $cita = new Cita();
       /*  $Id_Cita = intval($_POST['Id_Cita']);
@@ -71,6 +87,35 @@ function agendar()//del metodo save
 {
 
     $cita = new Cita();
+    /*$Id_Cita = intval($_POST['Id_Cita']);
+    if($Id_Cita)
+    {
+        $cita= $cita->getById($Id_Cita);
+    }  */
+
+    $cita->setFecha_Cita($_POST['Fecha_Cita']);
+    $cita->setHora_Cita($_POST['Hora_Cita']);
+    $cita->setEstado_Cita(1);
+    $cita->setId_Sucursal($_POST['Id_Sucursal']);
+    $cita->setId_Examen($_POST['Id_Examen']);
+    $cita->setId_Usuario($_SESSION['user']->getId_Usuario());
+    
+    $cita->agendarUnic();
+    //$Id_Cita?$cita->update(): $cita->agendarUnic();
+     header("location:?c=citas");
+  //  header("location:?c=citas&a=index");
+   
+
+}
+
+function agendarPac()//del metodo save
+{
+
+    $cita = new Cita();
+    $usuario = new Usuario();
+
+    $usuario->setDocumento_Identificacion($_POST['Documento_Identificacion']);
+    $usuario->buscarId();
     /*$Id_Cita = intval($_POST['Id_Cita']);
     if($Id_Cita)
     {
