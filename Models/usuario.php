@@ -80,7 +80,7 @@ public function listHistorial()
         }
     }
 
-    
+
 public function insertPac()
 {
     try{

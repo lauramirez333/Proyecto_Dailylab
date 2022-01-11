@@ -76,10 +76,10 @@ function viewHistorialPac(){
   $usuario = new Usuario();
   $usuarios=$usuario->list();
   if(isset($_GET['Id_Usuario'])){
-      $citas = $cita->listHistorial($_GET['Id_Usuario']); 
+      $citas = $cita->listHistorialPac($_GET['Id_Usuario']); 
   }
   require "Views/empleado/header.php";
-  require "Views/empleado/viewHistorial.php";
+  require "Views/empleado/viewHistorialPac.php";
   require "Views/footer.php";
 }
 

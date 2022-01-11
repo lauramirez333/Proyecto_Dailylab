@@ -63,7 +63,7 @@
         <td> <?= $usuario->getCorreo_Electronico() ?> </td>
  
         <td> <a href="?c=citas&a=viewAgendarPac&Id_Usuario=<?= $usuario->getId_Usuario() ?>" class= "btn btn-primary">Agendar Cita</a> </td>        
-        <td> <a href="?c=citas&a=viewHistorial&Id_Usuario=<?= $usuario->getId_Usuario() ?>" class= "btn btn-secondary">Ver Historial</a> </td>        
+        <td> <a href="?c=citas&a=viewHistorialPac&Id_Usuario=<?= $usuario->getId_Usuario() ?>" class= "btn btn-secondary">Ver Historial</a> </td>        
                           
         </a>
         
