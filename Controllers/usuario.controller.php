@@ -23,7 +23,7 @@ function index()//
     $cita = new Cita();
     $usuarios=$this->model->list();//$usuarios = $usuario->list();//objet de tipo list
     require "Views/empleado/header.php";
-    require "Views/empleado/menu.php";
+    require "Views/empleado/usuView.php";
     require "Views/footer.php";
 }
 
@@ -45,6 +45,7 @@ public function agendar(){
     require "Views/paciente/agendar.php";
 }
 
+/*
 public function editarUnique(){
     $usuario = new Usuario();
     
@@ -54,7 +55,7 @@ public function editarUnique(){
     }
     require "views/product/form.php";
 }
-
+*/
 function save()
 {
     $Correo_Electronico= $_POST['Correo_Electronico'];

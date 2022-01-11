@@ -69,6 +69,18 @@ public function insert()
                         
 }
 
+public function listHistorial()
+    {
+        try{
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW();");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+    
 public function insertPac()
 {
     try{
@@ -168,13 +180,14 @@ public function update()
     }
 }
 
+
 public function buscarId($Documento_Identificacion){
     try{
-        $query= "SELECT Id_Usuario FROM usuario where Documento_Identificacion=?;";
-        $query= $this-> connection-> prepare($query);
-        $query->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
+        $query = $this->connection  -> prepare("SELECT * FROM usuario WHERE Documento_Identificacion=?;");
+        $query->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
         $query->execute(array($Documento_Identificacion));
-        return $query->fetch();
+        $result = $query->fetch();
+        return $result;
     
     }catch(Exception $e){
         die($e->getMessage());

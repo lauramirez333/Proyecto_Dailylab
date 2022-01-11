@@ -37,32 +37,34 @@
 <br>
 <table class="table table-hover table-striped"> 
     <thead class="table-dark">
-        <tr>
-            <td>ID</td>
-            <td>Fecha </td>
-            <td>Hora </td>
-            <td>Estado </td>
-            <td>Nombre Sucursal</td>
-            <td>Nombre Examen</td>
-            <td>Nombre Usuario</td>
-            <td>Cancelar</td>
-        </tr>    
+    <tr>
+		<th>Documento Identificacion</th>
+		<th>Nombres</th>
+		<th>Apellidos</th>
+		<th>Telefono</th>
+		<th>Correo Electronico</th>
+		<th colspan="2">Acciones</th>
+	</tr>
+	
+
+
     </thead>  
 
     <?php 
     try{
-        foreach($cital as $cita): ?> 
+        foreach($usuarios as $usuario): ?> 
 
         <tr>
-        <td> <?= $cita->getId_Cita() ?> </td>
-        <td> <?= $cita->getFecha_Cita() ?> </td>
-        <td> <?= $cita->getHora_Cita() ?> </td>
-        <td> <?= $cita->getEstado_Cita() ?> </td>
-        <td> <?= $sucursal->getById($cita->getId_Sucursal())->getNombre_Sucursal() ?> </td>
-        <td> <?= $examen->getById($cita->getId_Examen())->getNombre_Examen() ?> </td>
-        <td> <?= $usuario->getById($cita->getId_Usuario())->getNombres_Usuario() ?> </td>
-        <td> <a href="?c=citas&a=changeState&Id_Cita=<?= $cita->getId_Cita() ?>" class= "btn btn-danger">Cancelar</a> </td>        
-                        
+            
+        <td> <?= $usuario->getDocumento_Identificacion() ?> </td>
+        <td> <?= $usuario->getNombres_Usuario() ?> </td>
+        <td> <?= $usuario->getApellidos_Usuario() ?> </td>
+        <td> <?= $usuario->getTelefono_Usuario() ?> </td>
+        <td> <?= $usuario->getCorreo_Electronico() ?> </td>
+ 
+        <td> <a href="?c=citas&a=viewAgendarPac&Id_Usuario=<?= $usuario->getId_Usuario() ?>" class= "btn btn-primary">Agendar Cita</a> </td>        
+        <td> <a href="?c=citas&a=viewHistorial&Id_Usuario=<?= $usuario->getId_Usuario() ?>" class= "btn btn-secondary">Ver Historial</a> </td>        
+                          
         </a>
         
 

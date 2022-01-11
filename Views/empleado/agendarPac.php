@@ -1,4 +1,4 @@
-<h4><?=$cita->getId_Cita() ? 'Editar' : 'Nuevo'?>Agendamiento </h4>
+<h4><?=$cita->getId_Cita() ? 'Editar' : 'Nuevo'?> Agendamiento </h4>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,26 +24,44 @@
 
 <div class="container">
 <form action= "?c=citas&a=agendarPac" method ="post">
-<!--<a href="?c=product&a=form&id=<?//= $product->getId() ?>" class= "btn btn-warning">Editar</a>
-<form action= "?c=citas&a=saveAgendar" method ="post">
 
-<input type="hidden" name="Id_Usuario" value="<?//=$_SESSION['user']->getId_Usuario() ?>"> -->
+<input type="hidden" name="Id_Usuario" value="<?=$usuario->getId_Usuario() ?>">
 
-<input type="hidden" name="Id_Cita" value="<?=$cita->getId_Cita() ?>">
+<table class="table table-hover table-striped"> 
+    <thead class="table-dark">
+        <tr>
+            <td>Documento</td>
+            <td>Nombre </td>
+            <td>Apellido </td>
+            <td>Correo </td>
+        </tr>    
+    </thead>  
 
-<label for="Documento_Identificacion"> Cedula: </label>
-<br>
-<input type="number" name="Documento_Identificacion" required >
-<br>
+ 
+   
+        <tr>
+        <td> <?= $usuario->getDocumento_Identificacion()?> </td>
+        <td> <?= $usuario->getNombres_Usuario()?> </td>
+        <td> <?= $usuario->getApellidos_Usuario() ?> </td>
+        <td> <?= $usuario->getCorreo_Electronico()?> </td> 
+                        
+        </a>
+        
+
+        </td>
+    </tr>
+   
+</table>
+
 
 <label for="Fecha_Cita"> Fecha: </label>
 <br>
-<input type="date" name="Fecha_Cita" value="<?=$cita->getFecha_Cita() ?>" >
+<input type="date" name="Fecha_Cita" >
 <br>
 
 <label for="Hora_Cita"> Hora: </label>
 <br>
-<input type="time" name="Hora_Cita" value="<?=$cita->getHora_Cita() ?>" >
+<input type="time" name="Hora_Cita" >
 <br>
 
 <label for="Id_Sucursal"> sucursal: </label>
