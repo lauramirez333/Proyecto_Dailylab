@@ -16,23 +16,20 @@
     </head>
     <body>
 
-<h1>Mis citas </h1>
+<h1>Citas </h1>
 
 <div class= "container-fluid">
 <br>
 
 <ol class= "breadcrumb">
     <li class="active">Inicio >> </li>  
-    <li><a href="#">Menu </a></li> 
 </ol>   
 </div>
 
-
-<br>
 <div class="container"> 
 
 </div> 
-<br>
+
 <div class="container">  
 <br>
 <table class="table table-hover table-striped"> 

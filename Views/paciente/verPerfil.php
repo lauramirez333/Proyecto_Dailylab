@@ -52,9 +52,9 @@
         foreach($usuarios as $usuario): ?> 
 
         <tr>
-        <td> <?= $usuario->getId_Usuario() ?> </td>
-        <td> <?= $usuario->getNombres_Usuario() ?> </td>
-        <td> <?= $usuario->getApellidos_Usuario() ?> </td>
+        <td> <?= $usuario->$_SESSION['user']->getId_Usuario() ?> </td> <!--experimento-->
+        <td> <?= $usuario->$_SESSION['user']->getNombres_Usuario() ?> </td> <!--experimento-->
+        <td> <?= $usuario->$_SESSION['user']->getApellidos_Usuario() ?> </td> <!--experimento-->
         <td> <?= $Rol->getById($usuario->getId_Rol())->getNombre_Rol() ?> </td>
         <td> <?= $usuario->getDocumento_Identificacion() ?> </td>
         <td> <?= $usuario->getCorreo_Electronico() ?> </td>

@@ -125,7 +125,7 @@
                 </a>
             </li>
 
-            <li id="citas">
+           <li id="citas">
             <a href="?c=usuario&a=index" >
                     <span class="icon"><i class='bx bx-band-aid'></i></span>
                     <span  class="item">Agendar Cita</span>

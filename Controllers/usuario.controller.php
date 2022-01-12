@@ -185,7 +185,7 @@ function validate()
       //  die(var_dump($Id_Rol));
         if($Id_Rol == 1 || $Id_Rol == 2)
         {
-            header('location: ?c=usuario&a=index');
+            header('location: ?c=citas&a=index2');
         }
         if($Id_Rol == 4 || $Id_Rol == 5)
         {

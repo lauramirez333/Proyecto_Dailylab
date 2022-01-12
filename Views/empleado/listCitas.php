@@ -7,11 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Citas</title>
+<h1> Citas </h1>
+
+<ol class= "breadcrumb">
+    <li class="active">Inicio >> </li>  
+</ol>   
+</div>
 
 <div class="container"> 
 
 </div> 
-<br>
+
 <div class="container">  
 <br>
 <table class="table table-hover table-striped"> 
