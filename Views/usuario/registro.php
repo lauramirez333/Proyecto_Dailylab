@@ -15,7 +15,7 @@ crossorigin="anonymous"></script>
           <form action="?c=usuario&a=save" id="registro" method="post" onsubmit="verificarPasswords();" >
             <h2 class="title">Registrate</h2>
  
-            <label  class="guia" for="">Nombre</label>
+            <label  class="guia" for="">Nombre*</label>
             <div class="input-field">
             
               <i class="fas fa-user"></i>
@@ -23,43 +23,43 @@ crossorigin="anonymous"></script>
             </div>
 
 
-            <label class="guia" for="">Apellido</label>
+            <label class="guia" for="">Apellido*</label>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input  name="Apellidos_Usuario" type="text" required   />
             </div>
 
-            <label class="guia"  for="">Docuemnto</label>
+            <label class="guia"  for="">Docuemnto*</label>
             <div class="input-field">
             <i class="fas fa-id-card-alt"></i>
               <input name="Documento_Identificacion" type="number" required  />
             </div>
 
 
-            <label  class="guia" for="">Correo</label>
+            <label  class="guia" for="">Correo*</label>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input name="Correo_Electronico" type="email" required  />
             </div>
 
-            <label  class="guia" for="">Confirma tu correo</label>
+            <label  class="guia" for="">Confirma tu correo*</label>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input name="Correo_Electronico2" type="email" required  />
             </div>
 
-            <label  class="guia" for="">Telefono</label>
+            <label  class="guia" for="">Telefono*</label>
             <div class="input-field">
             <i class="fas fa-phone-alt"></i>
               <input name="Telefono_Usuario" type="number" required />
             </div>
-            <label  class="guia" for="pass" >Contraseña</label>
+            <label  class="guia" for="pass" >Contraseña*</label>
             <div class="input-field">
               <i class="fas fa-lock"></i>
               <input name="Contrasena_Usuario" type="password" id="password" placeholder="contrasena" required/>
             </div>
 
-            <label  class="guia" for="passConfir" >Confirme Contraseña</label>
+            <label  class="guia" for="passConfir" >Confirme Contraseña*</label>
             <div class="input-field">
               <i class="fas fa-lock"></i>
               <input name="Contrasena_Confirm" type="password" id="password2" placeholder="contrasenaConfirm" required />
@@ -67,7 +67,7 @@ crossorigin="anonymous"></script>
 <br>
             <div id="msg"></div>
 
-            <label  class="guia" for="rol" >Selecciona tu rol</label>
+            <label  class="guia" for="rol" >Selecciona tu rol*</label>
             <div class="col-md-8">
             <select  name="Id_Rol" class="form-select">
 <option>Seleccione Rol</option>
@@ -79,7 +79,7 @@ crossorigin="anonymous"></script>
 </select>
 </div>
 <br>
-<label  class="guia" for="RH" >Selecciona tu RH</label>
+<label  class="guia" for="RH" >Selecciona tu RH*</label>
 <div class="col-md-8">
             <select  name="Id_RH" class="form-select">
 <option>Seleccione RH</option>

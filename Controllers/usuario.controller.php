@@ -143,8 +143,8 @@ function registro()
     }
     
     require "Views/usuario/registro.php";
-   // require"views/header.php";
-  //  require"views/footer.php";
+  //  require "Views/usuario/registroPrueba.php";
+
 }
 
 function registroPac()
