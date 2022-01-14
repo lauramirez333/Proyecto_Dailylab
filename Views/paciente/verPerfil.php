@@ -9,20 +9,22 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <title>Ver perfil</title>
+        <h1>Mis Datos </h1>
     </head>
     <body>
     <div class= "container-fluid">
 <br>
-
-<ol class= "breadcrumb">
-<li><a href="?c=citas&a=index">Inicio  </a> >> </li> 
-    <li class="active"> Mis Datos  </li>     
-</ol>   
+    
+    <ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="index.php?c=citas&a=index">Inicio</a></li>
+  <li class="breadcrumb-item"><a class="active"href="#">Datos  personales</a></li>
+</ul>
+   
 </div>
         
 <!--<a href="?c=product&a=form&id=<//?= $product->getId() ?>" class= "btn btn-warning">Editar</a> -->
 <a href="?c=usuario&a=editarUnique&Id_Usuario=<?= $usuario->getId_Usuario() ?>">Editar</a>
-<h1>Mis Datos </h1>
+
 
 <br>
 <div class="container"> 

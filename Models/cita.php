@@ -55,7 +55,7 @@ class Cita
     {
         try{
             $Id_Usuario=$_SESSION['user']->getId_Usuario();//esto para que listara nada mas lo del usuario en sesion?
-            $query = $this->connection->prepare("SELECT * FROM cita where Id_Usuario= ?");
+            $query = $this->connection->prepare("SELECT * FROM cita where Fecha_Cita >= NOW() AND Id_Usuario= ?");
             $query->execute(array($Id_Usuario));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
         }catch (Exception $e){
@@ -151,7 +151,7 @@ class Cita
             $query= "DELETE FROM cita WHERE Id_Cita=?;";
             $this-> connection->prepare($query)
                             ->execute(array($this->Id_Cita));
-        }catch(Excepcion $e){
+        }catch(Exception $e){
             die($e->getMessage());
 
         }
@@ -315,4 +315,3 @@ class Cita
     }
     
     
-

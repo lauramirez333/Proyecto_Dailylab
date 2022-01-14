@@ -1,4 +1,4 @@
-<h4><?=$cita->getId_Cita() ? 'Editar' : 'Nuevo'?>Agendamiento </h4>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,21 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <div class= "container-fluid">
-<br>
-
-<ol class= "breadcrumb">
-<li><a href="?c=citas&a=index">Inicio  </a> >> </li> 
-    <li class="active"> Agendar  </li>     
-</ol>   
-</div>
        
     <title>Agenda</title>
 </head>
 <body>
     
 <h1>Agenda tu cita </h1>
+<div class= "container-fluid">
+<br>
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="?=citas&a=index">Inicio</a></li>
+  <li class="breadcrumb-item"><a class="active"href="#">Agendar citas</a></li>
+</ul>
+<br>
+</div>
 
 <div class="container">
 <form action= "?c=citas&a=agendar" method ="post">
@@ -42,6 +41,7 @@
 
 <label for="Id_Sucursal"> sucursal: </label>
 <br>
+<div class="col-md-8">
 <select  name="Id_Sucursal" class="form-select">
 <option>Seleccione Sucursal</option>
 <?php foreach($sucursales as $sucursal): ?>
@@ -50,10 +50,12 @@
      <?=$sucursal->getNombre_Sucursal()?> </option>
     <?php endforeach;?>
 </select>
+</div>
 <br>
 
 <label for="Id_Examen"> examenes: </label>
 <br>
+<div class="col-md-8">
 <select  name="Id_Examen" class="form-select">
 <option>Seleccione Tipo de examen</option>
 <?php foreach($examenes as $examen): ?>
@@ -62,6 +64,7 @@
      <?=$examen->getNombre_Examen()?> </option>
     <?php endforeach;?>
 </select>
+</div>
 <button type="submit"> Guardar</button>
 </form>
 </div>

@@ -16,15 +16,22 @@
     </head>
     <body>
 
-<h1>Citas </h1>
+<h1>Usuarios </h1>
 
 <div class= "container-fluid">
 <br>
 
+<!--
 <ol class= "breadcrumb">
     <li class="active">Inicio >> </li>  
-</ol>   
-</div>
+</ol>  
+--> 
+
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="?=usuario&a=index">Inicio</a></li>
+  <li class="breadcrumb-item"><a class="active"href="#">Agendar citas</a></li>
+</ul>
+
 
 <div class="container"> 
 

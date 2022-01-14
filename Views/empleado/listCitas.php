@@ -10,9 +10,9 @@
 <title>Citas</title>
 <h1> Citas </h1>
 
-<ol class= "breadcrumb">
-    <li class="active">Inicio >> </li>  
-</ol>   
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a class="active"href="#">Inicio-Citas</a></li>
+</ul>
 </div>
 
 <div class="container"> 

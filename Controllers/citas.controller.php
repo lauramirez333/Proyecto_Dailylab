@@ -17,7 +17,17 @@ function __CONSTRUCT()
     $this->model = new Cita(); 
 }
 
-function index()// 
+function index()// este es el index que ve el paciente
+{
+    
+    require "Views/paciente/header.php";
+    require "Views/paciente/indexPac.php";
+    require "Views/footer.php";
+    
+
+}
+
+function Menu()// este es el menu de citas que ve el paciente
 {
     $cita = new Cita(); //?
     $cital = $this->model->listUnic();//objet de tipo list
@@ -35,7 +45,8 @@ function index()//
 
 }
 
-function index2()// 
+
+function index2()// // este es el index que ve el empleado
 {
     $cita = new Cita(); //?
     $citas = $this->model->list();//objet de tipo list
@@ -67,6 +78,24 @@ function viewHistorial(){
   require "Views/footer.php";
 }
 
+function viewHistRolPac(){ //esta es la vista del historial que se ve en rol paciente
+  $cita = new Cita();// este metodo est redirigiendo al index y nose pq
+  $sucursal = new Sucursal();
+  $sucursales=$sucursal->list();
+  $examen = new Examen();
+  $examenes=$examen->list();
+  $usuario = new Usuario();
+  $usuarios=$usuario->list();
+  
+  $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
+  if(isset($_GET['Id_Usuario'])){
+      $citas = $cita->listHistorialPac($_GET['Id_Usuario']); 
+  }
+  require "Views/paciente/header.php";
+  require "Views/paciente/historial.php";
+  require "Views/footer.php";
+
+}
 function viewHistorialPac(){
   $cita = new Cita();
   $sucursal = new Sucursal();
@@ -85,7 +114,7 @@ function viewHistorialPac(){
 
 
 
-public function viewAgendar(){
+public function viewAgendar(){ //vista de agendar que ve paciente
     $cita = new Cita();
     $sucursal = new Sucursal();
     $sucursales=$sucursal->list();
@@ -116,24 +145,24 @@ public function viewAgendarPac(){
   require "Views/footer.php";
 }
 
-public function saveAgendar(){
+/*public function saveAgendar(){ //revisal aqui, hay un error y nose a que corresppnde esto
     $cita = new Cita();
       /*  $Id_Cita = intval($_POST['Id_Cita']);
         if($Id_Cita){
             $cita = $cita->getById($Id_Cita);
         }*/
         
-        $cita->setFecha_Cita($_POST['Fecha_Cita']);
+/*        $cita->setFecha_Cita($_POST['Fecha_Cita']);
         $cita->setHora_Cita($_POST['Hora_Cita']);
         $cita->setEstado_Cita($_POST['Estado_Cita']);
         $cita->setId_Sucursal($_POST['Id_Sucursal']);
         $cita->setId_Examen($_POST['Id_Examen']);
 
-         $cita->insert();
+        $cita->insert();
 
        // var_dump($product->insert());
         header('location:?c=citas');
-}
+}*/
 
 function agendar()//del metodo save
 {

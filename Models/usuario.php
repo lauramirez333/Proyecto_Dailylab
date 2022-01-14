@@ -35,7 +35,7 @@ public function verPerfil()
 {
     try{
         $Id_Usuario=$_SESSION['user']->getId_Usuario();
-        $query = $this->connection->prepare("SELECT * FROM usuario where Id_Usuario=?" );
+        $query = $this->connection->prepare("SELECT * FROM usuario where Id_Usuario=?;");
         $query->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
         $query->execute(array($Id_Usuario));
         echo(var_dump($Id_Usuario));
@@ -211,7 +211,7 @@ public function delete(){
         $query= "DELETE FROM usuario WHERE Id_Usuario=?;";
         $this-> connection->prepare($query)
                         ->execute(array($this->Id_Usuario));
-    }catch(Excepcion $e){
+    }catch(Exception $e){
         die($e->getMessage());
 
     }

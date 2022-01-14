@@ -18,6 +18,7 @@ if(!isset($_SESSION['user'])){
   <link rel="stylesheet" href="Views/css/menu.css">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,27 +98,21 @@ if(!isset($_SESSION['user'])){
              
             <i class='fas fa-user-cog' style='color:#fdfdfd' ></i>
             
-             <h3>
+            <h3>
                   Bienvenid@
                   <?=
                    $_SESSION['user']->getCorreo_Electronico();
+                   
                  
                   ?>
                  
             </h3>
-           
-            <h3>
-                  Rol
-                  <br>
-                  Paciente
-            <!--    <?//=
-                  // $_SESSION['user']->getId_Rol()->getNombre_Rol(); //????? si se hce asi o como
-                 
-                  ?>
-              
-             --></h3>
-             
+            
+              <p> 
+            Paciente
+              </p> 
           </div>
+
 
 
 <ul>
@@ -133,12 +128,20 @@ if(!isset($_SESSION['user'])){
                     <span class="item:active">Ver perfil</span>
                 </a>
             </li>
-
             
             <li id="agendar">
                   <!-- <a href="?c=citas&a=viewAgendar" >Agendar citas -->
-                  <a href="?c=citas&a=viewAgendar" >
+                  <a href="?c=citas&a=Menu" >
                     <span class="icon"><i class='bx bx-band-aid'></i></span>
+                    <span  class="item:active">Mis citas
+                     </a>
+                    </span>  
+            </li>
+
+            <li id="agendar">
+                  <!-- <a href="?c=citas&a=viewAgendar" >Agendar citas -->
+                  <a href="?c=citas&a=viewAgendar" >
+                    <span class="icon"><i class='bx bxs-calendar-check'></i></span>
                     <span  class="item:active">Agendar citas
                      </a>
                     </span>  
@@ -148,15 +151,16 @@ if(!isset($_SESSION['user'])){
             <li id="resultados">
                   <!-- <a href="?c=citas&a=viewAgendar" >Agendar citas -->
                   <a href="?c=resultados&a=resultados" >
-                    <span class="icon"><i class='bx bx-band-aid'></i></span>
+                    <span class="icon"><i class='far fa-clipboard'></i></span>
                     <span  class="item:active">Resultados
                      </a>
                     </span>  
             </li>
 
             <li id="nuevo">
-            <a href="historial.php" >
-                    <span class="icon"><i class='bx bxs-calendar-check' ></i></span>
+            <a href="?=citas&a=viewHistRolPac" >
+          <!--  <a href="?=citas&a=viewHistRolPac&Id_Usuario=<?//=$_SESSION['user']?>" > -->
+                    <span class="icon"><i class='far fa-clock' ></i></span>
                     <span class="item:active">historial general</span>
                 </a>
   
@@ -175,5 +179,4 @@ if(!isset($_SESSION['user'])){
       
 
       
-
 
