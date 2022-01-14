@@ -132,7 +132,7 @@
                 </a>
             </li>
 
-            <li id="nuevo">
+            <li id="historial">
                 <a href="?c=citas&a=viewHistorial" >
                     <span class="icon"><i class='bx bxs-calendar-check' ></i></span>
                     <span class="item">historial general</span>

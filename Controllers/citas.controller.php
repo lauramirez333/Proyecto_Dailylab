@@ -36,7 +36,7 @@ function Menu()// este es el menu de citas que ve el paciente
     $usuario = new Usuario();//
     $RH = new RH();
     $examen = new Examen();
-    $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
+  //  $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
     
     require "Views/paciente/header.php";
     require "Views/paciente/menu.php";
@@ -79,15 +79,15 @@ function viewHistorial(){
 }
 
 function viewHistRolPac(){ //esta es la vista del historial que se ve en rol paciente
-  $cita = new Cita();// este metodo est redirigiendo al index y nose pq
+  $cita = new Cita();
   $sucursal = new Sucursal();
   $sucursales=$sucursal->list();
   $examen = new Examen();
   $examenes=$examen->list();
   $usuario = new Usuario();
   $usuarios=$usuario->list();
-  
   $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
+    
   if(isset($_GET['Id_Usuario'])){
       $citas = $cita->listHistorialPac($_GET['Id_Usuario']); 
   }
