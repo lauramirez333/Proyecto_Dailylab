@@ -35,11 +35,15 @@ function verPerfil()//
     $rol = new Rol();//empleado es role
     $RH = new RH();
     $usuarios= $this->model->verPerfil();//$usuarios = $usuario->list();//objet de tipo list
+    
     $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
+    
     require "Views/paciente/header.php";
     require "Views/paciente/verPerfil.php";
     require "Views/footer.php";
 }
+
+
 
 public function agendar(){
     require "Views/paciente/agendar.php";

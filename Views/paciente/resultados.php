@@ -52,8 +52,6 @@
                         <td> <a> <?= $mye->getURL_Resultado() ?> </a></td>
                         <td> <?= $mye->getEstado() ?> </td>
 
-
-
                         </td>
                     </tr>
             <?php endforeach;

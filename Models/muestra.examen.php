@@ -58,7 +58,7 @@ public function insert()
                     }
                         
 }
-
+/*
 public function update()
 {
     try{
@@ -80,7 +80,7 @@ public function update()
         die($e->getMessage());
     }
 }
-
+*/
 public function getById($Id_Empleado){
     try{
     $query= "SELECT * FROM muestra_examen where Id_Empleado=?;";
@@ -99,7 +99,7 @@ public function delete(){
         $query= "DELETE FROM muestra_examen WHERE Id_Empleado=?;";
         $this-> connection->prepare($query)
                         ->execute(array($this->Id_Empleado));
-    }catch(Excepcion $e){
+    }catch(Exception $e){
         die($e->getMessage());
 
     }

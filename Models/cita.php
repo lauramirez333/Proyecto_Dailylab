@@ -44,7 +44,7 @@ class Cita
     {
         try{
             $Id_Usuario=$_SESSION['user']->getId_Usuario();
-            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=?;");//con esto solo mostramos las citas que no estan vencidas
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=? OR  Estado_Cita=0;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute(array($Id_Usuario));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
         }catch (Exception $e){
@@ -54,9 +54,9 @@ class Cita
 
     public function listUnic()
     {
-        try{
+        try{ 
             $Id_Usuario=$_SESSION['user']->getId_Usuario();//esto para que listara nada mas lo del usuario en sesion?
-            $query = $this->connection->prepare("SELECT * FROM cita where Fecha_Cita >= NOW() AND Id_Usuario= ?");
+            $query = $this->connection->prepare("SELECT * FROM cita where Fecha_Cita >= NOW()  AND Estado_Cita=1 AND Id_Usuario= ?");
             $query->execute(array($Id_Usuario));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
         }catch (Exception $e){

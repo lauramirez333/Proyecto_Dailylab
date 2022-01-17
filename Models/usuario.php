@@ -31,7 +31,7 @@ public function list()
     }
 }
 
-public function verPerfil()
+public function verPerfil()//($Id_Usuario) intentar esto
 {
     try{
         $Id_Usuario=$_SESSION['user']->getId_Usuario();
