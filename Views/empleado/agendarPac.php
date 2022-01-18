@@ -23,7 +23,7 @@
 <h1>Agenda cita </h1>
 
 <div class="container">
-<form action= "?c=citas&a=agendarPac" method ="post">
+<form action= "?c=citas&a=agendarPac&Id_Usuario=<?= $usuario->getId_Usuario() ?>" method ="post">
 
 <input type="hidden" name="Id_Usuario" value="<?=$usuario->getId_Usuario() ?>">
 

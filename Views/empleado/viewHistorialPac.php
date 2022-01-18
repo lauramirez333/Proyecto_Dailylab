@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+        <input type="hidden" name="Id_Usuario" value="<?=$usuario->getId_Usuario() ?>"> <!--esto no esta mostrando el id que es, el metodo esta "confuncido" con el id y por eso no muestra lo que es-->
 <div class="container"> 
 
 </div> 
@@ -25,7 +25,7 @@
             <td> </td>
             <td>Documento</td>
             <td>Sucursal</td>
-            <td>Editar</td>
+
 
 </tr>    
 </thead>  
@@ -41,7 +41,6 @@
         <td> <?= $usuario->getById($cita->getId_Usuario())->getDocumento_Identificacion() ?></td>
         <td> <?= $sucursal->getById($cita->getId_Sucursal())->getNombre_Sucursal() ?></td>
        <td>
-        <a href="?c=product&a=form&id=<?= $usuario->getId_Usuario() ?>" class= "btn btn-warning">Cancelar cita</a>
 
         
     </td>

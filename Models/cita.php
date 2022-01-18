@@ -29,6 +29,17 @@ class Cita
         }
     }
 
+    public function dupliCitas($Id_Examen,$Id_Usuario){//esto evita que se pidan 2 citas de la misma especialidad si 1 de ella no se ha vencido todavia 
+
+        try{
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita >= NOW() AND Id_Examen=? AND Id_Usuario=?;");
+            $query->execute(array($Id_Examen,$Id_Usuario));
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
     public function listHistorial()
     {
         try{
@@ -43,7 +54,8 @@ class Cita
     public function listHistorialPac($Id_Usuario)
     {
         try{
-            $Id_Usuario=$_SESSION['user']->getId_Usuario();
+            $Id_Usuario=$_GET['Id_Usuario'];
+           // =$_SESSION['user']->getId_Usuario();
             $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=? OR  Estado_Cita=0;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute(array($Id_Usuario));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);

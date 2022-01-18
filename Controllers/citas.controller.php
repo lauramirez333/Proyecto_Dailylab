@@ -189,9 +189,25 @@ function agendar()//del metodo save
 
 }
 
-function agendarPac()//del metodo save
+function agendarPac()//proviene del metodo save
 {
 
+$Id_Examen= $_POST['Id_Examen'];
+$Id_Usuario= $_GET['Id_Usuario'];
+
+if($this->model-> dupliCitas($Id_Examen,$_GET['Id_Usuario']))//esto evita que se pidan 2 citas de la misma especialidad si 1 de ella no se ha vencido todavia 
+{
+
+        header('location:?c=usuario&a=registroPac');
+        
+        die("ya existe este usuario en la base de datos"); 
+        echo "ya existe este usuario en la base de datos";
+        ?> alert("ya existe este usuario en la base de datos")
+        var mensajesError = [];
+        mensajesError.push('ya existe este usuario en la base de datos')
+        error.innerHTML= mensajesError.join(' ') <?php
+       
+}else{ 
     $cita = new Cita();
     $usuario = new Usuario();
 
@@ -211,7 +227,7 @@ function agendarPac()//del metodo save
 
      header("location:?c=citas&a=index2");
       
-   
+      }  
     
 }
 public function deleteCita(){
