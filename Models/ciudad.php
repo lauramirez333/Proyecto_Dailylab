@@ -76,7 +76,7 @@ public function delete(){
         $query= "DELETE FROM ciudad WHERE Id_Ciudad=?;";
         $this-> connection->prepare($query)
                         ->execute(array($this->Id_Ciudad));
-    }catch(Excepcion $e){
+    }catch(Exception $e){
         die($e->getMessage());
 
     }
