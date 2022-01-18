@@ -105,7 +105,7 @@
 
 <ul>
                <li id="inicio">
-                <a href="../../inicio.php">
+                <a href="?c=citas&a=index2">
                     <span class="icon"> <i class='bx bx-grid-alt'></i> </span>
                     <span class="item">Inicio</span>
                 </a>
@@ -125,15 +125,15 @@
                 </a>
             </li>
 
-            <li id="citas">
-            <a href="?c=citas&a=viewAgendarPac" >
+           <li id="citas">
+            <a href="?c=usuario&a=index" >
                     <span class="icon"><i class='bx bx-band-aid'></i></span>
                     <span  class="item">Agendar Cita</span>
                 </a>
             </li>
 
-            <li id="nuevo">
-                <a href="?c=citas&a=resultadosPac" >
+            <li id="historial">
+                <a href="?c=citas&a=viewHistorial" >
                     <span class="icon"><i class='bx bxs-calendar-check' ></i></span>
                     <span class="item">historial general</span>
                 </a>
@@ -148,5 +148,4 @@
       
 
       
-
 

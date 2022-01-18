@@ -24,7 +24,7 @@ function index()//
     $cita = new Cita();
     $usuarios=$this->model->list();//$usuarios = $usuario->list();//objet de tipo list
     require "Views/empleado/header.php";
-    require "Views/empleado/menu.php";
+    require "Views/empleado/usuView.php";
     require "Views/footer.php";
 }
 
@@ -36,16 +36,21 @@ function verPerfil()//
     $rol = new Rol();//empleado es role
     $RH = new RH();
     $usuarios= $this->model->verPerfil();//$usuarios = $usuario->list();//objet de tipo list
+    
     $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
+    
     require "Views/paciente/header.php";
     require "Views/paciente/verPerfil.php";
     require "Views/footer.php";
 }
 
+
+
 public function agendar(){
     require "Views/paciente/agendar.php";
 }
 
+/*
 public function editarUnique(){
     $usuario = new Usuario();
     
@@ -55,7 +60,7 @@ public function editarUnique(){
     }
     require "views/product/form.php";
 }
-
+*/
 function save()
 {
     $Correo_Electronico= $_POST['Correo_Electronico'];
@@ -65,7 +70,7 @@ function save()
     {
 
             header('location:?c=usuario&a=login');
-            alert("ya existes en la base de datos, logueate"); 
+            die("ya existes en la base de datos, logueate"); 
 
     }else{ 
        
@@ -85,7 +90,7 @@ function save()
     $usuario->setId_Rol($_POST['Id_Rol']);
     $Id_Usuario?$usuario->update(): $usuario->insert();
     header("location:?c=usuario&a=login");
-    alert("registro exitoso");
+    die("registro exitoso");
 
 }
 }
@@ -99,9 +104,9 @@ function savePac()
     {
 
             header('location:?c=usuario&a=registroPac');
-            ?> 
-            alert("ya existe este usuario en la base de datos"); 
-            <?php
+            
+            die("ya existe este usuario en la base de datos"); 
+           
     }else{ 
        
     $usuario = new Usuario();
@@ -121,9 +126,9 @@ function savePac()
     $Id_Usuario?$usuario->update(): $usuario->insertPac();
     header("location:?c=usuario&a=login");
 
-    ?> 
-    Window.alert("registro exitoso"); 
-    <?php
+   
+    die("registro exitoso"); 
+   
 
 }
 }
@@ -142,8 +147,8 @@ function registro()
     }
     
     require "Views/usuario/registro.php";
-   // require"views/header.php";
-  //  require"views/footer.php";
+  //  require "Views/usuario/registroPrueba.php";
+
 }
 
 function registroPac()
@@ -184,7 +189,7 @@ function validate()
       //  die(var_dump($Id_Rol));
         if($Id_Rol == 1 || $Id_Rol == 2)
         {
-            header('location: ?c=usuario&a=index');
+            header('location: ?c=citas&a=index2');
         }
         if($Id_Rol == 4 || $Id_Rol == 5)
         {

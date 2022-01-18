@@ -21,20 +21,44 @@ class Cita
     public function list()
     {
         try{
-            $query = $this->connection->prepare("SELECT * FROM cita");
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita >= NOW();");//con esto solo mostramos las citas que no estan vencidas
             $query->execute();
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
         }catch (Exception $e){
             die ($e->getMessage());
         }
     }
-    public function listUnic()
+
+    public function listHistorial()
     {
         try{
-            $Id_Usuario=$_SESSION['user']->getId_Usuario();//esto para que listara nada mas lo del usuario en sesion?
-            $query = $this->connection->prepare("SELECT * FROM cita where Id_Usuario= ?");
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW();");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+    public function listHistorialPac($Id_Usuario)
+    {
+        try{
+            $Id_Usuario=$_SESSION['user']->getId_Usuario();
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=? OR  Estado_Cita=0;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute(array($Id_Usuario));
-            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+    public function listUnic()
+    {
+        try{ 
+            $Id_Usuario=$_SESSION['user']->getId_Usuario();//esto para que listara nada mas lo del usuario en sesion?
+            $query = $this->connection->prepare("SELECT * FROM cita where Fecha_Cita >= NOW()  AND Estado_Cita=1 AND Id_Usuario= ?");
+            $query->execute(array($Id_Usuario));
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
         }catch (Exception $e){
             die ($e->getMessage());
         }
@@ -60,6 +84,29 @@ class Cita
                         }
                             
     }
+
+    public function agendarUnicPac()
+    {
+        try{
+     //   $query = "INSERT INTO `cita` (`Id_Cita`, `Fecha_Cita`, `Hora_Cita`, `Estado_Cita`, `Id_Sucursal`, `Id_Examen`, `Id_Usuario`) VALUES (NULL, '2021-12-12', '12:12:12', 'agendado', '1', '1', '2');";
+        $query = "INSERT INTO cita ( Fecha_Cita, Hora_Cita, Estado_Cita, Id_Sucursal, Id_Examen,Id_Usuario) VALUES (?,?,?,?,?,?);";
+        $this -> connection-> prepare($query)
+                            ->execute(array(
+                                $this->Fecha_Cita,
+                                $this->Hora_Cita,
+                                $this->Estado_Cita,
+                                $this->Id_Sucursal,
+                                $this->Id_Examen,
+                                $this->Id_Usuario
+                            )); //esto funciona bien hasta aca lo de abajo es solo otra forma de hacerlo para devolver el id
+                            $this->Id_Cita=$this->connection->lastInsertId();
+                            return $this;
+                        }catch(Exception $e){
+                            die($e->getMessage());
+                        }
+                            
+    }
+    
     public function update()//ACTUALICZR
     {
         try{
@@ -105,7 +152,7 @@ class Cita
             $query= "DELETE FROM cita WHERE Id_Cita=?;";
             $this-> connection->prepare($query)
                             ->execute(array($this->Id_Cita));
-        }catch(Excepcion $e){
+        }catch(Exception $e){
             die($e->getMessage());
 
         }
@@ -269,4 +316,3 @@ class Cita
     }
     
     
-

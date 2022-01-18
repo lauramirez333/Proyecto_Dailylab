@@ -49,6 +49,7 @@ crossorigin="anonymous"></script>
               ex ratione. Aliquid!
             </p>
             <br>
+            <!--<a class="boton" id="sign-up-btn" href="?c=usuario&a=registro"> -->
             <a class="boton" id="sign-up-btn" href="?c=usuario&a=registro">
               Registrate
              </a>

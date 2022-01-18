@@ -27,8 +27,9 @@
 </ol>   
 </div>
 
-
-<br>
+<div class= "container-fluid">
+<h8>En este espacio encontrarás tus citas agendadas activas hasta el día de hoy. Para ver las citas que ya pasaron dirigete a historial general</h8>
+</div>
 <div class="container"> 
 
 </div> 

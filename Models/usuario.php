@@ -31,11 +31,11 @@ public function list()
     }
 }
 
-public function verPerfil()
+public function verPerfil()//($Id_Usuario) intentar esto
 {
     try{
         $Id_Usuario=$_SESSION['user']->getId_Usuario();
-        $query = $this->connection->prepare("SELECT * FROM usuario where Id_Usuario=?" );
+        $query = $this->connection->prepare("SELECT * FROM usuario where Id_Usuario=?;");
         $query->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
         $query->execute(array($Id_Usuario));
         echo(var_dump($Id_Usuario));
@@ -68,6 +68,18 @@ public function insert()
                     }
                         
 }
+
+public function listHistorial(){
+    
+        try{
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW();");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
 
 public function insertPac()
 {
@@ -167,6 +179,20 @@ public function update()
     }
 }
 
+
+public function buscarId($Documento_Identificacion){
+    try{
+        $query = $this->connection  -> prepare("SELECT * FROM usuario WHERE Documento_Identificacion=?;");
+        $query->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+        $query->execute(array($Documento_Identificacion));
+        $result = $query->fetch();
+        return $result;
+    
+    }catch(Exception $e){
+        die($e->getMessage());
+        }
+}
+
 public function getById($Id_Usuario){
     try{
     $query= "SELECT * FROM usuario where Id_Usuario=?;";
@@ -184,7 +210,7 @@ public function delete(){
         $query= "DELETE FROM usuario WHERE Id_Usuario=?;";
         $this-> connection->prepare($query)
                         ->execute(array($this->Id_Usuario));
-    }catch(Excepcion $e){
+    }catch(Exception $e){
         die($e->getMessage());
 
     }

@@ -1,14 +1,50 @@
 
 <link rel="stylesheet" href="Views\css\loginyregistro.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<title>Registro de usuarios</title>
+    </head>
+    <body>
+
+<h1>Registro de usuarios </h1>
+
+
+
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="?=usuario&a=index">Inicio</a></li>
+  <li class="breadcrumb-item"><a class="active"href="#">Registro</a></li>
+</ul>
+
 <div class="home">
+<br>
+<br>
+<br>  
+<br>
+<br>
+<br>  
 <div class="containerL">
-      <div class="forms-container">
+ 
+      <div class="forms-container"> 
         <div class="signin-signup">
+
         <!--<form action="?c=usuario&a=validate" method="post"> -->
-        
+
           <form action="?c=usuario&a=savePac" id="registro" method="post" onsubmit="verificarPasswords();" >
-            <h2 class="title">Registro</h2>
+          <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>        <br>
+<br>
+<br>        <br>
+<br>
+<br>
+          <h2 class="title">Registro</h2>
  <br>
             <label  class="guia" for="">Nombre</label>
             <div class="input-field">
