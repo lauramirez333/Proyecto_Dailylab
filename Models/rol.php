@@ -4,6 +4,7 @@ class Rol
 {
     private ?int $Id_Rol=null;
     private ?string $Nombre_Rol=null;
+
    
     private $connection;
 
@@ -75,7 +76,7 @@ public function delete(){
         $query= "DELETE FROM rol WHERE Id_Rol=?;";
         $this-> connection->prepare($query)
                         ->execute(array($this->Id_Rol));
-    }catch(Excepcion $e){
+    }catch(Exception $e){
         die($e->getMessage());
 
     }
@@ -119,7 +120,5 @@ public function delete(){
 
         return $this;
     }
+
 }
-    
-//getters y setters
-   

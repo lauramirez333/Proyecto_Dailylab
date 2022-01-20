@@ -64,6 +64,7 @@ class Cita
         }
     }
 
+    
     public function listUnic()
     {
         try{ 

@@ -9,9 +9,9 @@
         <!--<form action="?c=usuario&a=validate" method="post"> -->
 
         <form action="?c=usuario&a=save" id="registro" method="post">
-          <h2 class="title">Registrate</h2>
+          <h2 class="title"><b>Registrate</b></h2>
 
-          <label class="guia" for="Nombres_Usuario">Nombre*</label>
+          <label class="guia" for="Nombres_Usuario"><b>Nombre*</b></label>
           <div class="input-field">
 
             <i class="fas fa-user"></i>
@@ -19,19 +19,19 @@
           </div>
 
 
-          <label class="guia" for="Apellidos_Usuario">Apellido*</label>
+          <label class="guia" for="Apellidos_Usuario"><b>Apellido*</b></label>
           <div class="input-field">
             <i class="fas fa-user"></i>
             <input name="Apellidos_Usuario" id='Apellidos_Usuario' type="text" required />
           </div>
 
-          <label class="guia" for="Documento_Identificacion">Documento*</label>
+          <label class="guia" for="Documento_Identificacion"><b>Documento*</b></label>
           <div class="input-field">
             <i class="fas fa-id-card-alt"></i>
             <input name="Documento_Identificacion" id='Documento_Identificacion' type="number" required />
           </div>
 
-          <label class="guia" for="Telefono_Usuario">Telefono*</label>
+          <label class="guia" for="Telefono_Usuario"><b>Telefono*</b></label>
           <div class="input-field">
             <i class="fas fa-phone-alt"></i>
             <input name="Telefono_Usuario" id='Telefono_Usuario' type="number" required />
@@ -39,7 +39,7 @@
           <br>
           <div id="msg"></div>
 
-          <label class="guia" for="Id_Rol">Selecciona tu rol*</label>
+          <label class="guia" for="Id_Rol"><b>Selecciona tu rol*</b></label>
           <div class="col-md-12">
             <select name="Id_Rol" id="Id_Rol" class="form-select" aria-label="Default select example">
               <option>Seleccione Rol</option>
@@ -51,7 +51,32 @@
             </select>
           </div>
           <br>
-          <label class="guia" for="Id_RH">Selecciona tu RH*</label>
+
+         
+          <h8 class="margenRoles"><b>*</b>Si seleccionate el rol empleado/a por favor ingresa 
+          <br>  
+          tu ID, de lo contrario continua al siguiente campo</h8>
+         <br>
+          <label class="guia" for="Id_Empleado"><b>Id Empleado</b></label>
+          <div class="input-field">
+          <i class="fas fa-address-card"></i>
+            <input name="Id_Empleado" id='Id_Empleado' type="number" required />
+          </div>
+          <br>
+
+         <br>
+          <h8 class="margenRoles"><b>*</b>Si seleccionate el rol enfermero/a por favor ingresa
+            <br>
+             tu ID, de lo contrario continua al siguiente campo</h8>
+        <br>
+          <label class="guia" for="Id_Enfermero"><b>Id Enfermero</b></label>
+          <div class="input-field">
+          <i class="far fa-address-card"></i>
+            <input name="Id_Enfermero" id='Id_Enfermero' type="number" required />
+          </div>
+          <br>
+
+          <label class="guia" for="Id_RH"><b>Selecciona tu RH*</b></label>
           <div class="col-md-8">
             <select name="Id_RH" id="Id_RH" class="selectpicker show-tick">
               <option>Seleccione RH</option>
@@ -63,25 +88,25 @@
             </select>
           </div>
           <br>
-          <label class="guia" for="Correo_Electronico">Correo*</label>
+          <label class="guia" for="Correo_Electronico"><b>Correo*</b></label>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input name="Correo_Electronico" id="Correo_Electronico" type="email" required />
           </div>
 
-          <label class="guia" for="Correo_Electronico2">Confirma tu correo*</label>
+          <label class="guia" for="Correo_Electronico2"><b>Confirma tu correo*</b></label>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input id="Correo_Electronico2" type="email" required />
           </div>
 
-          <label class="guia" for="Contrasena_Usuario">Contraseña*</label>
+          <label class="guia" for="Contrasena_Usuario"><b>Contraseña*</b></label>
           <div class="input-field">
             <i class="fas fa-lock"></i>
             <input name="Contrasena_Usuario" type="password" id="Contrasena_Usuario" placeholder="contrasena" required />
           </div>
 
-          <label class="guia" for="Contrasena_Usuario2">Confirme Contraseña*</label>
+          <label class="guia" for="Contrasena_Usuario2"><b>Confirme Contraseña*</b></label>
           <div class="input-field">
             <i class="fas fa-lock"></i>
             <input type="password" id="Contrasena_Usuario2" placeholder="contrasenaConfirm" required />

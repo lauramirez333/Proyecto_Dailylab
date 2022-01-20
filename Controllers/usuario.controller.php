@@ -72,7 +72,6 @@ function save()
             die("ya existes en la base de datos, logueate"); 
 
     }else{ 
-       
     $usuario = new Usuario();
     $Id_Usuario=intval($_POST['Id_Usuario']);   
     if($Id_Usuario)
