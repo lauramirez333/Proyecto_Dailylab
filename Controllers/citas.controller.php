@@ -27,6 +27,23 @@ function index()// este es el index que ve el paciente
 
 }
 
+function indexEnf()// este es el index que ve la enfermera
+{
+  $cita = new Cita(); //?
+  $cital = $this->model->listAnalisis();//objet de tipo list
+  
+  $sucursal = new Sucursal();
+  $usuario = new Usuario();//
+  $RH = new RH();
+  $examen = new Examen();
+
+    require "Views/Enfermero/header.php";
+    require "Views/Enfermero/menu.php";
+    require "Views/footer.php";
+    
+
+}
+
 function Menu()// este es el menu de citas que ve el paciente
 {
     $cita = new Cita(); //?

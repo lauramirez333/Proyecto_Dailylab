@@ -7,6 +7,11 @@ var Correo_Electronico2 = document.getElementById('Correo_Electronico2');
 var Contrasena_Usuario =document.getElementById('Contrasena_Usuario');
 var Contrasena_Usuario2 =document.getElementById('Contrasena_Usuario2');
 var error =document.getElementById('error');
+var Id_Area =document.getElementById('Id_Area');
+var Terminos =document.getElementById('Terminos');
+var Id_RH =document.getElementById('Id_RH');
+
+
 error.style.color ='red';
 
 function enviarFormulario(){
@@ -74,6 +79,7 @@ function enviarFormulario(){
         return false;  
           
     }
+  
     
 else {
     console.log('Enviando formulario...');

@@ -76,6 +76,18 @@ class Cita
             die ($e->getMessage());
         }
     }
+
+    public function listAnalisis()
+    {
+        try{ 
+           $query = $this->connection->prepare("SELECT * FROM cita where Fecha_Cita < NOW()  AND Estado_Cita=1 ");
+            $query->execute(array());
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
     public function agendarUnic()
     {
         try{

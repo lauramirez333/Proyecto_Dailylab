@@ -73,11 +73,11 @@ function save()
 
     }else{ 
     $usuario = new Usuario();
-    $Id_Usuario=intval($_POST['Id_Usuario']);   
+ /*   $Id_Usuario=intval($_POST['Id_Usuario']);   
     if($Id_Usuario)
     {
         $usuario= $usuario->getById($Id_Usuario);
-    }  
+    }  */
     $usuario->setCorreo_Electronico($_POST['Correo_Electronico']);
     $usuario->setContrasena_Usuario($_POST['Contrasena_Usuario']);//(password_hash($_POST['Contrasena_Usuario'],PASSWORD_BCRYPT));//ciframos el id
     $usuario->setDocumento_Identificacion($_POST['Documento_Identificacion']);
@@ -85,8 +85,18 @@ function save()
     $usuario->setId_RH($_POST['Id_RH']);
     $usuario->setNombres_Usuario($_POST['Nombres_Usuario']);
     $usuario->setApellidos_Usuario($_POST['Apellidos_Usuario']);
-    $usuario->setId_Rol($_POST['Id_Rol']);
-    $Id_Usuario?$usuario->update(): $usuario->insert();
+    if($_POST['Id_Area'] == 1234){//para empleado
+        $usuario->setId_Rol(2);
+    }else{
+        if($_POST['Id_Area'] == 5678){//para enfermero
+            $usuario->setId_Rol(5);
+        }else{
+            $usuario->setId_Rol(3);//para paciente
+        }
+    }
+  //  $usuario->setId_Rol($_POST['Id_Area']);
+    $usuario->insert();
+
     header("location:?c=usuario&a=login");
     die("registro exitoso");
 
@@ -192,7 +202,7 @@ function validate()
         }
         if($Id_Rol == 4 || $Id_Rol == 5)
         {
-            header('location: ?c=citas&a=index');
+             header('location: ?c=citas&a=indexEnf');
         }
         if($Id_Rol == 3)
         {

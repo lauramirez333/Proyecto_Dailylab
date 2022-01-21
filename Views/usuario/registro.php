@@ -38,41 +38,15 @@
           </div>
           <br>
           <div id="msg"></div>
-
-          <label class="guia" for="Id_Rol"><b>Selecciona tu rol*</b></label>
-          <div class="col-md-12">
-            <select name="Id_Rol" id="Id_Rol" class="form-select" aria-label="Default select example">
-              <option>Seleccione Rol</option>
-              <?php foreach ($roles as $rol) : ?>
-                <option value="<?= $rol->getId_Rol() ?>" <?= $rol->getId_Rol() == $usuario->getId_Rol() ?
-                                                          'selected' : '' ?>>
-                  <?= $rol->getNombre_Rol() ?> </option>
-              <?php endforeach; ?>
-            </select>
-          </div>
-          <br>
-
-         
-          <h8 class="margenRoles"><b>*</b>Si seleccionate el rol empleado/a por favor ingresa 
-          <br>  
-          tu ID, de lo contrario continua al siguiente campo</h8>
-         <br>
-          <label class="guia" for="Id_Empleado"><b>Id Empleado</b></label>
-          <div class="input-field">
-          <i class="fas fa-address-card"></i>
-            <input name="Id_Empleado" id='Id_Empleado' type="number" required />
-          </div>
-          <br>
-
-         <br>
-          <h8 class="margenRoles"><b>*</b>Si seleccionate el rol enfermero/a por favor ingresa
+<br>
+          <h8><b>*</b>Si eres empleado o enfermer@ por favor digita el codigo de tu area
             <br>
-             tu ID, de lo contrario continua al siguiente campo</h8>
+            de lo contrario, no llenes este espacio</h8>
         <br>
-          <label class="guia" for="Id_Enfermero"><b>Id Enfermero</b></label>
+          <label class="guia" for="Id_Area"><b>Id Area</b></label>
           <div class="input-field">
           <i class="far fa-address-card"></i>
-            <input name="Id_Enfermero" id='Id_Enfermero' type="number" required />
+            <input name="Id_Area" id='Id_Area' type="number"  />
           </div>
           <br>
 
@@ -111,7 +85,8 @@
             <i class="fas fa-lock"></i>
             <input type="password" id="Contrasena_Usuario2" placeholder="contrasenaConfirm" required />
           </div>
-
+          <br>
+          <label><input type="checkbox" id="Terminos" value="first_checkbox" required/> Acepto terminos y condiciones</label><br>
           <input type="submit" onclick='return enviarFormulario();' id="login" class="btn solid" />
           <div id="error"></div>
           <script src='Views/js/registro.js'></script>
