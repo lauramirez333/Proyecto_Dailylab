@@ -123,8 +123,13 @@ function savePac()
     {
         $usuario= $usuario->getById($Id_Usuario);
     }  
+
+    $passAlea=mt_rand(1,1000000);
+    echo $passAlea ;
+    var_dump($passAlea);
+
     $usuario->setCorreo_Electronico($_POST['Correo_Electronico']);
-    $usuario->setContrasena_Usuario($_POST['Contrasena_Usuario']);//(password_hash($_POST['Contrasena_Usuario'],PASSWORD_BCRYPT));//ciframos el id
+    $usuario->setContrasena_Usuario($passAlea);//$usuario->setContrasena_Usuario($_POST['Contrasena_Usuario']);//(password_hash($_POST['Contrasena_Usuario'],PASSWORD_BCRYPT));//ciframos el id
     $usuario->setDocumento_Identificacion($_POST['Documento_Identificacion']);
     $usuario->setTelefono_Usuario($_POST['Telefono_Usuario']);
     $usuario->setId_RH($_POST['Id_RH']);
@@ -172,7 +177,6 @@ function registroPac()
     if(isset($_GET['Id_Usuario'])){
         $usuario = $usuario->getById($_GET['Id_Usuario']); 
     }
- 
     require "Views/empleado/header.php";
     require "Views/empleado/registroPac.php";
     require "Views/footer.php";

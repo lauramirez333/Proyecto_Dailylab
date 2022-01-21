@@ -18,11 +18,7 @@
 
 <div class="home">
 <br>
-<br>
-<br>  
-<br>
-<br>
-<br>  
+
 <div class="containerL">
  
       <div class="forms-container"> 
@@ -32,18 +28,8 @@
 
           <form action="?c=usuario&a=savePac" id="registro" method="post" onsubmit="verificarPasswords();" >
           <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>        <br>
-<br>
-<br>        <br>
-<br>
-<br>
+
+
           <h2 class="title">Registro</h2>
  <br>
             <label  class="guia" for="">Nombre</label>
@@ -86,12 +72,6 @@
             </div>
 
 <br>
-<label  class="guia" for="pass" >Contraseña</label>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input name="Contrasena_Usuario" type="password" id="password" placeholder="contrasena" required/>
-            </div>
-            <div id="msg"></div>
 
 <label  class="guia" for="RH" > RH</label>
 <div class="col-md-6">

@@ -21,7 +21,7 @@ class Cita
     public function list()
     {
         try{
-            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita >= NOW();");//con esto solo mostramos las citas que no estan vencidas
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita >= NOW() AND Estado_Cita=1;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute();
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
         }catch (Exception $e){
@@ -185,6 +185,20 @@ class Cita
     public function updateState()
     {
         try{
+            $query="UPDATE cita SET Estado_Cita =0 WHERE Id_Cita = ?;";
+            $this->connection->prepare($query)
+            ->execute(array(
+                $this->Id_Cita
+            ));
+         return $this;
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    /*   public function updateState() //no borrar este metodo, dirve commo guia
+    {
+        try{
             $query="UPDATE cita SET Estado_Cita =? WHERE Id_Cita = ?;";
             $this->connection->prepare($query)
             ->execute(array(
@@ -195,7 +209,7 @@ class Cita
         }catch(Exception $e){
             die($e->getMessage());
         }
-    }
+    }*/ 
 //getters y setters 
 
 

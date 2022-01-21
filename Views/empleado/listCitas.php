@@ -47,8 +47,7 @@
         <td> <?= $usuario->getById($cita->getId_Usuario())->getApellidos_Usuario() ?></td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getDocumento_Identificacion() ?></td>
         <td> <?= $sucursal->getById($cita->getId_Sucursal())->getNombre_Sucursal() ?></td>
-       <td>
-        <a href="?c=product&a=form&id=<?= $usuario->getId_Usuario() ?>" class= "btn btn-warning">Cancelar cita</a>
+        <td> <a href="?c=citas&a=changeState&Id_Cita=<?= $cita->getId_Cita() ?>" class= "btn btn-danger">Cancelar</a> </td>        
 
         
     </td>
