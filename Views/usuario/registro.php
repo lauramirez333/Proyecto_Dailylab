@@ -1,6 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="Views\css\loginyregistro.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 <div class="home">
   <div class="container">
@@ -73,18 +74,64 @@
             <i class="fas fa-envelope"></i>
             <input id="Correo_Electronico2" type="email" required />
           </div>
+          <label class="guia" for="Contrasena_Usuario">Contraseña*  </label>
+          <section  class="social-media">
+          <div class="input-field" >
+            <i class="fas fa-lock"></i>
+            <input name="password"  type="password" id="Contrasena_Usuario" placeholder="contrasena" required />
+           
+          </div>
+          <div class="seña">
+          <i  onclick="mostrar()" value="ver" class="fas fa-low-vision" ></i>
+          </div>
+          </section>
 
-          <label class="guia" for="Contrasena_Usuario"><b>Contraseña*</b></label>
+
+          <label class="guia" for="Contrasena_Usuario2">Confirme Contraseña*   </label>
+          <section  class="social-media">
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input name="Contrasena_Usuario" type="password" id="Contrasena_Usuario" placeholder="contrasena" required />
+            <input type="password" name="password" id="Contrasena_Usuario2" placeholder="contrasenaConfirm" required >  </input>
+          
           </div>
 
-          <label class="guia" for="Contrasena_Usuario2"><b>Confirme Contraseña*</b></label>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="Contrasena_Usuario2" placeholder="contrasenaConfirm" required />
+          <div class="seña"> 
+           
+          <i  onclick="mostrar2()" value="ver" class="fas fa-low-vision" ></i>
+                
+          
           </div>
+          </section>
+
+          <script  type="text/javascript">
+            function mostrar2(){
+    var tipo = document.getElementById("Contrasena_Usuario2");
+
+    if( tipo.type== 'password'){
+        tipo.type='text';
+    } else{
+        tipo.type ='password';
+
+        
+    }
+  }
+
+    function mostrar(){
+    var tipo = document.getElementById("Contrasena_Usuario");
+
+    if( tipo.type== 'password'){
+        tipo.type='text';
+    } else{
+        tipo.type ='password';
+
+        
+    }
+
+    
+}
+</script>
+
+
           <br>
           <label><input type="checkbox" id="Terminos" value="first_checkbox" required/> Acepto terminos y condiciones</label><br>
           <input type="submit" onclick='return enviarFormulario();' id="login" class="btn solid" />
