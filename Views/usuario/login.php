@@ -21,6 +21,10 @@ crossorigin="anonymous"></script>
               <i class="fas fa-lock"></i>
               <input name="Contrasena_Usuario" type="password" placeholder="contrasena" />
             </div>
+            <br>
+              <a  id="sign-up-btn" href="?c=usuario&a=recuperarPass">
+              Recuperar contraseña
+             </a>
             <input type="submit"  class="btn solid" /> 
             <p class="social-text">Siguenos en nuestras redes sociales</p>
             <div class="social-media">

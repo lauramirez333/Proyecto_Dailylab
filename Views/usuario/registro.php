@@ -62,7 +62,7 @@
               <?php endforeach; ?>
             </select>
           </div>
-          <br>
+          <br>     
           <label class="guia" for="Correo_Electronico"><b>Correo*</b></label>
           <div class="input-field">
             <i class="fas fa-envelope"></i>

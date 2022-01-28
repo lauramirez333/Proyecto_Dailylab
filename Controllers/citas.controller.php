@@ -211,20 +211,31 @@ function agendarPac()//proviene del metodo save
 
 $Id_Examen= $_POST['Id_Examen'];
 $Id_Usuario= $_GET['Id_Usuario'];
+$Fecha_Cita= $_POST['Fecha_Cita'];
+
+$hoy = date("d/m/Y");
 
 if($this->model-> dupliCitas($Id_Examen,$_GET['Id_Usuario']))//esto evita que se pidan 2 citas de la misma especialidad si 1 de ella no se ha vencido todavia 
 {
 
         header('location:?c=usuario&a=registroPac');
         
-        die("ya existe este usuario en la base de datos"); 
-        echo "ya existe este usuario en la base de datos";
-        ?> alert("ya existe este usuario en la base de datos")
-        var mensajesError = [];
-        mensajesError.push('ya existe este usuario en la base de datos')
-        error.innerHTML= mensajesError.join(' ') <?php
-       
-}else{ 
+        die("ya existe esta cita"); 
+        echo "ya existe esta cita";
+        echo "<script>alert('ya existe esta cita')
+ console.log('ya existe esta cita');</script>";
+
+ /*   esto no funcinoa, siempre se va por este condicional aunque este bien    
+}else{ //evita que se pidan citas anteriores a hoy
+  if($Fecha_Cita < $hoy){
+    echo "<script>alert('elige una fecha mayor al dia de hoy')
+console.log('elige una fecha mayor al dia de hoy');</script>";
+    header('location:?c=citas&a=viewAgendarPac2');
+    die("elige una fecha mayor al dia de hoy"); 
+    echo "elige una fecha mayor al dia de hoy";
+    */
+  }else{
+  /*  if($Fecha_Cita >= $hoy){*/
     $cita = new Cita();
     $usuario = new Usuario();
 
@@ -245,8 +256,10 @@ if($this->model-> dupliCitas($Id_Examen,$_GET['Id_Usuario']))//esto evita que se
      header("location:?c=citas&a=index2");
       
       }  
-    
-}
+    }
+//}
+//}
+
 public function deleteCita(){
     $cita = new Cita();
     $cita=$cita->getById($_GET['Id_Cita']);

@@ -29,6 +29,24 @@ class Cita
         }
     }
 
+/* este metodo hay que perfeccionarlo pq por ahora no tiene mucho sentido
+   public function controlNumCitas(){//con este metodo controlamos el numero de citas que se pueden pedir al dia
+        try{
+            $query = $this->connection->prepare("SELECT COUNT(*) FROM cita WHERE Fecha_Cita = CURDATE();
+            ");
+            $query->execute();
+            return $query;
+if ($query >= 330 ){
+    return false; 
+    echo "no puede pedir mas citas por hoy"; 
+
+}
+
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+*/
     public function dupliCitas($Id_Examen,$Id_Usuario){//esto evita que se pidan 2 citas de la misma especialidad si 1 de ella no se ha vencido todavia 
 
         try{

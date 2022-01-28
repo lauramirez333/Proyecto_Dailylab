@@ -16,6 +16,27 @@ function __CONSTRUCT()
     $this->model = new Usuario(); 
 }
 
+function recuPass()// aparentemente todo esta bien pero no envia nada
+{
+//https://www.youtube.com/watch?v=hmFFsMK_-vE
+$destinatario= $_POST['Correo_Electronico'];
+//$destinatario = 'laura2003ramirez@gmail.com';
+$nombre= "Dailylb Team";
+$asunto= "Bienvenido a dailylab team";
+$mensaje="hola, ahora formas parte del equipo de dailylab";
+$email="dailylabt@gmail.com";//este es quien remite, quien envia el correo
+//$nombre= $_POST['nombre'];
+//$asunto= $_POST['asunto'];
+
+$header="Enviado desde el recuperar contraseña de la pagina dailyab";
+$mensajeCompleto= $mensaje ."\nAtentamente: " . $nombre;
+
+mail($destinatario, $asunto, $mensajeCompleto, $header);
+ echo "<script>alert('correo enviado exitosamente')
+ console.log('Enviando correo para '+ '$destinatario' + 'de' + '$email');</script>";
+
+}
+
 function index()// 
 {
     $usuario = new Usuario(); //?
@@ -27,6 +48,10 @@ function index()//
     require "Views/footer.php";
 }
 
+function recuperarPass(){
+    require "Views/usuario/recuperarPass.php"; 
+  //  require "Views/usuario/emailPass.php"; 
+}
 
 function verPerfil()// 
 {
@@ -60,7 +85,7 @@ public function editarUnique(){
     require "views/product/form.php";
 }
 */
-function save()
+function save()//aqui se insertan los datos del registro
 {
     $Correo_Electronico= $_POST['Correo_Electronico'];
     $Documento_Identificacion= $_POST['Documento_Identificacion'];
@@ -96,7 +121,7 @@ function save()
     }
   //  $usuario->setId_Rol($_POST['Id_Area']);
     $usuario->insert();
-
+    //$this->envioMail();
     header("location:?c=usuario&a=login");
     die("registro exitoso");
 
@@ -240,5 +265,5 @@ function logout()
     $user->updateState();
     header("location:?c=user");
 }*/
-}
 
+}
