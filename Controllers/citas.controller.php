@@ -65,6 +65,18 @@ class CitasController
     if (isset($_GET['Id_Usuario'])) {
       $usuario = $usuario->getById($_GET['Id_Usuario']);
     }
+    ///////////////////
+    //primero llenamos la tabla muestra para ahi si llenar muestra_examen
+    $referencia=mt_rand(1,10000000);
+   /* echo $passAlea ;
+    var_dump($passAlea);*/ //para ver que # esta sacando
+    echo "<script>alert($Id_Cita);</script>";
+   
+    $muestra->setReferencia($referencia);
+    $muestra->setId_Cita($_GET['Id_Cita']);
+    $muestra->insert();
+    echo "<script>alert('ya se lleno muestra');</script>";
+    /////////////////////////
     require "Views/Enfermero/header.php";
     require "Views/Enfermero/subirResult.php";
     require "Views/footer.php";
@@ -75,22 +87,11 @@ class CitasController
     $cita = new Cita(); 
     $muestra_examen= new Muestra_Examen();
     $muestra= new Muestra();
-    //primero llenamos la tabla muestra para ahi si llenar muestra_examen
-    $referencia=mt_rand(1,10000000);
-   /* echo $passAlea ;
-    var_dump($passAlea);*/ //para ver que # esta sacando
-    $Id_Cita=$_GET['Id_Cita'];
-    echo "<script>alert($Id_Cita);</script>";
-   
-    $muestra->setReferencia($referencia);
-    $muestra->setId_Cita($_GET['Id_Cita']);
-    $muestra->insert();
-    echo "<script>alert('ya se lleno muestra');</script>";
-    //
 
+    $Id_Cita=$_GET['Id_Cita'];
     $Id_Muestra= $muestra_examen->list2($Id_Cita);
     $Id_Examen= $muestra_examen->list3($Id_Cita);
-    echo "<script>alert('ID MUESTRA ES'+(int)$Id_Muestra+' y ID EXAMEN ES'+(int)$Id_Examen)';</script>";
+    //echo "<script>alert('ID MUESTRA ES'+(int)$Id_Muestra+' y ID EXAMEN ES'+(int)$Id_Examen)';</script>";
     
     $muestra_examen->setURL_Resultado($_POST['URL_Resultado']);
     $muestra_examen->setId_Muestra((int)$Id_Muestra);
