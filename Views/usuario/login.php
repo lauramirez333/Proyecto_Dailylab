@@ -14,13 +14,21 @@ crossorigin="anonymous"></script>
           <label class="izq"  for="email" >Ingresa tu Email</label>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input name="Correo_Electronico" type="text" placeholder="Usuario" />
+              <input name="Correo_Electronico" type="text" placeholder="Usuario" maxlength="40" oninput="maxlengthNumber(this);" required/>
             </div>
             <label class="izq" for="password" >Ingresa tu Contraseña</label>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input name="Contrasena_Usuario" type="password" placeholder="contrasena" />
+              <input name="Contrasena_Usuario" type="password" placeholder="contrasena" maxlength="11" oninput="maxlengthNumber(this);" required/>
             </div>
+            <!-- esto evita el desbordamiento de datos-->
+            <script> 
+            function maxlengthNumber(obj) {
+              if (obj.value.length > obj.maxLength) {
+                obj.value = obj.value.slice(0, obj.maxLength);
+              }
+            }
+          </script>
             <br>
               <a  id="sign-up-btn" href="?c=usuario&a=recuperarPass">
               Recuperar contraseña

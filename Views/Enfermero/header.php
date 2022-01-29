@@ -125,13 +125,6 @@
                 </a>
             </li>
 
-           <li id="citas">
-            <a href="?c=usuario&a=index" >
-                    <span class="icon"><i class='bx bx-band-aid'></i></span>
-                    <span  class="item">Agendar Cita</span>
-                </a>
-            </li>
-
             <li id="historial">
                 <a href="?c=citas&a=viewHistorial" >
                     <span class="icon"><i class='bx bxs-calendar-check' ></i></span>

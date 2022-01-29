@@ -16,124 +16,104 @@
           <div class="input-field">
 
             <i class="fas fa-user"></i>
-            <input name="Nombres_Usuario" id='Nombres_Usuario' type="text" required />
+            <input name="Nombres_Usuario" id='Nombres_Usuario' type="text" maxlength="25" oninput="maxlengthNumber(this);"required />
           </div>
-
 
           <label class="guia" for="Apellidos_Usuario"><b>Apellido*</b></label>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input name="Apellidos_Usuario" id='Apellidos_Usuario' type="text" required />
+            <input name="Apellidos_Usuario" id='Apellidos_Usuario' type="text" maxlength="25"  oninput="maxlengthNumber(this);" required />
           </div>
 
           <label class="guia" for="Documento_Identificacion"><b>Documento*</b></label>
           <div class="input-field">
             <i class="fas fa-id-card-alt"></i>
-            <input name="Documento_Identificacion" id='Documento_Identificacion' type="number" required />
+            <input name="Documento_Identificacion" id='Documento_Identificacion' type="number" maxlength="10" oninput="maxlengthNumber(this);" required />
           </div>
+
 
           <label class="guia" for="Telefono_Usuario"><b>Telefono*</b></label>
           <div class="input-field">
             <i class="fas fa-phone-alt"></i>
-            <input name="Telefono_Usuario" id='Telefono_Usuario' type="number" required />
+            <input name="Telefono_Usuario" id='Telefono_Usuario' type="number" maxlength="10" oninput="maxlengthNumber(this);" required />
           </div>
           <br>
           <div id="msg"></div>
-<br>
-          <h8><b>*</b>Si eres empleado o enfermer@ por favor digita el codigo de tu area
-            <br>
-            de lo contrario, no llenes este espacio</h8>
-        <br>
-          <label class="guia" for="Id_Area"><b>Id Area</b></label>
-          <div class="input-field">
-          <i class="far fa-address-card"></i>
-            <input name="Id_Area" id='Id_Area' type="number"  />
-          </div>
           <br>
 
+          <h8><b>*</b>Si eres empleado o enfermer@ por favor digita el codigo de tu area
+            <br>
+            de lo contrario, no llenes este espacio
+          </h8>
+          <br>
+          <label class="guia" for="Id_Area"><b>Id Area</b></label>
+          <div class="input-field">
+            <i class="far fa-address-card"></i>
+            <input name="Id_Area" id='Id_Area' type="number" maxlength="4" oninput="maxlengthNumber(this);" required />
+          </div>
+          <br>
+          <script>
+            function maxlengthNumber(obj) {
+              if (obj.value.length > obj.maxLength) {
+                obj.value = obj.value.slice(0, obj.maxLength);
+              }
+            }
+          </script>
           <label class="guia" for="Id_RH"><b>Selecciona tu RH*</b></label>
           <div class="col-md-8">
             <select name="Id_RH" id="Id_RH" class="selectpicker show-tick">
               <option>Seleccione RH</option>
               <?php foreach ($RH as $RHS) : ?>
                 <option value="<?= $RHS->getId_RH() ?>" <?= $RHS->getId_RH() == $usuario->getId_RH() ?
-                                                        'selected' : '' ?>>
+                                                          'selected' : '' ?>>
                   <?= $RHS->getTipo_RH() ?> </option>
               <?php endforeach; ?>
             </select>
           </div>
-          <br>     
+          <br>
           <label class="guia" for="Correo_Electronico"><b>Correo*</b></label>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input name="Correo_Electronico" id="Correo_Electronico" type="email" required />
+            <input name="Correo_Electronico" id="Correo_Electronico" type="email" maxlength="40" oninput="maxlengthNumber(this);" required />
           </div>
 
           <label class="guia" for="Correo_Electronico2"><b>Confirma tu correo*</b></label>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input id="Correo_Electronico2" type="email" required />
+            <input id="Correo_Electronico2" type="email" maxlength="40" oninput="maxlengthNumber(this);" required />
           </div>
-          <label class="guia" for="Contrasena_Usuario">Contraseña*  </label>
-          <section  class="social-media">
-          <div class="input-field" >
-            <i class="fas fa-lock"></i>
-            <input name="password"  type="password" id="Contrasena_Usuario" placeholder="contrasena" required />
-           
-          </div>
-          <div class="seña">
-          <i  onclick="mostrar()" value="ver" class="fas fa-low-vision" ></i>
-          </div>
+          <label class="guia" for="Contrasena_Usuario">Contraseña* </label>
+          <section class="social-media">
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input name="Contrasena_Usuario" type="password" id="Contrasena_Usuario" placeholder="contrasena" maxlength="11" oninput="maxlengthNumber(this);" required />
+
+            </div>
+            <div class="seña">
+              <i onclick="mostrar()" value="ver" class="fas fa-low-vision"></i>
+            </div>
           </section>
 
 
-          <label class="guia" for="Contrasena_Usuario2">Confirme Contraseña*   </label>
-          <section  class="social-media">
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" id="Contrasena_Usuario2" placeholder="contrasenaConfirm" required >  </input>
-          
-          </div>
+          <label class="guia" for="Contrasena_Usuario2">Confirme Contraseña* </label>
+          <section class="social-media">
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="password" id="Contrasena_Usuario2" placeholder="contrasenaConfirm" maxlength="11" oninput="maxlengthNumber(this);" required> </input>
 
-          <div class="seña"> 
-           
-          <i  onclick="mostrar2()" value="ver" class="fas fa-low-vision" ></i>
-                
-          
-          </div>
+            </div>
+
+            <div class="seña">
+
+              <i onclick="mostrar2()" value="ver" class="fas fa-low-vision"></i>
+
+
+            </div>
           </section>
-
-          <script  type="text/javascript">
-            function mostrar2(){
-    var tipo = document.getElementById("Contrasena_Usuario2");
-
-    if( tipo.type== 'password'){
-        tipo.type='text';
-    } else{
-        tipo.type ='password';
-
-        
-    }
-  }
-
-    function mostrar(){
-    var tipo = document.getElementById("Contrasena_Usuario");
-
-    if( tipo.type== 'password'){
-        tipo.type='text';
-    } else{
-        tipo.type ='password';
-
-        
-    }
-
-    
-}
-</script>
 
 
           <br>
-          <label><input type="checkbox" id="Terminos" value="first_checkbox" required/> Acepto terminos y condiciones</label><br>
+          <label><input type="checkbox" id="Terminos" value="first_checkbox" required /> Acepto terminos y condiciones</label><br>
           <input type="submit" onclick='return enviarFormulario();' id="login" class="btn solid" />
           <div id="error"></div>
           <script src='Views/js/registro.js'></script>
