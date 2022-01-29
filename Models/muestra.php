@@ -80,7 +80,7 @@ class Muestra
             $query= "DELETE FROM muestra WHERE Id_Muestra=?;";
             $this-> connection->prepare($query)
                             ->execute(array($this->Id_Muestra));
-        }catch(Excepcion $e){
+        }catch(Exception $e){
             die($e->getMessage());
 
         }

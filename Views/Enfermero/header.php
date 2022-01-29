@@ -105,7 +105,7 @@
 
 <ul>
                <li id="inicio">
-                <a href="?c=citas&a=index2">
+                <a href="?c=citas&a=TomasEnf">
                     <span class="icon"> <i class='bx bx-grid-alt'></i> </span>
                     <span class="item">Inicio</span>
                 </a>
@@ -119,9 +119,9 @@
 
             
             <li id="usuarios">
-            <a href="?c=usuario&a=registroPac" >
+            <a href="?c=citas&a=resulEnf" >
                     <span class="icon"><i class='bx bx-band-aid'></i></span>
-                    <span  class="item">Registrar Paciente</span>
+                    <span  class="item">Resultados</span>
                 </a>
             </li>
 

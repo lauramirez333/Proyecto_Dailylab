@@ -28,6 +28,30 @@ public function list()
     }
 }
 
+public function list2($Id_Cita)
+{
+    try{
+        $query = $this->connection->prepare("SELECT Id_Muestra FROM muestra where Id_Cita=?
+        ");
+        $query->execute(array($Id_Cita));
+       return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+    }catch (Exception $e){
+        die ($e->getMessage());
+    }
+}
+
+public function list3($Id_Cita)
+{
+    try{
+        $query = $this->connection->prepare("SELECT Id_Examen FROM cita where Id_Cita=?
+        ");
+        $query->execute(array($Id_Cita));
+       return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+    }catch (Exception $e){
+        die ($e->getMessage());
+    }
+}
+
 public function listResult()
 {
     try{
@@ -44,14 +68,16 @@ public function listResult()
 public function insert()
 {
     try{
-    $query = "INSERT INTO muestra_examen (URL_Resultado,Id_Muestra,Estado) VALUES (?,?,?);";
+    $query = "INSERT INTO muestra_examen (URL_Resultado,Id_Muestra,Estado,Id_Examen,Id_Usuario) VALUES (?,?,?,?,?);";
     $this -> connection-> prepare($query)
                         ->execute(array(
                             $this->URL_Resultado,
                             $this->Id_Muestra,
-                            $this->Estado
+                            $this->Estado,
+                            $this->Id_Examen,
+                            $this->Id_Usuario
                         ));
-                        $this->Id_Empleado=$this->connection->lastInsertId();
+                        $this->Id_Examen=$this->connection->lastInsertId();
                         return $this;
                     }catch(Exception $e){
                         die($e->getMessage());
@@ -81,12 +107,12 @@ public function update()
     }
 }
 */
-public function getById($Id_Empleado){
+public function getById($Id_Examen){
     try{
-    $query= "SELECT * FROM muestra_examen where Id_Empleado=?;";
+    $query= "SELECT * FROM muestra_examen where Id_Examen=?;";
     $query= $this-> connection-> prepare($query);
     $query->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
-    $query->execute(array($Id_Empleado));
+    $query->execute(array($Id_Examen));
     return $query->fetch();
 
 

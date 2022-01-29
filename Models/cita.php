@@ -18,10 +18,32 @@ class Cita
     }
 
     //metodos 
+    public function list1($Id_Cita)
+    {
+        try{
+            $query = $this->connection->prepare("SELECT * FROM cita where Id_Cita=?;");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute(array($Id_Cita));
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
     public function list()
     {
         try{
             $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita >= NOW() AND Estado_Cita=1;");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+    public function listAsist()//lista de la gente que ya asistio a las citas
+    {
+        try{
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Estado_Cita=2;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute();
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
         }catch (Exception $e){
@@ -98,7 +120,7 @@ if ($query >= 330 ){
     public function listAnalisis()
     {
         try{ 
-           $query = $this->connection->prepare("SELECT * FROM cita where Fecha_Cita < NOW()  AND Estado_Cita=1 ");
+           $query = $this->connection->prepare("SELECT * FROM cita where Fecha_Cita < NOW()  AND Estado_Cita=2 ");
             $query->execute(array());
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
         }catch (Exception $e){
@@ -200,10 +222,37 @@ if ($query >= 330 ){
 
         }
     }
-    public function updateState()
+    public function updateState()//para cancelar
     {
         try{
             $query="UPDATE cita SET Estado_Cita =0 WHERE Id_Cita = ?;";
+            $this->connection->prepare($query)
+            ->execute(array(
+                $this->Id_Cita
+            ));
+         return $this;
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+    public function asistido()//para asistido
+    {
+        try{
+            $query="UPDATE cita SET Estado_Cita =2 WHERE Id_Cita = ?;";
+            $this->connection->prepare($query)
+            ->execute(array(
+                $this->Id_Cita
+            ));
+         return $this;
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    public function noAsistido()//para asistido
+    {
+        try{
+            $query="UPDATE cita SET Estado_Cita =3 WHERE Id_Cita = ?;";
             $this->connection->prepare($query)
             ->execute(array(
                 $this->Id_Cita

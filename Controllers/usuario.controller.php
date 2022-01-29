@@ -231,7 +231,7 @@ function validate()
         }
         if($Id_Rol == 4 || $Id_Rol == 5)
         {
-             header('location: ?c=citas&a=indexEnf');
+             header('location: ?c=citas&a=TomasEnf');
         }
         if($Id_Rol == 3)
         {

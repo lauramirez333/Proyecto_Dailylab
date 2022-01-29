@@ -57,7 +57,7 @@
         <td> <?= $usuario->getById($cita->getId_Usuario())->getNombres_Usuario() ?> </td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getApellidos_Usuario() ?> </td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getDocumento_Identificacion() ?> </td>
-        <td> <a href="?c=citas&a=changeState&Id_Cita=<?= $cita->getId_Cita() ?>" class= "btn btn-danger">Subir <br>Resultados</a> </td>        
+        <td> <a href="?c=citas&a=subirResult&Id_Usuario=<?= $cita->getId_Usuario() ?>&Id_Cita=<?= $cita->getId_Cita() ?>" class= "btn btn-danger">Subir <br>Resultados</a> </td>        
                         
         </a>
         
