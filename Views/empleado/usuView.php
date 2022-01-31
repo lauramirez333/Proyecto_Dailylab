@@ -10,6 +10,10 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 -->  
+<!-- esto va en cada tabla-->
+<link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+<script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
+<!-- esto va en cada tabla-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <title>Pacientes</title>
@@ -34,10 +38,14 @@
 
 <div class="container">  
 <br>
-<table class="table table-hover table-striped"> 
+<table class="table table-hover table-striped" id="tabla" class="display"> 
     <thead class="table-dark">
     <tr>
-		<th>Documento Identificacion</th>
+    <th>Documento Identificacion 
+                <div class="float-right"> <i class="fas fa-arrow-up"></i> 
+            <i class="fas fa-arrow-down"></i>
+</div>
+                    </th>
 		<th>Nombres</th>
 		<th>Apellidos</th>
 		<th>Telefono</th>
@@ -75,8 +83,10 @@
         die("No se pudo listar");
     }
     ?>
+    </tbody>
 </table>
 
     </div>
+    <script src='Views/js/dataTable.js'></script>
     </body>
     </html>

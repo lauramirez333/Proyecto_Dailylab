@@ -12,15 +12,12 @@
         <h1>Mis Datos </h1>
     </head>
     <body>
-    <div class= "container-fluid">
-<br>
 
-<nav aria-label="breadcrumb">
+    <div class= "container-fluid">
+    <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="active"><a href="?c=citas&a=index">Inicio</a></li>
-    </ol>
-    <ol class="breadcrumb">
-        <li class="active">Datos personales</li>
+        <li class="breadcrumb-item"><a href="?c=citas&a=Menu">Inicio</a></li>
+        <li class="breadcrumb-item active">Datos personales</li>
     </ol>
 </nav>
     </div>

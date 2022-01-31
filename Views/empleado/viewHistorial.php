@@ -47,7 +47,6 @@
             <td> </td>
             <td>Documento</td>
             <td>Sucursal</td>
-            <td>Editar</td>
 
 </tr>    
 </thead>  
@@ -62,11 +61,6 @@
         <td> <?= $usuario->getById($cita->getId_Usuario())->getApellidos_Usuario() ?></td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getDocumento_Identificacion() ?></td>
         <td> <?= $sucursal->getById($cita->getId_Sucursal())->getNombre_Sucursal() ?></td>
-       <td>
-        <a href="?c=product&a=form&id=<?= $usuario->getId_Usuario() ?>" class= "btn btn-warning">Cancelar cita</a>
-
-        
-    </td>
     </tr>
     <?php endforeach; ?>
 </tbody>
