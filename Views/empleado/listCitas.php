@@ -10,10 +10,13 @@
 <title>Citas</title>
 <h1> Citas </h1>
 
-<ul class="breadcrumb">
-  <li class="breadcrumb-item"><a class="active"href="#">Inicio-Citas</a></li>
-</ul>
-</div>
+<div class= "container-fluid">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Inicio / Citas </li>
+    </ol>
+</nav>
+    </div>
 
 <div class="container"> 
 

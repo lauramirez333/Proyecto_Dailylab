@@ -13,13 +13,13 @@
     
 <h1>Agenda tu cita </h1>
 <div class= "container-fluid">
-<br>
-<ul class="breadcrumb">
-  <li class="breadcrumb-item"><a href="?=citas&a=index">Inicio</a></li>
-  <li class="breadcrumb-item"><a class="active"href="#">Agendar citas</a></li>
-</ul>
-<br>
-</div>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="?c=citas&a=index">Inicio</a></li>
+        <li class="breadcrumb-item active">Agendar</li>
+    </ol>
+</nav>
+    </div>
 
 <div class="container">
 <form action= "?c=citas&a=agendar" method ="post">
@@ -65,7 +65,7 @@
     <?php endforeach;?>
 </select>
 </div>
-<button type="submit"> Guardar</button>
+<button type="submit" > Guardar</button>
 </form>
 </div>
 </body>

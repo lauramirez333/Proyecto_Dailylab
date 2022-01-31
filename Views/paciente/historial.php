@@ -10,12 +10,15 @@
 <title>Historial</title>
 <h1> Historial </h1>
 
-<ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="?c=citas&a=index" class="active">Inicio</a></li>
-  <li class="breadcrumb-item"><a class="active"href="#">Historial</a></li>
-</ul>
-</div>
-<br>
+<div class= "container-fluid">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="?c=citas&a=index">Inicio</a></li>
+        <li class="breadcrumb-item active">Historial</li>
+    </ol>
+</nav>
+    </div>
+
 <div class="container">  
 <br>
 <table class="table table-hover table-striped"> 

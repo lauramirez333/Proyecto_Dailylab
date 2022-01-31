@@ -89,27 +89,59 @@
               <input name="Contrasena_Usuario" type="password" id="Contrasena_Usuario" placeholder="contrasena" maxlength="11" oninput="maxlengthNumber(this);" required />
 
             </div>
-            <div class="seña">
-              <i onclick="mostrar()" value="ver" class="fas fa-low-vision"></i>
-            </div>
-          </section>
+            <div class="seña"> 
 
+<i  onclick="mostrar()" value="ver" class="fas fa-low-vision" ></i>
+
+
+</div>
+</section>
 
           <label class="guia" for="Contrasena_Usuario2">Confirme Contraseña* </label>
           <section class="social-media">
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" name="password" id="Contrasena_Usuario2" placeholder="contrasenaConfirm" maxlength="11" oninput="maxlengthNumber(this);" required> </input>
+              <input type="password" name="Contrasena_Usuario2" id="Contrasena_Usuario2" placeholder="contrasenaConfirm" maxlength="11" oninput="maxlengthNumber(this);" required> </input>
 
             </div>
 
-            <div class="seña">
+            <div class="seña"> 
 
-              <i onclick="mostrar2()" value="ver" class="fas fa-low-vision"></i>
+          <i  onclick="mostrar2()" value="ver" class="fas fa-low-vision" ></i>
 
 
-            </div>
+          </div>
           </section>
+          
+<!-- con esto se ve el ojito de la contraseña -->
+          <script  type="text/javascript">
+            function mostrar2(){
+    var tipo = document.getElementById("Contrasena_Usuario2");
+
+    if( tipo.type== 'password'){
+        tipo.type='text';
+    } else{
+        tipo.type ='password';
+
+
+    }
+  }
+
+    function mostrar(){
+    var tipo = document.getElementById("Contrasena_Usuario");
+
+    if( tipo.type== 'password'){
+        tipo.type='text';
+    } else{
+        tipo.type ='password';
+
+
+    }
+
+
+}
+</script>
+
 
 
           <br>

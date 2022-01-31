@@ -235,7 +235,7 @@ function validate()
         }
         if($Id_Rol == 3)
         {
-            header('location: ?c=citas&a=index');
+            header('location: ?c=citas&a=Menu');
         }
 
     }else{ 

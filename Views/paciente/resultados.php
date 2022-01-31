@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <h1>Mis Resultados </h1>
-    <div class="container-fluid">
-        <br>
-
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="?=citas&a=index">Inicio</a></li>
-            <li class="breadcrumb-item"><a class="active" href="#">Resultados</a></li>
-        </ul>
-        <br>
+    
+    <div class= "container-fluid">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="?c=citas&a=index">Inicio</a></li>
+        <li class="breadcrumb-item active">Resultados</li>
+    </ol>
+</nav>
     </div>
-
     <title>Mis citas</title>
 </head>
 

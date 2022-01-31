@@ -8,9 +8,17 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <input type="hidden" name="Id_Usuario" value="<?=$usuario->getId_Usuario() ?>"> <!--esto no esta mostrando el id que es, el metodo esta "confuncido" con el id y por eso no muestra lo que es-->
-<div class="container"> 
-
-</div> 
+        
+        <h1>Historial</h1>
+        <div class= "container-fluid">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="?c=citas&a=index2">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="?c=usuario&a=index">Pacientes</a></li>
+        <li class="breadcrumb-item active">Historial</li>
+    </ol>
+</nav>
+    </div>
 <br>
 <div class="container">  
 <br>

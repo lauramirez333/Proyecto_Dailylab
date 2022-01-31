@@ -21,10 +21,11 @@
 <div class= "container-fluid">
 <br>
 
-<ol class= "breadcrumb">
-    <li class="active">Inicio >> </li>  
-    <li><a href="#">Menu </a></li> 
-</ol>   
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="active">Inicio / Mis citas</a></li>
+    </ol>
+</nav>
 </div>
 
 <div class= "container-fluid">
@@ -78,5 +79,7 @@
 </table>
 
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="Views/js/sweetAlert.js"></script>
     </body>
     </html>

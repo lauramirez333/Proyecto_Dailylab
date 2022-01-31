@@ -14,13 +14,16 @@
     <body>
     <div class= "container-fluid">
 <br>
-    
-    <ul class="breadcrumb">
-  <li class="breadcrumb-item"><a href="index.php?c=citas&a=index">Inicio</a></li>
-  <li class="breadcrumb-item"><a class="active"href="#">Datos  personales</a></li>
-</ul>
-   
-</div>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="active"><a href="?c=citas&a=index">Inicio</a></li>
+    </ol>
+    <ol class="breadcrumb">
+        <li class="active">Datos personales</li>
+    </ol>
+</nav>
+    </div>
         
 <!--<a href="?c=product&a=form&id=<//?= $product->getId() ?>" class= "btn btn-warning">Editar</a> -->
 <a href="?c=usuario&a=editarUnique&Id_Usuario=<?= $usuario->getId_Usuario() ?>">Editar</a>

@@ -19,8 +19,28 @@ crossorigin="anonymous"></script>
             <label class="izq" for="password" >Ingresa tu Contraseña</label>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input name="Contrasena_Usuario" type="password" placeholder="contrasena" maxlength="11" oninput="maxlengthNumber(this);" required/>
+              <input name="Contrasena_Usuario" id="Contrasena_Usuario" type="password" placeholder="contrasena" maxlength="11" oninput="maxlengthNumber(this);" required/>
             </div>
+            <div class="seña"> 
+
+<i  onclick="mostrar()" value="ver" class="fas fa-low-vision" ></i>
+
+
+</div>
+<!-- con esto se ve el ojito de la contraseña -->
+<script  type="text/javascript">
+function mostrar(){
+    var tipo = document.getElementById("Contrasena_Usuario");
+
+    if( tipo.type== 'password'){
+        tipo.type='text';
+    } else{
+        tipo.type ='password';
+
+
+    }
+  }
+</script>
             <!-- esto evita el desbordamiento de datos-->
             <script> 
             function maxlengthNumber(obj) {

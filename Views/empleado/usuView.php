@@ -12,27 +12,22 @@
 -->  
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<title>Usuarios</title>
+<title>Pacientes</title>
     </head>
     <body>
 
-<h1>Usuarios </h1>
+<h1>Pacientes </h1>
 
 <div class= "container-fluid">
-<br>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="?c=citas&a=index2">Inicio</a></li>
+        <li class="breadcrumb-item active">Pacientes</li>
+    </ol>
+</nav>
+    </div>
 
-<!--
-<ol class= "breadcrumb">
-    <li class="active">Inicio >> </li>  
-</ol>  
---> 
-
-<ul class="breadcrumb">
-  <li class="breadcrumb-item"><a href="?=usuario&a=index">Inicio</a></li>
-  <li class="breadcrumb-item"><a class="active"href="#">Agendar citas</a></li>
-</ul>
-
-
+    
 <div class="container"> 
 
 </div> 

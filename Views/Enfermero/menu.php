@@ -19,13 +19,13 @@
 <h1>Mis citas </h1>
 
 <div class= "container-fluid">
-<br>
-
-<ol class= "breadcrumb">
-    <li class="active">Inicio >> </li>  
-    <li><a href="#">Menu </a></li> 
-</ol>   
-</div>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="?c=citas&a=TomasEnf">Inicio</a></li>
+        <li class="breadcrumb-item active">Resultados</li>
+    </ol>
+</nav>
+    </div>
 
 <div class="container"> 
 
