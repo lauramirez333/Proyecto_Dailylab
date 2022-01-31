@@ -137,7 +137,8 @@ function savePac()
     {
 
             header('location:?c=usuario&a=registroPac');
-            
+            echo "<script>alert('ya existe este usuario en la base de datos');</script>";
+           
             die("ya existe este usuario en la base de datos"); 
            
     }else{ 
@@ -162,9 +163,9 @@ function savePac()
     $usuario->setApellidos_Usuario($_POST['Apellidos_Usuario']);
     $usuario->setId_Rol(3);
     $Id_Usuario?$usuario->update(): $usuario->insertPac();
-    header("location:?c=usuario&a=login");
+    header("location:?c=usuario&a=registroPac");
 
-   
+    echo "<script>alert('Registro exitoso');</script>";
     die("registro exitoso"); 
    
 
