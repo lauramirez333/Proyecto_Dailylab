@@ -14,7 +14,7 @@
     <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="?c=citas&a=index2">Inicio</a></li>
-        <li class="breadcrumb-item active">Registrar Pacientes</li>
+        <li class="breadcrumb-item active"><b>Registrar Pacientes</b></li>
     </ol>
 </nav>
     </div>
@@ -35,7 +35,7 @@
 
             <h2 class="title">Registro</h2>
             <br>
-            <label class="guia" for="Nombres_Usuario">Nombre</label>
+            <label class="guia" for="Nombres_Usuario"><b>Nombre*</b></label>
             <div class="input-field">
 
               <i class="fas fa-user"></i>
@@ -43,19 +43,19 @@
             </div>
 
 
-            <label class="guia" for="Apellidos_Usuario">Apellido</label>
+            <label class="guia" for="Apellidos_Usuario"><b>Apellido*</b></label>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input name="Apellidos_Usuario" id="Apellidos_Usuario" type="text" maxlength="25" oninput="maxlengthNumber(this);" required />
             </div>
 
-            <label class="guia" for="">Documento</label>
+            <label class="guia" for=""><b>Documento*</b></label>
             <div class="input-field">
               <i class="fas fa-id-card-alt"></i>
               <input name="Documento_Identificacion" id="Documento_Identificacion" type="number" maxlength="10" oninput="maxlengthNumber(this);" required />
             </div>
 
-            <label class="guia" for="">Telefono</label>
+            <label class="guia" for=""><b>Telefono*</b></label>
             <div class="input-field">
               <i class="fas fa-phone-alt"></i>
               <input name="Telefono_Usuario" id="Telefono_Usuario" type="number" maxlength="10" oninput="maxlengthNumber(this);" required />
@@ -71,7 +71,7 @@
               }
             </script>
 
-            <label class="guia" for="Id_RH" id="Id_RH"> RH</label>
+            <label class="guia" for="Id_RH" id="Id_RH"><b>RH*</b></label>
             <div class="col-md-6">
               <select name="Id_RH" id="Id_RH" class="form-select">
                 <option>Seleccione RH</option>
@@ -83,13 +83,13 @@
               </select>
             </div>
             <br>
-            <label class="guia" for="">Correo</label>
+            <label class="guia" for=""><b>Correo*</b></label>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input name="Correo_Electronico" id="Correo_Electronico" type="email" maxlength="40" oninput="maxlengthNumber(this);" required />
             </div>
 
-            <label class="guia" for="">Confirma tu correo</label>
+            <label class="guia" for=""><b>Confirma tu correo*</b></label>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input name="Correo_Electronico2" id="Correo_Electronico2" type="email" maxlength="40" oninput="maxlengthNumber(this);" required />
