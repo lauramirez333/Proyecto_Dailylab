@@ -296,8 +296,7 @@ class CitasController
 
       die("ya existe esta cita");
       echo "ya existe esta cita";
-      echo "<script>alert('ya existe esta cita')
- console.log('ya existe esta cita');</script>";
+      echo "<script>alert('ya existe esta cita');</script>";
 
       /*   esto no funcinoa, siempre se va por este condicional aunque este bien    
 }else{ //evita que se pidan citas anteriores a hoy
@@ -377,11 +376,32 @@ console.log('elige una fecha mayor al dia de hoy');</script>";
   }
   function changeState()
   {
+    /* FUNCION PARA QUE NO CANCELE SI YA PASARON MAS DE 24H ANTES DE LA CITA (EN PROCESO)
+    $ahora = time();
+    $unDiaEnSegundos = 24 * 60 * 60;
+    $ayer = $ahora - $unDiaEnSegundos;
+    $ayerLegible = date("Y-m-d", $ayer);
+    # ahoraLegible únicamente es para demostrar
+    $ahoraLegible = date("Y-m-d", $ahora);
+    echo "Hoy es $ahoraLegible y ayer es $ayerLegible";
 
+
+    $cita = new Cita();
+    $Fecha_Cita= $cita->setFecha_Cita($_GET['Fecha_Cita']);
+    //$cita->setHora_Cita($_POST['Hora_Cita']);
+*/
     $cita = $this->model->getById($_GET['Id_Cita']);
+/*      
+    if($Fecha_Cita > $ayerLegible){
+      echo "<script>alert('La cita debe ser cancelada 24 horas antes')
+      console.log('La cita debe ser cancelada 24 horas antes');</script>";
+    return false;      
+    }else{
+      return true;*/
     $cita->updateState();
     //header("Refresh:20");
     header("?c=citas&a=index2");
+  //}
   }
   function asistido()
   {
