@@ -3,6 +3,10 @@
 <link rel="stylesheet" href="Views\css\loginyregistro.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 <div class="home">
   <div class="container">
     <div class="forms-container">
@@ -10,6 +14,9 @@
         <!--<form action="?c=usuario&a=validate" method="post"> -->
 
         <form action="?c=usuario&a=save" id="registro" method="post">
+        <a class="boton" id="sign-up-btn" href="?c=usuario&a=login2">
+              Inicia sesion
+            </a>
           <h2 class="title"><b>Registrate</b></h2>
 
           <label class="guia" for="Nombres_Usuario"><b>Nombre*</b></label>

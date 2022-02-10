@@ -10,8 +10,8 @@
 <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
 <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
 <!-- esto va en cada tabla-->
-        <title>Citas</title>
-<h1> Citas </h1>
+        <h2>Citas</h2>
+
 
 <div class= "container-fluid">
     <nav aria-label="breadcrumb">
