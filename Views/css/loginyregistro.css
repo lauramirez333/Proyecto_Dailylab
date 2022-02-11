@@ -7,17 +7,33 @@
   text-decoration: none;
 }
 
-.containerL{
-  position: relative;
-  width: 100%;
-  background-color: #fff;
-  min-height: 100vh;
-  overflow: hidden;
-  margin-right: 899px;
-  margin-left: 85px;
-  margin-top:-130px;
+
+.seña{
+  height: 58px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.45rem;
+  color: #333;
+  border-radius: 50%;
+  
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
 }
 
+.seña:hover {
+  color: #4481eb;
+  border-color: #4481eb;
+  cursor: pointer;
+}
+
+.margenRoles {
+  margin-right: 850px;
+  margin-left: 850px;
+  margin-top: 850px;
+}
 izq {
   margin-right: 85px;
   margin-left: 85px;

@@ -18,11 +18,62 @@ class Cita
     }
 
     //metodos 
+    public function list1($Id_Cita)
+    {
+        try{
+            $query = $this->connection->prepare("SELECT * FROM cita where Id_Cita=?;");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute(array($Id_Cita));
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
     public function list()
     {
         try{
-            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita >= NOW();");//con esto solo mostramos las citas que no estan vencidas
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita >= NOW() AND Estado_Cita=1;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute();
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+    public function listAsist()//lista de la gente que ya asistio a las citas
+    {
+        try{
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Estado_Cita=2;");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+/* este metodo hay que perfeccionarlo pq por ahora no tiene mucho sentido
+   public function controlNumCitas(){//con este metodo controlamos el numero de citas que se pueden pedir al dia
+        try{
+            $query = $this->connection->prepare("SELECT COUNT(*) FROM cita WHERE Fecha_Cita = CURDATE();
+            ");
+            $query->execute();
+            return $query;
+if ($query >= 330 ){
+    return false; 
+    echo "no puede pedir mas citas por hoy"; 
+
+}
+
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+*/
+    public function dupliCitas($Id_Examen,$Id_Usuario){//esto evita que se pidan 2 citas de la misma especialidad si 1 de ella no se ha vencido todavia 
+
+        try{
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita >= NOW() AND Id_Examen=? AND Id_Usuario=?;");
+            $query->execute(array($Id_Examen,$Id_Usuario));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
         }catch (Exception $e){
             die ($e->getMessage());
@@ -43,7 +94,8 @@ class Cita
     public function listHistorialPac($Id_Usuario)
     {
         try{
-            $Id_Usuario=$_SESSION['user']->getId_Usuario();
+            $Id_Usuario=$_GET['Id_Usuario'];
+           // =$_SESSION['user']->getId_Usuario();
             $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=? OR  Estado_Cita=0;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute(array($Id_Usuario));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
@@ -52,6 +104,7 @@ class Cita
         }
     }
 
+    
     public function listUnic()
     {
         try{ 
@@ -63,6 +116,18 @@ class Cita
             die ($e->getMessage());
         }
     }
+
+    public function listAnalisis()
+    {
+        try{ 
+           $query = $this->connection->prepare("SELECT * FROM cita where Fecha_Cita < NOW()  AND Estado_Cita=2 ");
+            $query->execute(array());
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
     public function agendarUnic()
     {
         try{
@@ -157,7 +222,48 @@ class Cita
 
         }
     }
-    public function updateState()
+    public function updateState()//para cancelar
+    {
+        try{
+            $query="UPDATE cita SET Estado_Cita =0 WHERE Id_Cita = ?;";
+            $this->connection->prepare($query)
+            ->execute(array(
+                $this->Id_Cita
+            ));
+         return $this;
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+    public function asistido()//para asistido
+    {
+        try{
+            $query="UPDATE cita SET Estado_Cita =2 WHERE Id_Cita = ?;";
+            $this->connection->prepare($query)
+            ->execute(array(
+                $this->Id_Cita
+            ));
+         return $this;
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    public function noAsistido()//para asistido
+    {
+        try{
+            $query="UPDATE cita SET Estado_Cita =3 WHERE Id_Cita = ?;";
+            $this->connection->prepare($query)
+            ->execute(array(
+                $this->Id_Cita
+            ));
+         return $this;
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    /*   public function updateState() //no borrar este metodo, dirve commo guia
     {
         try{
             $query="UPDATE cita SET Estado_Cita =? WHERE Id_Cita = ?;";
@@ -170,7 +276,7 @@ class Cita
         }catch(Exception $e){
             die($e->getMessage());
         }
-    }
+    }*/ 
 //getters y setters 
 
 

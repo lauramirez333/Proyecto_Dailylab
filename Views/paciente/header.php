@@ -117,7 +117,7 @@ if(!isset($_SESSION['user'])){
 
 <ul>
                <li class= "bubble" id="inicio"> <!--prueba-->
-                <a href="?c=citas&a=index">
+                <a href="?c=citas&a=Menu">
                     <span class="icon"> <i class='bx bx-grid-alt'></i> </span>
                     <span class="item:active">Inicio</span>
                 </a>
@@ -129,14 +129,14 @@ if(!isset($_SESSION['user'])){
                 </a>
             </li>
             
-            <li id="agendar">
-                  <!-- <a href="?c=citas&a=viewAgendar" >Agendar citas -->
+       <!--     <li id="agendar">
+                   <a href="?c=citas&a=viewAgendar" >Agendar citas 
                   <a href="?c=citas&a=Menu" >
                     <span class="icon"><i class='bx bx-band-aid'></i></span>
                     <span  class="item:active">Mis citas
                      </a>
                     </span>  
-            </li>
+            </li> -->
 
             <li id="agendar">
                   <!-- <a href="?c=citas&a=viewAgendar" >Agendar citas -->

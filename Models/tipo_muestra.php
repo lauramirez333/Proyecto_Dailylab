@@ -75,7 +75,7 @@ class Tipo_Muestra
             $query= "DELETE FROM tipo_muestra WHERE Id_T_Muestra=?;";
             $this-> connection->prepare($query)
                             ->execute(array($this->Id_T_Muestra));
-        }catch(Excepcion $e){
+        }catch(Exception $e){
             die($e->getMessage());
 
         }

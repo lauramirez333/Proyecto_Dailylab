@@ -92,7 +92,7 @@ class Examen
             $query= "DELETE FROM examen WHERE Id_Examen=?;";
             $this-> connection->prepare($query)
                             ->execute(array($this->Id_Examen));
-        }catch(Excepcion $e){
+        }catch(Exception $e){
             die($e->getMessage());
 
         }

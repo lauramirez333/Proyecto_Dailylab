@@ -17,6 +17,27 @@ function __CONSTRUCT()
     $this->model = new Usuario(); 
 }
 
+function recuPass()// aparentemente todo esta bien pero no envia nada
+{
+//https://www.youtube.com/watch?v=hmFFsMK_-vE
+$destinatario= $_POST['Correo_Electronico'];
+//$destinatario = 'laura2003ramirez@gmail.com';
+$nombre= "Dailylb Team";
+$asunto= "Bienvenido a dailylab team";
+$mensaje="hola, ahora formas parte del equipo de dailylab";
+$email="dailylabt@gmail.com";//este es quien remite, quien envia el correo
+//$nombre= $_POST['nombre'];
+//$asunto= $_POST['asunto'];
+
+$header="Enviado desde el recuperar contraseña de la pagina dailyab";
+$mensajeCompleto= $mensaje ."\nAtentamente: " . $nombre;
+
+mail($destinatario, $asunto, $mensajeCompleto, $header);
+ echo "<script>alert('correo enviado exitosamente')
+ console.log('Enviando correo para '+ '$destinatario' + 'de' + '$email');</script>";
+
+}
+
 function index()// 
 {
     $usuario = new Usuario(); //?
@@ -28,6 +49,10 @@ function index()//
     require "Views/footer.php";
 }
 
+function recuperarPass(){
+    require "Views/usuario/recuperarPass.php"; 
+  //  require "Views/usuario/emailPass.php"; 
+}
 
 function verPerfil()// 
 {
@@ -61,7 +86,7 @@ public function editarUnique(){
     require "views/product/form.php";
 }
 */
-function save()
+function save()//aqui se insertan los datos del registro
 {
     $Correo_Electronico= $_POST['Correo_Electronico'];
     $Documento_Identificacion= $_POST['Documento_Identificacion'];
@@ -73,13 +98,12 @@ function save()
             die("ya existes en la base de datos, logueate"); 
 
     }else{ 
-       
     $usuario = new Usuario();
-    $Id_Usuario=intval($_POST['Id_Usuario']);   
+ /*   $Id_Usuario=intval($_POST['Id_Usuario']);   
     if($Id_Usuario)
     {
         $usuario= $usuario->getById($Id_Usuario);
-    }  
+    }  */
     $usuario->setCorreo_Electronico($_POST['Correo_Electronico']);
     $usuario->setContrasena_Usuario($_POST['Contrasena_Usuario']);//(password_hash($_POST['Contrasena_Usuario'],PASSWORD_BCRYPT));//ciframos el id
     $usuario->setDocumento_Identificacion($_POST['Documento_Identificacion']);
@@ -87,8 +111,18 @@ function save()
     $usuario->setId_RH($_POST['Id_RH']);
     $usuario->setNombres_Usuario($_POST['Nombres_Usuario']);
     $usuario->setApellidos_Usuario($_POST['Apellidos_Usuario']);
-    $usuario->setId_Rol($_POST['Id_Rol']);
-    $Id_Usuario?$usuario->update(): $usuario->insert();
+    if($_POST['Id_Area'] == 1234){//para empleado
+        $usuario->setId_Rol(2);
+    }else{
+        if($_POST['Id_Area'] == 5678){//para enfermero
+            $usuario->setId_Rol(5);
+        }else{
+            $usuario->setId_Rol(3);//para paciente
+        }
+    }
+  //  $usuario->setId_Rol($_POST['Id_Area']);
+    $usuario->insert();
+    //$this->envioMail();
     header("location:?c=usuario&a=login");
     die("registro exitoso");
 
@@ -104,7 +138,8 @@ function savePac()
     {
 
             header('location:?c=usuario&a=registroPac');
-            
+            echo "<script>alert('ya existe este usuario en la base de datos');</script>";
+           
             die("ya existe este usuario en la base de datos"); 
            
     }else{ 
@@ -115,8 +150,13 @@ function savePac()
     {
         $usuario= $usuario->getById($Id_Usuario);
     }  
+
+    $passAlea=mt_rand(1,1000000);
+    echo $passAlea ;
+    var_dump($passAlea);
+
     $usuario->setCorreo_Electronico($_POST['Correo_Electronico']);
-    $usuario->setContrasena_Usuario($_POST['Contrasena_Usuario']);//(password_hash($_POST['Contrasena_Usuario'],PASSWORD_BCRYPT));//ciframos el id
+    $usuario->setContrasena_Usuario($passAlea);//$usuario->setContrasena_Usuario($_POST['Contrasena_Usuario']);//(password_hash($_POST['Contrasena_Usuario'],PASSWORD_BCRYPT));//ciframos el id
     $usuario->setDocumento_Identificacion($_POST['Documento_Identificacion']);
     $usuario->setTelefono_Usuario($_POST['Telefono_Usuario']);
     $usuario->setId_RH($_POST['Id_RH']);
@@ -124,9 +164,9 @@ function savePac()
     $usuario->setApellidos_Usuario($_POST['Apellidos_Usuario']);
     $usuario->setId_Rol(3);
     $Id_Usuario?$usuario->update(): $usuario->insertPac();
-    header("location:?c=usuario&a=login");
+    header("location:?c=usuario&a=registroPac");
 
-   
+    echo "<script>alert('Registro exitoso');</script>";
     die("registro exitoso"); 
    
 
@@ -163,7 +203,6 @@ function registroPac()
     if(isset($_GET['Id_Usuario'])){
         $usuario = $usuario->getById($_GET['Id_Usuario']); 
     }
- 
     require "Views/empleado/header.php";
     require "Views/empleado/registroPac.php";
     require "Views/footer.php";
@@ -193,11 +232,11 @@ function validate()
         }
         if($Id_Rol == 4 || $Id_Rol == 5)
         {
-            header('location: ?c=citas&a=index');
+             header('location: ?c=citas&a=TomasEnf');
         }
         if($Id_Rol == 3)
         {
-            header('location: ?c=citas&a=index');
+            header('location: ?c=citas&a=Menu');
         }
 
     }else{ 
@@ -227,5 +266,5 @@ function logout()
     $user->updateState();
     header("location:?c=user");
 }*/
-}
 
+}

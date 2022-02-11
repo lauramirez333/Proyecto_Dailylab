@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <div class= "container-fluid">
-<br>
-
-<ol class= "breadcrumb">
-<li><a href="?c=citas&a=index">Inicio  </a> >> </li> 
-    <li class="active"> Agendar  </li>     
-</ol>   
-</div>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="?c=citas&a=index2">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="?c=usuario&a=index">Pacientes</a></li>
+        <li class="breadcrumb-item active">Agendar Pacientes</li>
+    </ol>
+</nav>
+    </div>
        
     <title>Agenda</title>
 </head>
@@ -23,7 +24,7 @@
 <h1>Agenda cita </h1>
 
 <div class="container">
-<form action= "?c=citas&a=agendarPac" method ="post">
+<form action= "?c=citas&a=agendarPac&Id_Usuario=<?= $usuario->getId_Usuario() ?>" method ="post">
 
 <input type="hidden" name="Id_Usuario" value="<?=$usuario->getId_Usuario() ?>">
 

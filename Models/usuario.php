@@ -11,6 +11,7 @@ class Usuario
     private ?string $Nombres_Usuario=null;
     private ?string $Apellidos_Usuario=null;
     private ?int $Id_Rol=null;
+
  
     
     private $connection;
@@ -103,6 +104,8 @@ public function insertPac()
                     }
                         
 }
+
+
 public function login ($Correo_Electronico, $Contrasena_Usuario) 
     {
           //  die(var_dump($this));

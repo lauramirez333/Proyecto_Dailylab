@@ -4,11 +4,7 @@ var Telefono_Usuario = document.getElementById('Telefono_Usuario');
 var Documento_Identificacion = document.getElementById('Documento_Identificacion');
 var Correo_Electronico = document.getElementById('Correo_Electronico');
 var Correo_Electronico2 = document.getElementById('Correo_Electronico2');
-var Contrasena_Usuario =document.getElementById('Contrasena_Usuario');
-var Contrasena_Usuario2 =document.getElementById('Contrasena_Usuario2');
 var error =document.getElementById('error');
-var Id_Area =document.getElementById('Id_Area');
-var Terminos =document.getElementById('Terminos');
 var Id_RH =document.getElementById('Id_RH');
 
 
@@ -51,24 +47,6 @@ function enviarFormulario(){
     }
     if (Correo_Electronico2.value === null  || Correo_Electronico2.value === '' ){
         mensajesError.push('Confirma tu correo electronico')
-        error.innerHTML= mensajesError.join(' ')
-        return false;  
-          
-    }
-    if (Contrasena_Usuario.value === null  || Contrasena_Usuario.value === '' ){
-        mensajesError.push('Ingresa tu contraseña')
-        error.innerHTML= mensajesError.join(' ')
-        return false;  
-          
-    }
-    if (Contrasena_Usuario2.value === null  || Contrasena_Usuario2.value === '' ){
-        mensajesError.push('Confirma tu contraseña')
-        error.innerHTML= mensajesError.join(' ')
-        return false;  
-          
-    }
-    if (Contrasena_Usuario2.value !==   Contrasena_Usuario.value){
-        mensajesError.push('Las contraseñas no son iguales')
         error.innerHTML= mensajesError.join(' ')
         return false;  
           
