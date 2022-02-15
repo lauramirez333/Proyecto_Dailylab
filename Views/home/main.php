@@ -38,8 +38,8 @@ if (isset($NombreUsuario)) {
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#review">Ventajas</a>
         <a href="#contact">Contactenos</a>
-     <!-- -->   <a href="?c=usuario&a=login"class="btn">Iniciar sesion</a> <!--<a href="?c=usuario&a=login"class="btn">Iniciar sesion</a><!--c es controller? tonces se fue al controller del usuario y a es accion, la accion de login-->
-     <a href="?c=usuario&a=registro"class="btn">Registrar</a><!-- <a href="?c=usuario&a=registro" class="btn">Registrate</a> -->
+     <!-- -->   <a href="?c=usuario&a=login&Start=1"class="btn">Iniciar sesion</a> <!--<a href="?c=usuario&a=login"class="btn">Iniciar sesion</a><!--c es controller? tonces se fue al controller del usuario y a es accion, la accion de login-->
+     <a href="?c=usuario&a=registro&Start=1"class="btn">Registrar</a><!-- <a href="?c=usuario&a=registro" class="btn">Registrate</a> -->
     </nav>
 
 </header>

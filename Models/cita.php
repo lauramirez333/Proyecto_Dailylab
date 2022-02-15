@@ -96,7 +96,7 @@ if ($query >= 330 ){
         try{
             $Id_Usuario=$_GET['Id_Usuario'];
            // =$_SESSION['user']->getId_Usuario();
-            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=? OR  Estado_Cita=0;");//con esto solo mostramos las citas que no estan vencidas
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=?;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute(array($Id_Usuario));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
         }catch (Exception $e){
@@ -104,7 +104,18 @@ if ($query >= 330 ){
         }
     }
 
-    
+    public function listHistorialPac2($Id_Usuario)
+    {
+        try{
+            $Id_Usuario=$_GET['Id_Usuario'];
+           // =$_SESSION['user']->getId_Usuario();
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=?;");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute(array($Id_Usuario));
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
     public function listUnic()
     {
         try{ 

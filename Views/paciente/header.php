@@ -18,11 +18,12 @@ if(!isset($_SESSION['user'])){
   <link rel="stylesheet" href="Views/css/menu.css">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+    <script src="../js/vistas.js"></script>
 
 <!--jquery -->
 
@@ -65,15 +66,14 @@ if(!isset($_SESSION['user'])){
 
           <!--barra de busqueda -->
 
+
           <form autocomplete="on" class="buscar">
-            <div>
-              <input type="text" name="q" placeholder="Buscar">
-            </div>
+            
           </form>
 
            <!--logo -->
           <div class="logo_name">
-            <img class="logo" src="../Views/multimedia/logo.png" alt="" width="180" height="60" />
+            <img class="logo" src="Views/multimedia/logo.png" alt="" width="180" height="60" />
 
         </div>
 
@@ -107,7 +107,9 @@ if(!isset($_SESSION['user'])){
                   ?>
                  
             </h3>
-            
+
+            <input type="hidden" name="Id_Usuario" value="<?=$_SESSION['user']->getId_Usuario() ?>">
+
               <p> 
             Paciente
               </p> 
@@ -158,7 +160,7 @@ if(!isset($_SESSION['user'])){
             </li>
 
             <li id="historial">
-            <a href="?c=citas&a=viewHistRolPac&&Id_Usuario=<?= $usuario->getId_Usuario() ?>">
+            <a href="?c=citas&a=viewHistRolPac&Id_Usuario=<?=  $_SESSION['user']->getId_Usuario() ?>">
         
                     <span class="icon"><i class='far fa-clock' ></i></span>
                     <span class="item:active">historial general</span>
@@ -170,6 +172,10 @@ if(!isset($_SESSION['user'])){
           
 
                 <a href="?c=usuario&a=logout"  class="Cerrar_sesion">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a>
+
+                
+
+                
      </div>
 
            <!--contenido de la pagina -->
@@ -179,4 +185,3 @@ if(!isset($_SESSION['user'])){
       
 
       
-

@@ -176,7 +176,7 @@ class CitasController
     $examenes = $examen->list();
     $usuario = new Usuario();
     $usuarios = $usuario->list();
-    $Id_Usuario = $_SESSION['user']->getId_Usuario(); //prueba
+    //$Id_Usuario = $_SESSION['user']->getId_Usuario(); //prueba
 
     if (isset($_GET['Id_Usuario'])) {
       $citas = $cita->listHistorialPac($_GET['Id_Usuario']);
@@ -195,7 +195,7 @@ class CitasController
     $usuario = new Usuario();
     $usuarios = $usuario->list();
     if (isset($_GET['Id_Usuario'])) {
-      $citas = $cita->listHistorialPac($_GET['Id_Usuario']);
+      $citas = $cita->listHistorialPac2($_GET['Id_Usuario']);
     }
     require "Views/empleado/header.php";
     require "Views/empleado/viewHistorialPac.php";
