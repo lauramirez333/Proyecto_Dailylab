@@ -232,7 +232,7 @@ class CitasController
     if (isset($_GET['Id_Usuario'])) {
       $usuario = $usuario->getById($_GET['Id_Usuario']);
     } else {
-      echo "<script>alert('No se encontro id')";
+      echo "<script>alert('No se encontro id')</script>";
     }
     require "Views/empleado/header.php";
     require "Views/empleado/agendarPac.php";
@@ -287,6 +287,7 @@ class CitasController
     $Id_Usuario = $_GET['Id_Usuario'];
     $Fecha_Cita = $_POST['Fecha_Cita'];
 
+    $cita = new Cita();
     $hoy = date("d/m/Y");
 
     if ($this->model->dupliCitas($Id_Examen, $_GET['Id_Usuario'])) //esto evita que se pidan 2 citas de la misma especialidad si 1 de ella no se ha vencido todavia 
@@ -309,7 +310,21 @@ console.log('elige una fecha mayor al dia de hoy');</script>";
     */
     } else {
       /*  if($Fecha_Cita >= $hoy){*/
-      $cita = new Cita();
+        $Fecha_Cita = $_POST['Fecha_Cita'];
+        $result= $this->model->ValidacionCitas($Fecha_Cita);
+        if(intval($result) == 5 ){
+         // $cita->ValidacionCitas($Fecha_Cita);
+        return false;
+        var_dump($result);
+        echo "<script>alert($result);</script>";
+        echo ("No se pueden agendar mas de este tipo por hoy");
+
+        } else{
+          echo "<script>alert($result);</script>";
+
+          var_dump($result);
+        
+      
       $usuario = new Usuario();
 
       $Id_Usuario = intval($_POST['Id_Usuario']);
@@ -327,6 +342,20 @@ console.log('elige una fecha mayor al dia de hoy');</script>";
       $cita->agendarUnicPac();
 
       header("location:?c=citas&a=index2");
+      var_dump($result);
+      echo ("<script>alert($result);</script>");
+
+    
+      ?>
+   <script>console.log(<?$result?>);</script>;
+
+      <?php 
+     
+      ?>
+      console.log(<?$result?>);
+   
+         <?php 
+    }
     }
   }
   //}

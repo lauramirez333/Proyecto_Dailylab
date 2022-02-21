@@ -40,6 +40,17 @@ class Cita
         }
     }
 
+    public function ValidacionCitas($Fecha_Cita)
+    {
+        try{
+            $query = $this->connection->prepare("SELECT COUNT(fecha_cita) FROM cita WHERE fecha_cita=?;");
+            $query->execute(intval(array($Fecha_Cita)));
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
     public function listAsist()//lista de la gente que ya asistio a las citas
     {
         try{
