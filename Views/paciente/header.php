@@ -23,7 +23,7 @@ if(!isset($_SESSION['user'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/vistas.js"></script>
+    
 
 <!--jquery -->
 
@@ -66,10 +66,10 @@ if(!isset($_SESSION['user'])){
 
           <!--barra de busqueda -->
 
+ 
+   
+   
 
-          <form autocomplete="on" class="buscar">
-            
-          </form>
 
            <!--logo -->
           <div class="logo_name">
@@ -94,24 +94,24 @@ if(!isset($_SESSION['user'])){
       <!--barra lateral -->
    
       <div class="sidebar">
-          <div class="profile">
+          <div class="profile" >
              
-            <i class='fas fa-user-cog' style='color:#fdfdfd' ></i>
-            
-            <h3>
+          <i class='bx bxs-user-circle'  ></i>
+         
+            <h5>
                   Bienvenid@
                   <?=
-                   $_SESSION['user']->getCorreo_Electronico();
+                   $_SESSION['user']->getNombres_Usuario();
                    
                  
                   ?>
                  
-            </h3>
+            </h5>
 
-            <input type="hidden" name="Id_Usuario" value="<?=$_SESSION['user']->getId_Usuario() ?>">
-
+            
               <p> 
-            Paciente
+
+              Rol: Paciente
               </p> 
           </div>
 
@@ -160,7 +160,7 @@ if(!isset($_SESSION['user'])){
             </li>
 
             <li id="historial">
-            <a href="?c=citas&a=viewHistRolPac&Id_Usuario=<?=  $_SESSION['user']->getId_Usuario() ?>">
+            <a href="?c=citas&a=viewHistRolPac&&Id_Usuario=<?= $usuario->getId_Usuario() ?>">
         
                     <span class="icon"><i class='far fa-clock' ></i></span>
                     <span class="item:active">historial general</span>
@@ -172,14 +172,10 @@ if(!isset($_SESSION['user'])){
           
 
                 <a href="?c=usuario&a=logout"  class="Cerrar_sesion">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a>
-
-                
-
-                
      </div>
 
            <!--contenido de la pagina -->
-
+           <script src="views/js/vistas.js"></script>
      
 
       

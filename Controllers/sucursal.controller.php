@@ -14,7 +14,7 @@ class SucursalController
     {
         $sucursales = $this->model->list();
         require "Views/paciente/header.php";
-        require "Views/footer.php";
+        // require "Views/footer.php";
     }
 /*
     public function form2(){
@@ -23,7 +23,7 @@ class SucursalController
             $sucursal = $sucursal->getById($_GET['Id_Sucursal']); 
         }
         require "Views/paciente/header.php";
-        require "Views/footer.php";
+        // require "Views/footer.php";
     }
 
 
