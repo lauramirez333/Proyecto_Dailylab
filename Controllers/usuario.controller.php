@@ -6,6 +6,7 @@ require_once "Models/barrio.php";
 require_once "Models/rol.php";
 require_once "Models/RH.php";
 require_once "Models/cita.php";
+//require_once "Models/phpmailer/phpmailer/mail.php";
 
 
 class UsuarioController
@@ -19,22 +20,28 @@ function __CONSTRUCT()
 
 function recuPass()// aparentemente todo esta bien pero no envia nada
 {
+
+    require "Models/phpmailer/phpmailer/mail.php";
+//    $mail = new PHPMailer(true);
+   // $mail -> enviarEmail();
+
+ //  $destinatario= $_POST['Correo_Electronico'];
 //https://www.youtube.com/watch?v=hmFFsMK_-vE
-$destinatario= $_POST['Correo_Electronico'];
-//$destinatario = 'laura2003ramirez@gmail.com';
-$nombre= "Dailylb Team";
-$asunto= "Bienvenido a dailylab team";
-$mensaje="hola, ahora formas parte del equipo de dailylab";
-$email="dailylabt@gmail.com";//este es quien remite, quien envia el correo
-//$nombre= $_POST['nombre'];
-//$asunto= $_POST['asunto'];
+// $destinatario= $_POST['Correo_Electronico'];
+// //$destinatario = 'laura2003ramirez@gmail.com';
+// $nombre= "Dailylb Team";
+// $asunto= "Bienvenido a dailylab team";
+// $mensaje="hola, ahora formas parte del equipo de dailylab";
+// $email="dailylabt@gmail.com";//este es quien remite, quien envia el correo
+// //$nombre= $_POST['nombre'];
+// //$asunto= $_POST['asunto'];
 
-$header="Enviado desde el recuperar contraseña de la pagina dailyab";
-$mensajeCompleto= $mensaje ."\nAtentamente: " . $nombre;
+// $header="Enviado desde el recuperar contraseña de la pagina dailyab";
+// $mensajeCompleto= $mensaje ."\nAtentamente: " . $nombre;
 
-mail($destinatario, $asunto, $mensajeCompleto, $header);
- echo "<script>alert('correo enviado exitosamente')
- console.log('Enviando correo para '+ '$destinatario' + 'de' + '$email');</script>";
+// mail($destinatario, $asunto, $mensajeCompleto, $header);
+//  echo "<script>alert('correo enviado exitosamente')
+//  console.log('Enviando correo para '+ '$destinatario' + 'de' + '$email');</script>";
 
 }
 

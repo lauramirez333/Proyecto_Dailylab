@@ -5,7 +5,8 @@
 <div class="container">
     <div class="forms-container">
         <div class="signin-signup">
-            <form action="?c=usuario&a=recuPass" method="post">
+        <form action="?c=usuario&a=recuPass" method="post">
+            <!-- <form action="Models/phpmailer/phpmailer/mail.php" method="post"> -->
                 <h2 class="title">Recupera tu contraseña</h2>
                 <label class="izq" for="email">Ingresa tu Email</label>
                 <div class="input-field">
