@@ -1,8 +1,8 @@
 :root {
     --color-dark:  #ffffff;
-    --color-dark-x: #1a87e0;
+    --color-dark-x: #68C4D4;
     --color-dark-xx: #ffffff98;
-    --color-light: #197cee;
+    --color-light:#68C4D4;
     --color-grey: #f5f6f8;
 }
 
@@ -41,7 +41,7 @@ body {
 .icon:hover{
 
     cursor: pointer;
-    color: #197cee;
+    color: #68C4D4;
 
     
 }
@@ -78,7 +78,7 @@ body {
   }
   .seña:hover{
     cursor: pointer;
-    color: #197cee;
+    color: #68C4D4;
 
 
   }
@@ -124,11 +124,17 @@ body {
     padding: 0.8rem 1rem;
     border-radius: 5rem;
     min-width: 10rem;
-    background:rgba(20, 140, 238, 0.856);
+    background:#FFE406;
+    color: #333;
+}
+
+.btn:hover{
+
+    background: #68C4D4;
 }
 
 .btn-outline-dark {
-    border: 2px solid var(--color-light);
+    border: 2px solid #333 ;
 }
 
 

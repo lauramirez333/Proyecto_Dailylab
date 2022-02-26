@@ -28,7 +28,6 @@ function resultados()// arreglar
     $examenes=$examen->list();
     $usuario = new Usuario();
     $usuarios=$usuario->list();
-
     $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
     
     require "Views/paciente/header.php";

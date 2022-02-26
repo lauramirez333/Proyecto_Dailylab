@@ -9,6 +9,7 @@
 <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
 <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
 <!-- esto va en cada tabla-->
+<link rel="stylesheet" href="Views/css/tablas.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <input type="hidden" name="Id_Usuario" value="<?=$usuario->getId_Usuario() ?>"> <!--esto no esta mostrando el id que es, el metodo esta "confuncido" con el id y por eso no muestra lo que es-->
         
@@ -23,10 +24,10 @@
 </nav>
     </div>
 <br>
-<div class="container">  
+<div class="contact-box">  
 <br>
 <table class="table table-hover table-striped" id="tabla" class="display"> 
-    <thead class="table-dark">
+    <thead class="table">
         <tr>
         <td>Fecha 
                 <div class="float-right"> <i class="fas fa-arrow-up"></i> 

@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/Views/js/vistas.js"></script>
+    
 
 <!--jquery -->
 
@@ -116,7 +116,7 @@
 
             
             <li id="usuarios">
-            <a href="?c=usuario&a=registroPac" >
+            <a href="Views/usuario/registrsobre.php" >
                     <span class="icon-lg"><i class='bx bx-band-aid'></i></span>
                     <span  class="item">Registrar</span>
                 </a>
@@ -146,6 +146,7 @@
                </div> 
 
            <!--contenido de la pagina -->
+           <script src="views/js/vistas.js"></script>
 
      
 

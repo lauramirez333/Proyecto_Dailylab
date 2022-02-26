@@ -11,8 +11,8 @@ and open the template in the editor.
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
 
 :root{
-    purple:#00a7f5;
-    pink:#11bcff;
+    purple:#68C4D4;
+    pink:#68C4D4;
     gradient:linear-gradient(90deg, var(--purple), var(--pink));
 }
 

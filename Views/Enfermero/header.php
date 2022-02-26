@@ -54,11 +54,8 @@
 
           <!--barra de busqueda -->
 
-          <form autocomplete="on" class="buscar">
-            <div>
-              <input type="text" name="q" placeholder="Buscar">
-            </div>
-          </form>
+
+
 
            <!--logo -->
           <div class="logo_name">
@@ -85,17 +82,17 @@
       <div class="sidebar">
           <div class="profile">
              
-            <i class='fas fa-user-cog' style='color:#fdfdfd' ></i>
+            <i class='fas fa-user-cog'  ></i>
             
-            <h3>
+            <h5>
                   Bienvenid@
                   <?=
-                   $_SESSION['user']->getCorreo_Electronico();
+                   $_SESSION['user']->getNombres_Usuario();
                    
                  
                   ?>
                  
-            </h3>
+            </h5>
             
               <p> 
             Enfermer@
@@ -135,7 +132,7 @@
                 <a href="?c=usuario&a=logout"  class="Cerrar_sesion">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a> </div>
 
            <!--contenido de la pagina -->
-
+           <script src="views/js/vistas.js"></script>
      
 
       

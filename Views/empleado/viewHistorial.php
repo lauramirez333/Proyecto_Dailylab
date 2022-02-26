@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- esto va en cada tabla-->
+<link rel="stylesheet" href="Views/css/tablas.css">
         <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
 <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
 <!-- esto va en cada tabla-->
@@ -28,12 +29,12 @@
 
 </div> 
 <br>
-<div class="container">  
+<div class="contact-box">  
 <br>
 
 
 <table class="table table-hover table-striped" id="tabla" class="display">
-    <thead class="table-dark">
+    <thead class="table">
         <tr>
             <td>Fecha 
                 <div class="float-right"> <i class="fas fa-arrow-up"></i> 

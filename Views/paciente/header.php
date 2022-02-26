@@ -76,6 +76,11 @@ if(!isset($_SESSION['user'])){
             <img class="logo" src="Views/multimedia/logo.png" alt="" width="180" height="60" />
 
         </div>
+        <div class="cont">
+
+
+gg
+</div>
 
       </div>
 
@@ -98,8 +103,8 @@ if(!isset($_SESSION['user'])){
              
           <i class='bx bxs-user-circle'  ></i>
          
-            <h5>
-                  Bienvenid@
+            <h5> 
+                  Bienvenid@  <br>
                   <?=
                    $_SESSION['user']->getNombres_Usuario();
                    

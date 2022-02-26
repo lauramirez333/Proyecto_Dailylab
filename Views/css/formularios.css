@@ -1,8 +1,8 @@
 :root {
     --color-dark:  #ffffff;
-    --color-dark-x: #1a87e0;
+    --color-dark-x: #68C4D4;
     --color-dark-xx: #ffffff98;
-    --color-light: #197cee;
+    --color-light: #68C4D4;
     --color-grey: #f5f6f8;
 }
 
@@ -39,7 +39,7 @@ body {
   }
   .seña:hover{
     cursor: pointer;
-    color: #197cee;
+    color: #549fac;
 
 
   }
@@ -82,8 +82,8 @@ body {
     padding: 0.8rem 1rem;
     border-radius: 5rem;
     min-width: 10rem;
-    background:rgba(20, 140, 238, 0.856);
-    color: #197cee;
+    background:#68C4D4;
+    color: #57a3b1;
 }
 
 .btn-outline-dark {

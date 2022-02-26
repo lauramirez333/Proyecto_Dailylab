@@ -6,7 +6,6 @@ require_once "Models/barrio.php";
 require_once "Models/rol.php";
 require_once "Models/RH.php";
 require_once "Models/cita.php";
-//require_once "Models/phpmailer/phpmailer/mail.php";
 
 
 class UsuarioController
@@ -20,12 +19,7 @@ function __CONSTRUCT()
 
 function recuPass()// aparentemente todo esta bien pero no envia nada
 {
-
     require "Models/phpmailer/phpmailer/mail.php";
-//    $mail = new PHPMailer(true);
-   // $mail -> enviarEmail();
-
- //  $destinatario= $_POST['Correo_Electronico'];
 //https://www.youtube.com/watch?v=hmFFsMK_-vE
 // $destinatario= $_POST['Correo_Electronico'];
 // //$destinatario = 'laura2003ramirez@gmail.com';
