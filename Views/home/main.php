@@ -92,7 +92,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="?c=usuario&a=registro" class="appointment-btn scrollto"><span class="d-none d-md-inline">Inicia</span> Sesión</a>
+      <a href="?c=usuario&a=login&Start=1" class="appointment-btn scrollto"><span class="d-none d-md-inline">Inicia</span> Sesión</a>
 
 
     </div>

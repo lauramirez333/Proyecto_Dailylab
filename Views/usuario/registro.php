@@ -40,7 +40,9 @@
                 <div class="container align-self-center p-15">
                     <h1 class=" text-dark font-weight-bold mb-3">Registrate</h1>
 
-                    <button class="btn btn-primary width-100" >  inicia secion </button>
+                    <!-- <button href="?c=usuario&a=login&Start=1" class="btn btn-primary width-100" >  inicia sesion </button> -->
+                    <a href="?c=usuario&a=login&Start=1" class="btn btn-primary width-100" ><span class="d-none d-md-inline">Inicia</span> Sesión</a>
+
 
                     <form action="?c=usuario&a=save" id="registro" method="post" >
                         <div class="form-row mb-2">

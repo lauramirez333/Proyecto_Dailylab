@@ -82,7 +82,7 @@ function mostrar(){
             </p>
             <br>
             <!--<a class="boton" id="sign-up-btn" href="?c=usuario&a=registro"> -->
-            <a class="boton" id="sign-up-btn" href="?c=usuario&a=registro">
+            <a class="btn btn-primary width-100" id="sign-up-btn" href="?c=usuario&a=registro&Start=1">
               Registrate
              </a>
           </div>
