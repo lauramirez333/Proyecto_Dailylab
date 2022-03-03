@@ -50,7 +50,7 @@ function mostrar(){
             }
           </script>
             <br>
-              <a  id="sign-up-btn" href="?c=usuario&a=recuperarPass">
+              <a  id="sign-up-btn" href="?c=usuario&a=recuperarPass&Start=1">
               Recuperar contraseña
              </a>
             <input type="submit"  class="btn solid" /> 

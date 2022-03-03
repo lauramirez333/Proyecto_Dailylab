@@ -7,6 +7,13 @@ require_once "Models/rol.php";
 require_once "Models/RH.php";
 require_once "Models/cita.php";
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//require '../vendor/autoload.php';
+require 'vendor/autoload.php';
+
+
 
 class UsuarioController
 {
@@ -19,7 +26,7 @@ function __CONSTRUCT()
 
 function recuPass()// aparentemente todo esta bien pero no envia nada
 {
-    require "Models/phpmailer/phpmailer/mail.php";
+  //  require "Models/phpmailer/phpmailer/mail.php";
 //https://www.youtube.com/watch?v=hmFFsMK_-vE
 // $destinatario= $_POST['Correo_Electronico'];
 // //$destinatario = 'laura2003ramirez@gmail.com';
@@ -37,6 +44,35 @@ function recuPass()// aparentemente todo esta bien pero no envia nada
 //  echo "<script>alert('correo enviado exitosamente')
 //  console.log('Enviando correo para '+ '$destinatario' + 'de' + '$email');</script>";
 
+
+$Correo_Electronico= $_POST['Correo_Electronico'];
+$mail = new PHPMailer(true);
+
+try {
+
+    $mail->SMTPDebug=0; 
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true; 
+    $mail->Username   = 'laura2003ramirez@gmail.com';                     //SMTP username
+    $mail->Password   = 'shekinah.10';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //Recipients
+        $mail->setFrom('laura2003ramirez@gmail.com', 'Mailer');
+        $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
+        $mail->isHTML(true);
+        $mail->Subject = 'Contacto';
+        $mail->Body    = 'hola<br>camila';
+    
+        $mail->send();
+    echo 'Message has been sent';
+
+}catch(Exception $exception){
+    echo 'algo salio mal', $exception->getMessage();
+
+}
 }
 
 function index()// 
