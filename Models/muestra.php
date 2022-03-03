@@ -25,6 +25,26 @@ class Muestra
         }
     }
 
+    public function traerReferencia($Id_Cita){
+        try{
+            $query = $this->connection->prepare("SELECT Id_Muestra from muestra where Id_Cita=? ");
+            $query->execute(array($Id_Cita));
+           return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+    public function traerIdMuestra($Id_Cita){
+        try{
+            $query = $this->connection->prepare("SELECT Id_Muestra from muestra where Id_Cita=? ");
+            $query->execute(array($Id_Cita));
+           return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
     public function insert()
     {
         try{

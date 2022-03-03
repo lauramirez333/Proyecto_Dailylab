@@ -13,6 +13,7 @@
 
 <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
 <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
+
 <!-- esto va en cada tabla-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <body>
@@ -76,14 +77,40 @@
 
 
 <label class=" text-dark font-weight-bold" for="Fecha_Cita"> Fecha: </label>
-<input class="form-control" id="fecha" type="date" name="Fecha_Cita" >
+<input class="form-control" id="fecha" onMouseOut="fuera()" type="date" name="Fecha_Cita" >
 
+<script>
 
+function fuera(){
+    // cita= document.getElementById('fecha').value;
+    
+
+    // fecha = new Date('2022 02 25');
+    // const hoy = fecha.getDay();
+    // alert(cita);
+    // alert(hoy);
+
+//     const hoy1 = fecha.getDate();
+//     const hoy = fecha.getDay();
+//     //const cita = fecha.getDay();
+//     alert('hoy es tal fecha'+hoy1);
+//     alert('hoy es tal dia'+hoy);//Devuelve el día de la semana: OJO: 0 Domingo, 6 Sábado.
+//  if (hoy == 6 /*|| (hoy == 0)*/ ){
+//     alert('hoy es sabado ');
+//  }else if(hoy == 6) {
+//     alert('hoy es  domingo');
+//  }else {
+//      alert('pase')
+//  }
+//     // }
+}
+
+</script>
 </div>
 
 <div  class="form-group col-md-6" >
 <label class=" text-dark font-weight-bold" for="Hora_Cita"> Hora: </label>
-<input class="form-control" id="hora" type="time" name="Hora_Cita" >
+<input class="form-control" id="hora" type="time" name="Hora_Cita" min='06:00:00' max='18:00:00' >
 
 
 </div>

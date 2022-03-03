@@ -87,20 +87,27 @@ class CitasController
     $cita = new Cita(); 
     $muestra_examen= new Muestra_Examen();
     $muestra= new Muestra();
-
     $Id_Cita=$_GET['Id_Cita'];
-    $Id_Muestra= $muestra_examen->list2($Id_Cita);
-    $Id_Examen= $muestra_examen->list3($Id_Cita);
+    $muestra -> traerReferencia($Id_Cita);
+
+
+
+    //$Id_Muestra= $muestra_examen->list2($Id_Cita);
+    $Id_Examen=$muestra_examen->list3($Id_Cita);
     //echo "<script>alert('ID MUESTRA ES'+(int)$Id_Muestra+' y ID EXAMEN ES'+(int)$Id_Examen)';</script>";
+ 
     
     $muestra_examen->setURL_Resultado($_POST['URL_Resultado']);
-    $muestra_examen->setId_Muestra((int)$Id_Muestra);
+    $muestra_examen->setId_Muestra($_GET['Id_Muestra']);
     $muestra_examen->setEstado(1);
     $muestra_examen->setId_Examen((int)$Id_Examen);
     $muestra_examen->setId_Usuario($_GET['Id_Usuario']);
     $muestra_examen->insert();
+
     echo "<script>alert('ya se inserto el url');</script>";
+
     header("location:?c=citas&a=resulEnf");
+   
 
   }
 

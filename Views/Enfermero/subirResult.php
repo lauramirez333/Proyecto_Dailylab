@@ -25,10 +25,13 @@
     <h1>Subir resultado </h1>
 
     <div class="container">
-        <form action="?c=citas&a=guardarResult&Id_Usuario=<?= $usuario->getId_Usuario()?>&Id_Cita=<?= $cita = $_GET['Id_Cita'] ?>" method="post">
+        <form action="?c=citas&a=guardarResult&Id_Usuario=<?= $usuario->getId_Usuario()?>&Id_Cita=<?= $cita = $_GET['Id_Cita'] ?>&Id_Muestra=<?= $muestra->getId_Muestra() ?>&Id_Examen=<?= $examen->getId_Examen() ?>" 
+        method="post">
 
             <input type="" name="Id_Usuario" value="<?= $usuario->getId_Usuario() ?>">
             <input type="" name="Id_Cita" value="<?= $cita = $_GET['Id_Cita'] ?>">
+            <input type="" name="Id_Muestra" value="<?= $muestra->getId_Muestra() ?>">
+ 
        
             <table class="table table-hover table-striped">
                 <thead class="table-dark">
@@ -63,8 +66,21 @@
                     }
                     ?>
 
+<?php
+                    try {
+                        foreach ($muestra_examen as $muestra_examen) : ?>
+
+                            <td> <?= $muestra_examen->getById($cita->getId_Examen())->getNombre_Examen() ?> </td>
+                    <?php endforeach;
+                    } catch (Exception $e) {
+                        die($e->getMessage());
+                        die("No se pudo listar");
+                    }
+                    ?>
+
+
                     <td>Tipo muestra </td>
-                    <td>Referencia </td>
+                    <td> <?= $muestra->getReferencia() ?> </td>
                     <td>id_Cita </td>
                     <td>Fecha </td>
                     </a>

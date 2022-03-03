@@ -124,8 +124,11 @@ function save()//aqui se insertan los datos del registro
   //  $usuario->setId_Rol($_POST['Id_Area']);
     $usuario->insert();
     //$this->envioMail();
+
     header("location:?c=usuario&a=login");
     die("registro exitoso");
+
+
 
 }
 }
