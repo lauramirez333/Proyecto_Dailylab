@@ -32,6 +32,27 @@ public function list()
     }
 }
 
+public function updatePass($passAlea,$Correo_Electronico){
+    try{
+        $query = $this->connection->prepare("UPDATE usuario
+        SET Contrasena_Usuario = ? WHERE Correo_Electronico=?");
+        $query->execute(array($passAlea,$Correo_Electronico));
+       return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+    }catch (Exception $e){
+        die ($e->getMessage());
+    }
+}
+
+public function recuPass($Correo_Electronico){
+    try{
+        $query = $this->connection->prepare("SELECT Contrasena_Usuario FROM usuario WHERE Correo_Electronico=?;");
+        $query->execute(array($Correo_Electronico));
+       return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+    }catch (Exception $e){
+        die ($e->getMessage());
+    }
+}
+
 public function verPerfil()//($Id_Usuario) intentar esto
 {
     try{

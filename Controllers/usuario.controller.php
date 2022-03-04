@@ -26,54 +26,107 @@ function __CONSTRUCT()
 
 function recuPass()// aparentemente todo esta bien pero no envia nada
 {
-  //  require "Models/phpmailer/phpmailer/mail.php";
-//https://www.youtube.com/watch?v=hmFFsMK_-vE
-// $destinatario= $_POST['Correo_Electronico'];
-// //$destinatario = 'laura2003ramirez@gmail.com';
-// $nombre= "Dailylb Team";
-// $asunto= "Bienvenido a dailylab team";
-// $mensaje="hola, ahora formas parte del equipo de dailylab";
-// $email="dailylabt@gmail.com";//este es quien remite, quien envia el correo
-// //$nombre= $_POST['nombre'];
-// //$asunto= $_POST['asunto'];
+    $Correo_Electronico= $_POST['Correo_Electronico'];
 
-// $header="Enviado desde el recuperar contraseña de la pagina dailyab";
-// $mensajeCompleto= $mensaje ."\nAtentamente: " . $nombre;
+    $usuario = new Usuario(); //?
 
-// mail($destinatario, $asunto, $mensajeCompleto, $header);
-//  echo "<script>alert('correo enviado exitosamente')
-//  console.log('Enviando correo para '+ '$destinatario' + 'de' + '$email');</script>";
+     if($this->model->recuPass($Correo_Electronico))
+    {
+        $passAlea=mt_rand(1,1000000);
 
+//CON ESTE SE HACEN CADENAS STRING ALEATORIAS EN VEZ DE NUMEROS  
+// $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+// // Output: 54esmdr0qf
+// echo substr(str_shuffle($permitted_chars), 0, 10);
 
-$Correo_Electronico= $_POST['Correo_Electronico'];
-$mail = new PHPMailer(true);
+        $this->model->updatePass($passAlea,$Correo_Electronico);
 
-try {
+        $mail = new PHPMailer(true);
 
-    $mail->SMTPDebug=0; 
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true; 
-    $mail->Username   = 'laura2003ramirez@gmail.com';                     //SMTP username
-    $mail->Password   = 'shekinah.10';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        try {
+        
+            $mail->SMTPDebug=0; 
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true; 
+            $mail->Username   = 'laura2003ramirez@gmail.com';                     //SMTP username
+            $mail->Password   = 'shekinah.10';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        
+        
+            $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de registrarte en www.dailylab.com";      
+           
+           
+           // HTML email starts here
+           
+           $message  = "<html><body>";
+           
+           $message .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
+           
+           $message .= "<tr><td>";
+           
+           $message .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
+            
+           $message .= "<thead>
+              <tr height='80'>
+               <th colspan='4' style='background-color:#f5f5f5; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#333; font-size:34px;' >Bienvenido a Dailylab</th>
+              </tr>
+              </thead>";
+            
+           $message .= "<tbody>
+        
+              <tr>
+               <td colspan='4' style='padding:15px;'>
+                <p style='font-size:20px;'>Hola' ".$Correo_Electronico.",</p>
+                <hr />
+                <p style='font-size:25px;'>Estamos muy felices de que ahora seas parte de dailylab. A continuacion, te recordamos tu contraseña: ".$passAlea.", no olvides guardarla en un lugar seguro y no compartirla con nadie</p>
+                <img src='https://4.bp.blogspot.com/-rt_1MYMOzTs/VrXIUlYgaqI/AAAAAAAAAaI/c0zaPtl060I/s1600/Image-Upload-Insert-Update-Delete-PHP-MySQL.png' alt='Sending HTML eMail using PHPMailer in PHP' title='Sending HTML eMail using PHPMailer in PHP' style='height:auto; width:100%; max-width:100%;' />
+                <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
+               </td>
+              </tr>
+              
+              </tbody>";
+            
+           $message .= "</table>";
+           
+           $message .= "</td></tr>";
+           $message .= "</table>";
+           
+           $message .= "</body></html>";
+           
+           // HTML email ends here
+                //Recipients
+                $mail->setFrom('laura2003ramirez@gmail.com', 'Mailer');
+                $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
+                $mail->isHTML(true);
+                $mail->Subject = 'Restablecimiento de contraseña';
+                $mail->Body    = $message;
+                $mail->AltBody    = $message;
+                 
+        
+                
+                $mail->send();
+            echo 'Message has been sent';
+            echo "<script>alert('Revisa tu correo para encontrar la nueva contraseña');</script>";
+           
+        }catch(Exception $exception){
+            echo 'algo salio mal', $exception->getMessage();
+            echo "<script>alert('No se pudo mandar correo');</script>";
+           
+        
+        }
 
-        //Recipients
-        $mail->setFrom('laura2003ramirez@gmail.com', 'Mailer');
-        $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
-        $mail->isHTML(true);
-        $mail->Subject = 'Contacto';
-        $mail->Body    = 'hola<br>camila';
+    }else{
+        echo "<script>alert('Tu correo no esta registrado');</script>";
+       
+       
+    }
     
-        $mail->send();
-    echo 'Message has been sent';
-
-}catch(Exception $exception){
-    echo 'algo salio mal', $exception->getMessage();
 
 }
-}
+
+
 
 function index()// 
 {
@@ -123,24 +176,101 @@ public function editarUnique(){
     require "views/product/form.php";
 }
 */
+function envioMail($Correo_Electronico,$Contrasena_Usuario){
+    
+//$Correo_Electronico= $_POST['Correo_Electronico'];
+$mail = new PHPMailer(true);
+
+try {
+
+    $mail->SMTPDebug=0; 
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true; 
+    $mail->Username   = 'laura2003ramirez@gmail.com';                     //SMTP username
+    $mail->Password   = 'shekinah.10';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    
+
+    $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de registrarte en www.dailylab.com";      
+   
+   
+   // HTML email starts here
+   
+   $message  = "<html><body>";
+   
+   $message .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
+   
+   $message .= "<tr><td>";
+   
+   $message .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
+    
+   $message .= "<thead>
+      <tr height='80'>
+       <th colspan='4' style='background-color:#f5f5f5; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#333; font-size:34px;' >Bienvenido a Dailylab</th>
+      </tr>
+      </thead>";
+    
+   $message .= "<tbody>
+
+      <tr>
+       <td colspan='4' style='padding:15px;'>
+        <p style='font-size:20px;'>Hola' ".$Correo_Electronico.",</p>
+        <hr />
+        <p style='font-size:25px;'>Estamos muy felices de que ahora seas parte de dailylab. A continuacion, te recordamos tu contraseña: $Contrasena_Usuario, no olvides guardarla en un lugar seguro y no compartirla con nadie</p>
+        <img src='https://4.bp.blogspot.com/-rt_1MYMOzTs/VrXIUlYgaqI/AAAAAAAAAaI/c0zaPtl060I/s1600/Image-Upload-Insert-Update-Delete-PHP-MySQL.png' alt='Sending HTML eMail using PHPMailer in PHP' title='Sending HTML eMail using PHPMailer in PHP' style='height:auto; width:100%; max-width:100%;' />
+        <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
+       </td>
+      </tr>
+      
+      </tbody>";
+    
+   $message .= "</table>";
+   
+   $message .= "</td></tr>";
+   $message .= "</table>";
+   
+   $message .= "</body></html>";
+   
+   // HTML email ends here
+
+        //Recipients
+        $mail->setFrom('laura2003ramirez@gmail.com', 'Mailer');
+        $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
+        $mail->isHTML(true);
+        $mail->Subject = 'Bienvenido a dailylab';
+        $mail->Body    = $message;
+        $mail->AltBody    = $message;
+         
+        $mail->send();
+    echo 'Message has been sent';
+
+}catch(Exception $exception){
+    echo 'algo salio mal', $exception->getMessage();
+
+}
+
+}
 function save()//aqui se insertan los datos del registro
 {
     $Correo_Electronico= $_POST['Correo_Electronico'];
+    $Contrasena_Usuario= $_POST['Contrasena_Usuario'];
     $Documento_Identificacion= $_POST['Documento_Identificacion'];
 
      if($this->model-> dupli($Correo_Electronico,$Documento_Identificacion))
     {
 
             header('location:?c=usuario&a=login');
-            die("ya existes en la base de datos, logueate"); 
+            die("ya existes en la base de datos, logueate");
+            echo ' '; 
+            echo "<script>alert('ya existe este usuario en la base de datos');</script>";
+           
 
     }else{ 
     $usuario = new Usuario();
- /*   $Id_Usuario=intval($_POST['Id_Usuario']);   
-    if($Id_Usuario)
-    {
-        $usuario= $usuario->getById($Id_Usuario);
-    }  */
+
     $usuario->setCorreo_Electronico($_POST['Correo_Electronico']);
     $usuario->setContrasena_Usuario($_POST['Contrasena_Usuario']);//(password_hash($_POST['Contrasena_Usuario'],PASSWORD_BCRYPT));//ciframos el id
     $usuario->setDocumento_Identificacion($_POST['Documento_Identificacion']);
@@ -157,9 +287,9 @@ function save()//aqui se insertan los datos del registro
             $usuario->setId_Rol(3);//para paciente
         }
     }
-  //  $usuario->setId_Rol($_POST['Id_Area']);
+
     $usuario->insert();
-    //$this->envioMail();
+    $this->envioMail($Correo_Electronico,$Contrasena_Usuario);
 
     header("location:?c=usuario&a=login");
     die("registro exitoso");
