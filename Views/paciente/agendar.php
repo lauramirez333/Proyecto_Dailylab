@@ -6,7 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="Views/css/formularios.css">
-    <title>Agenda</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+  <script>
+//   var fecha_inicio = '17/04/2019';
+// var fecha_final = '8/05/2019';
+
+// inicio = moment(fecha_a);
+// fin = moment(fecha_b);
+// diferencia_dias = parseInt(fin.diff(inicio, 'days')) + parseInt(1); // Añadimos un dia mas para que cuente todos los dias incluyendo el inicial
+
+// num_dia = (parseInt(inicio.isoWeekday()));
+
+for(i=1;i<=diferencia_dias;i++){
+    if(num_dia == 6){
+      alert('sabado');
+      // Do something....
+    }
+    if(num_dia == 7){
+      alert('domingo');
+      num_dia=0;
+      // Do something....
+    }
+    num_dia++;
+  }
+</script> 
+  <title>Agenda</title>
 </head>
 <body>
     

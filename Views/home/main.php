@@ -66,9 +66,10 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about">Nosotros</a></li>
-          <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
-          <li><a class="nav-link scrollto" href="#departments">Muestras</a></li>
+          <li><a class="nav-link scrollto" href="#departments">Que es Dailylab</a></li>
+          <li><a class="nav-link scrollto" href="#about">Ventajas</a></li>
+          <li><a class="nav-link scrollto" href="#services">Funcionalidades</a></li>
+         
           
           <li class="dropdown"><a href="#"><span>desplegable</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -102,7 +103,7 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <h1>Bienvenido a Dailylab</h1>
-      <h2>Dailylab es un software de agendamiento de citas enfocado en el área de la salud como los laboratorios clínicos, eps, entre otros. En él podrás encontrar diferentes módulos que te ayudaran en el proceso de gestión de tiempo de tu empresa, organizando tu agenda.</h2>
+      <h2>El software de agendamiento de citas mas eficiente del mercado </h2>
       <a href="#about" class="btn-get-started scrollto">Iingresa</a>
     </div>
   </section><!-- End Hero -->
@@ -125,7 +126,7 @@
                
               </p>
               <div class="text-center">
-                <a href="#" class="more-btn">Aprende más <i class="bx bx-chevron-right"></i></a>
+               
               </div>
             </div>
           </div>
@@ -145,21 +146,21 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class='bx bx-test-tube' ></i>
                     <h4>Análisis</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <p>Análisis de tomas de muestra optimas, sin demoras ni errores</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class='bx bxs-calendar-minus' ></i>
                     <h4>Gestión de citas</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <p>Pide tus citas sin salir de casa, sin demoras y en tu disponibilidad de tiempo</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class='bx bx-list-check'></i>
                     <h4>Resultados</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <p>Consulta tus resultados de forma confiable y personalizada, al alcance de tu mano, sin consultas a páginas externas</p>
                   </div>
                 </div>
                 
@@ -177,28 +178,21 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Examenes</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+
+        <br>
+        <br>
+          <h2>¿Qué es Dailylab?</h2>
+          <br>
+          <p>Dailylab es un software de agendamiento de citas enfocado en el área de la salud como los laboratorios clínicos, eps, entre otros. En él podrás encontrar diferentes módulos que te ayudaran en el proceso de gestión de tiempo de tu empresa, organizando tu agenda.</p>
         </div>
 
         <div class="row gy-4">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Glóbulos rojos</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1"></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Glucosa </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Nivel de pH</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Perfil bioquímico</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Perfil lipídico</a>
-              </li>
+
             </ul>
           </div>
           <div class="col-lg-9">
@@ -206,12 +200,14 @@
               <div class="tab-pane active show" id="tab-1">
                 <div class="row gy-4">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Glóbulos rojos</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                    <h3></h3>
+                    <p class="fst-italic"></p>
+                    <p></p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Views/multimedia/departments-1.jpg" alt="" class="img-fluid">
+  
+                    <img src="Views/multimedia/departments-1.jpg" alt=""  width="400" height="400" class="imagen">
+                   
                   </div>
                 </div>
               </div>
@@ -259,7 +255,7 @@
                     <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Views/multimedia/departments-5.jpg" alt="" class="img-fluid">
+                    <img src="Views/multimedia/departments-5.jpg" alt=""  class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -281,30 +277,30 @@
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h3>Ventajas</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+<br>
 
             <div class="icon-box">
               <div class="icon"><i class='bx bx-slideshow' ></i></div>
               <h4 class="title"><a href="">Virtualidad</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <p class="description">Con nuestro software de agendamientos puedes sacar tus citas desde donde estes y en el momento que mas te convenga, sin necesidad de desplazarte o buscar un espacio en tu agenda para hacerlo</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class='bx bx-trending-up' ></i></div>
               <h4 class="title"><a href="">Agilidad</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <p class="description">Evita las largas colas, demora del la prestación del servicio, errores de digitacion o sistemas demorados. Agenda tus citas en menos de 5 minutos con dailylab.</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class='bx bxs-calendar'></i></div>
               <h4 class="title"><a href="">Facilidad de agendamiento</a></h4>
-              <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+              <p class="description">Dailylab es el software mas intuitivo y facil de manejar que puedas encontrar, incluye un manual de usuario muy corto  sencilo que puedes ver en caso de tener dudas.</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class='bx bx-tachometer'></i></div>
               <h4 class="title"><a href="">Incrementa la productividad</a></h4>
-              <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+              <p class="description">Con un sistema de agendamientos optimo, la prestación del servcio es mejor! mas beneficiosa para el lado del usuario como para el lado de la empresa prestadora del servicio.</p>
             </div>
 
           </div>
@@ -321,7 +317,7 @@
 
         <div class="section-title">
           <h2>Funcionalidades</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Conoce lo que vas a encontrar en nuestro software de agendamiento de citas.</p>
         </div>
 
         <div class="row">
@@ -329,7 +325,7 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-heartbeat"></i></div>
               <h4><a href="">Gestióna</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <p>Gestión de agendamiento, cancelación y reagendamiento de citas</p>
             </div>
           </div>
 
@@ -337,7 +333,7 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-pills"></i></div>
               <h4><a href="">Analiza</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <p>Análisis personaliado a cada muestra que se toma dentro del laboratorio, asociado a cada una de las citas agendadas mediante este.</p>
             </div>
           </div>
 
@@ -345,7 +341,7 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-hospital-user"></i></div>
               <h4><a href="">Consulta</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <p>Consulta de historiales, resultados y citas de forma muy intutiva, facil y sin demoras</p>
             </div>
           </div>
 
@@ -353,7 +349,7 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-dna"></i></div>
               <h4><a href="">Facilita</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <p>Facilita la gestion de tu negocio, muchas funcionalidades utiles para un buen funcionamiento en un solo sistema.</p>
             </div>
           </div>
 
@@ -371,67 +367,7 @@
     
 
     <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </section><!-- End Frequently Asked Questions Section -->
-
+   
     
 
 
@@ -444,7 +380,7 @@
 
         <div class="section-title">
           <h2>Contáctanos</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Conoce nuestras sedes y agenda en la más cercana </p>
         </div>
       </div>
 
