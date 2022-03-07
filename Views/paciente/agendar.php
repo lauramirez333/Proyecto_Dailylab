@@ -69,17 +69,21 @@ for(i=1;i<=diferencia_dias;i++){
 <div class="form-group col-md-6" >
   <label  class=" text-dark font-weight-bold" for="Fecha_Cita"> Fecha: </label>
  
-    <input id="fecha" class="form-control" type="date"  name="Fecha_Cita" value="<?=$cita->getFecha_Cita() ?>" >
-
+    <input id="fecha" onMouseOut='fuera()' class="form-control" type="date"  name="Fecha_Cita" value="<?=$cita->getFecha_Cita() ?>" >
+    <div id="info2"></div>
+    <script src='Views/js/evitaWeekends.js'></script>
 </div>
 
  <div  class="form-group col-md-6" >
 <label  class=" text-dark font-weight-bold" for="Hora_Cita"> Hora: </label>
 
-<input id="hora" class="form-control" type="time" require name="Hora_Cita" value="<?=$cita->getHora_Cita() ?>" >
+<input id="hora" class="form-control" type="time" require name="Hora_Cita"  min='06:00:00' max='18:00:00' value="<?=$cita->getHora_Cita() ?>" >
 
+<script src='Views/js/hora.js'></script>
 </div>
 </div>
+<div id="info"></div>
+
 
 <div class="form-row mb-2">
 <div class="form-group col-md-6">

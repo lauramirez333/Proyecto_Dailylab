@@ -77,11 +77,24 @@
 
 
 <label class=" text-dark font-weight-bold" for="Fecha_Cita"> Fecha: </label>
-<input class="form-control" id="fecha" onMouseOut="fuera()" type="date" name="Fecha_Cita" >
+<input class="form-control" id="fecha" onMouseOut='fuera()' type="date" name="Fecha_Cita" >
+<div id="info2"></div>
+<script src='Views/js/evitaWeekends.js'></script>
 
 <script>
 
-function fuera(){
+
+// const picker = document.getElementById("fecha");
+// picker.addEventListener("input", function(e){
+//   var day = new Date(this.value).getUTCDay();
+//   if([6,0].includes(day)){
+//     e.preventDefault();
+//     this.value = "";
+//     alert("Weekends not allowed");
+//   }
+// });
+
+// function fuera(){
     // cita= document.getElementById('fecha').value;
     
 
@@ -103,14 +116,17 @@ function fuera(){
 //      alert('pase')
 //  }
 //     // }
-}
+//}
 
 </script>
 </div>
 
 <div  class="form-group col-md-6" >
 <label class=" text-dark font-weight-bold" for="Hora_Cita"> Hora: </label>
-<input class="form-control" id="hora" type="time" name="Hora_Cita" min='06:00:00' max='18:00:00' >
+<input class="form-control" id="hora"  type="time"  name="Hora_Cita" min='06:00:00' max='18:00:00' >
+<div id="info"></div>
+<script src='Views/js/hora.js'></script>
+ 
 
 
 </div>
