@@ -11,30 +11,8 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
-  <script>
-//   var fecha_inicio = '17/04/2019';
-// var fecha_final = '8/05/2019';
-
-// inicio = moment(fecha_a);
-// fin = moment(fecha_b);
-// diferencia_dias = parseInt(fin.diff(inicio, 'days')) + parseInt(1); // Añadimos un dia mas para que cuente todos los dias incluyendo el inicial
-
-// num_dia = (parseInt(inicio.isoWeekday()));
-
-for(i=1;i<=diferencia_dias;i++){
-    if(num_dia == 6){
-      alert('sabado');
-      // Do something....
-    }
-    if(num_dia == 7){
-      alert('domingo');
-      num_dia=0;
-      // Do something....
-    }
-    num_dia++;
-  }
-</script> 
-  <title>Agenda</title>
+ 
+    <title>Agenda</title>
 </head>
 <body>
     
@@ -58,32 +36,31 @@ for(i=1;i<=diferencia_dias;i++){
                     <div class="form-group">
 
                     </div>
-<form action= "?c=citas&a=agendar" method ="post">
+                    <input type="hidden" id="Id_Cita" name="Id_Cita" require value="<?=$cita->getId_Cita() ?>">
+
+<input type="hidden" id="Id_Usuario" name="Id_Usuario"  require value="<?=$_SESSION['user']->getId_Usuario() ?>">
+
+<form  id="formulario" action= "?c=citas&a=Agendar" method ="post" >
 <!--<form action= "?c=citas&a=saveAgendar" method ="post">
 -->
-<input type="hidden" name="Id_Cita" require value="<?=$cita->getId_Cita() ?>">
-
-<input type="hidden" name="Id_Usuario"  require value="<?=$_SESSION['user']->getId_Usuario() ?>">
 
 <div class="form-row mb-2" >
 <div class="form-group col-md-6" >
   <label  class=" text-dark font-weight-bold" for="Fecha_Cita"> Fecha: </label>
  
-    <input id="fecha" onMouseOut='fuera()' class="form-control" type="date"  name="Fecha_Cita" value="<?=$cita->getFecha_Cita() ?>" >
+  <input id="fecha" onMouseOut='fuera()' class="form-control" type="date"  name="Fecha_Cita" value="<?=$cita->getFecha_Cita() ?>" >
     <div id="info2"></div>
     <script src='Views/js/evitaWeekends.js'></script>
-</div>
+  </div>
 
  <div  class="form-group col-md-6" >
 <label  class=" text-dark font-weight-bold" for="Hora_Cita"> Hora: </label>
-
 <input id="hora" class="form-control" type="time" require name="Hora_Cita"  min='06:00:00' max='18:00:00' value="<?=$cita->getHora_Cita() ?>" >
 
 <script src='Views/js/hora.js'></script>
 </div>
 </div>
 <div id="info"></div>
-
 
 <div class="form-row mb-2">
 <div class="form-group col-md-6">
@@ -119,17 +96,27 @@ for(i=1;i<=diferencia_dias;i++){
 </div>
 </div>
 <div>
-                       
-                       <input class="btn btn-primary width-100" type="submit" onclick='return enviarFormulario();' id="login" class="btn solid" />
+<button  class="btn btn-primary width-100"  onclick='return enviarFormulario();' id="bt1"  class="btn solid" >enviar</button>
+                      
                        <div  class="error" id="error"></div>
-                       <script src='Views/js/agendar.js'></script>
+
+
+
                        </div>
 </form>
+</td>
+<td> 
+
+
+</td>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
+
+                       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                       <script src="Views/js/sweetAlert.js"></script>
 </body>
 </html>

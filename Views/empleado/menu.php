@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- esto va en cada tabla-->
 <link rel="stylesheet" href="Views/css/tablas.css">
+
+<link rel="stylesheet" href="Views/css/perfil.css">
 <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
 <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
 <!-- esto va en cada tabla-->
@@ -17,9 +19,8 @@
     </head>
     <body>
 
-<h1>Mis citas </h1>
 
-<div class= "container-fluid">
+    <div class= "container-fluid">
 <br>
 
 <ol class= "breadcrumb">
@@ -27,7 +28,6 @@
     <li><a href="#">Menu </a></li> 
 </ol>   
 </div>
-
 
 <br>
 <div class="container"> 

@@ -49,7 +49,7 @@
             <td>Nombre Sucursal</td>
             <td>Nombre Examen</td>
             <td>Nombre Usuario</td>
-            <td></td>
+            <td>Apellido</td>
             <td>Cédula</td>
             <td>Subir resultado</td>
         </tr>    
@@ -66,7 +66,7 @@
         <td> <?= $usuario->getById($cita->getId_Usuario())->getNombres_Usuario() ?> </td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getApellidos_Usuario() ?> </td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getDocumento_Identificacion() ?> </td>
-        <td> <a href="?c=citas&a=subirResult&Id_Usuario=<?= $cita->getId_Usuario() ?>&Id_Cita=<?= $cita->getId_Cita() ?>" class= "btn btn-danger">Subir <br>Resultados</a> </td>        
+        <td>  <form id="cancelar" > <a href="?c=citas&a=subirResult&Id_Usuario=<?= $cita->getId_Usuario() ?>&Id_Cita=<?= $cita->getId_Cita() ?>"  onclick='return cancelar();'  id="cancelar" type="submit">Subir <br>Resultados</a></form> </td>        
                         
         </a>
         
@@ -83,6 +83,8 @@
 </table>
 
     </div>
+    <script src='Views/js/cancelar.js'></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src='Views/js/dataTable.js'></script>
     </body>
     </html>

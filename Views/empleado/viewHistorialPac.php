@@ -56,10 +56,7 @@
         <td> <?= $usuario->getById($cita->getId_Usuario())->getApellidos_Usuario() ?></td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getDocumento_Identificacion() ?></td>
         <td> <?= $sucursal->getById($cita->getId_Sucursal())->getNombre_Sucursal() ?></td>
-       <td>
 
-        
-    </td>
     </tr>
     <?php endforeach; ?>
     </tbody>

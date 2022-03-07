@@ -44,7 +44,7 @@
                     <a href="?c=usuario&a=login&Start=1" class="btn btn-primary width-100" ><span class="d-none d-md-inline">Inicia</span> Sesión</a>
 
 
-                    <form action="?c=usuario&a=save" id="registro" method="post" >
+                    <form action="?c=usuario&a=save" id="registro" class="registro" method="post" >
                         <div class="form-row mb-2">
                             <div class="form-group col-md-6">
                                 <label class=" text-dark font-weight-bold">Nombre <span class="text-danger">*</span></label>
@@ -238,19 +238,8 @@
                         </div>
                     </form>
 <br>
-                    <button id="open">terminos y condiciones</button>
+<input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2"  require >Acepto terminos y condiciones.</label>
 
-<div id="modal_container" class="fondo">
-  <div class="ventana">
-    <h1>DAILYLAB </h1>
-    <p  class=" text-dark font-weight-bold" >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nisi dolor eveniet consequatur. Voluptate quasi nostrum voluptates ducimus vitae aliquam et inventore, accusamus repellendus. Doloremque quisquam consequuntur deserunt corrupti provident? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores cum beatae consectetur et laboriosam modi in reiciendis laborum voluptatibus, doloribus provident accusamus officia architecto odio nam dolorum nesciunt eius explicabo!
-                    </p>
-    <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2"  require >Acepto terminos y condiciones.</label>
-    <button id="close">Aceptar</button>
-  </div>
-</div>
-<script src='Views/js/modal.js'></script>
 
                     <br>
                     <small class="d-inline-block text-dark mt-7">Dailylab| Colombia | © 2022 </small>
@@ -261,6 +250,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                       <script src="Views/js/sweetAlert.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

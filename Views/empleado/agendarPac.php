@@ -13,7 +13,6 @@
 
 <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
 <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
-
 <!-- esto va en cada tabla-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <body>
@@ -42,7 +41,7 @@
                     <div class="form-group">
 
                     </div>
-<form action= "?c=citas&a=agendarPac&Id_Usuario=<?= $usuario->getId_Usuario() ?>" method ="post">
+<form action= "?c=citas&a=agendarPac&Id_Usuario=<?= $usuario->getId_Usuario() ?>" method ="post" id="agendar">
 
 <input type="hidden" name="Id_Usuario" value="<?=$usuario->getId_Usuario() ?>">
 
@@ -77,48 +76,12 @@
 
 
 <label class=" text-dark font-weight-bold" for="Fecha_Cita"> Fecha: </label>
+
 <input class="form-control" id="fecha" onMouseOut='fuera()' type="date" name="Fecha_Cita" >
 <div id="info2"></div>
 <script src='Views/js/evitaWeekends.js'></script>
 
-<script>
 
-
-// const picker = document.getElementById("fecha");
-// picker.addEventListener("input", function(e){
-//   var day = new Date(this.value).getUTCDay();
-//   if([6,0].includes(day)){
-//     e.preventDefault();
-//     this.value = "";
-//     alert("Weekends not allowed");
-//   }
-// });
-
-// function fuera(){
-    // cita= document.getElementById('fecha').value;
-    
-
-    // fecha = new Date('2022 02 25');
-    // const hoy = fecha.getDay();
-    // alert(cita);
-    // alert(hoy);
-
-//     const hoy1 = fecha.getDate();
-//     const hoy = fecha.getDay();
-//     //const cita = fecha.getDay();
-//     alert('hoy es tal fecha'+hoy1);
-//     alert('hoy es tal dia'+hoy);//Devuelve el día de la semana: OJO: 0 Domingo, 6 Sábado.
-//  if (hoy == 6 /*|| (hoy == 0)*/ ){
-//     alert('hoy es sabado ');
-//  }else if(hoy == 6) {
-//     alert('hoy es  domingo');
-//  }else {
-//      alert('pase')
-//  }
-//     // }
-//}
-
-</script>
 </div>
 
 <div  class="form-group col-md-6" >
@@ -175,6 +138,7 @@
 </div>
 </div>
 </section>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                      
 </body>
 </html>
-
