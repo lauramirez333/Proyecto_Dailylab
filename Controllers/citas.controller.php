@@ -436,6 +436,7 @@ console.log('elige una fecha mayor al dia de hoy');</script>";
       return true;*/
     $cita->updateState();
     //header("Refresh:20");
+    header('location:?c=citas&a=index2');
     header("?c=citas&a=index2");
   //}
   }
@@ -445,7 +446,8 @@ console.log('elige una fecha mayor al dia de hoy');</script>";
     $cita = $this->model->getById($_GET['Id_Cita']);
     $cita->asistido();
     // header("Refresh:10");
-    header("?c=citas&a=TomasEnf");
+    header('location:?c=citas&a=TomasEnf');
+  
   }
   function noAsistido()
   {
@@ -453,6 +455,7 @@ console.log('elige una fecha mayor al dia de hoy');</script>";
     $cita = $this->model->getById($_GET['Id_Cita']);
     $cita->noAsistido();
     //header("Refresh"); 
-    header("?c=citas&a=TomasEnf");
+    header('location:?c=citas&a=TomasEnf');
+  
   }
 }

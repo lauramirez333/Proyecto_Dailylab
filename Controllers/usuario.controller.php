@@ -48,8 +48,8 @@ function recuPass()// aparentemente todo esta bien pero no envia nada
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true; 
-            $mail->Username   = 'laura2003ramirez@gmail.com';                     //SMTP username
-            $mail->Password   = 'shekinah.10';                               //SMTP password
+            $mail->Username   = 'dailylabt@gmail.com';                     //SMTP username
+            $mail->Password   = '2184573Dailylab';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
@@ -96,7 +96,7 @@ function recuPass()// aparentemente todo esta bien pero no envia nada
            
            // HTML email ends here
                 //Recipients
-                $mail->setFrom('laura2003ramirez@gmail.com', 'Mailer');
+                $mail->setFrom('dailylabt@gmail.com', 'Mailer');
                 $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
                 $mail->isHTML(true);
                 $mail->Subject = 'Restablecimiento de contraseña';
@@ -108,7 +108,7 @@ function recuPass()// aparentemente todo esta bien pero no envia nada
                 $mail->send();
             echo 'Message has been sent';
             echo "<script>alert('Revisa tu correo para encontrar la nueva contraseña');</script>";
-           
+            header("location:?c=usuario&a=login"); 
         }catch(Exception $exception){
             echo 'algo salio mal', $exception->getMessage();
             echo "<script>alert('No se pudo mandar correo');</script>";
@@ -185,8 +185,8 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true; 
-        $mail->Username   = 'laura2003ramirez@gmail.com';                     //SMTP username
-        $mail->Password   = 'shekinah.10';                               //SMTP password
+        $mail->Username   = 'dailylabt@gmail.com';                     //SMTP username
+        $mail->Password   = '2184573Dailylab';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
@@ -235,7 +235,7 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
        // HTML email ends here
     
             //Recipients
-            $mail->setFrom('laura2003ramirez@gmail.com', 'Mailer');
+            $mail->setFrom('dailylabt@gmail.com', 'Mailer');
             $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
             $mail->isHTML(true);
             $mail->Subject = 'Bienvenido a dailylab';
@@ -244,7 +244,7 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
              
             $mail->send();
         echo 'Message has been sent';
-    
+        header("location:?c=usuario&a=login");
     }catch(Exception $exception){
         echo 'algo salio mal', $exception->getMessage();
     
