@@ -47,10 +47,8 @@
         <i class="bi bi-phone"></i> +numero
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="#" class="twitter"><i class="bi bi-Gmail"></i></a>
+    
       </div>
     </div>
   </div>
@@ -71,23 +69,7 @@
           <li><a class="nav-link scrollto" href="#services">Funcionalidades</a></li>
          
           
-          <li class="dropdown"><a href="#"><span>desplegable</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
+
           <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -118,12 +100,13 @@
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
               <center>
-              <h3>Modulos</h3>
+              <h3>Módulos</h3>
               </center>
 
    <br>
               <p>
-               
+               Conoce los tres modulos que son el pilar base para el buen funcionamiento del software.
+
               </p>
               <div class="text-center">
                
@@ -153,7 +136,7 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class='bx bxs-calendar-minus' ></i>
                     <h4>Gestión de citas</h4>
-                    <p>Pide tus citas sin salir de casa, sin demoras y en tu disponibilidad de tiempo</p>
+                    <p>agenda, canelacion o confirmacion de citas sin salir de casa, sin demoras, facilitando el flujo de atención</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
@@ -183,18 +166,9 @@
         <br>
           <h2>¿Qué es Dailylab?</h2>
           <br>
-          <p>Dailylab es un software de agendamiento de citas enfocado en el área de la salud como los laboratorios clínicos, eps, entre otros. En él podrás encontrar diferentes módulos que te ayudaran en el proceso de gestión de tiempo de tu empresa, organizando tu agenda.</p>
+          <p>Dailylab es un software de agendamiento de citas enfocado en el área de la salud como los laboratorios clínicos, eps, entre otros. En él podrás encontrar diferentes módulos que te ayudaran en el proceso de gestión de tiempo de tu empresa, organizando tu agenda. Su objetivo es evoluciona e innovar a la vez que el mundo de la tecnologia y el area de la salud lo hacen, se puede hacer un rastreo de rendimiento con el que se busca una constante planeacion y desarrollo de soluciones que faciliten la gestion de las funciones de los laboratorios clinicos.</p>
         </div>
 
-        <div class="row gy-4">
-          <div class="col-lg-3">
-            <ul class="nav nav-tabs flex-column">
-              <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1"></a>
-              </li>
-
-            </ul>
-          </div>
           <div class="col-lg-9">
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
@@ -206,7 +180,7 @@
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
   
-                    <img src="Views/multimedia/departments-1.jpg" alt=""  width="400" height="400" class="imagen">
+                  
                    
                   </div>
                 </div>
@@ -266,6 +240,78 @@
       </div>
     </section><!-- End Departments Section -->
 
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Funcionalidades</h2>
+          <p>Conoce lo que vas a encontrar en nuestro software de agendamiento de citas.</p>
+        </div>
+
+        <div class="row">
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4><a href="">Analiza</a></h4>
+              <p>Análisis personaliado a cada muestra que se toma dentro del laboratorio, asociado a cada una de las citas agendadas mediante este.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-hospital-user"></i></div>
+              <h4><a href="">Informes</a></h4>
+              <p>Informe de historiales y  citas de forma muy intutiva, facil y sin demoras.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-login-circle-line"></i></div>
+              <h4><a href="">Registra</a></h4>
+              <p>Registro de  datos personales desde el modulo de empleados como el de pacientes, con funcionalidad 24/7 para los usuarios, mejorando la expriencia de estos.  </p>
+            </div>
+          </div>
+
+          
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-questionnaire-line"></i></div>
+              <h4><a href="">Consulta</a></h4>
+              <p>Consulta y descarga de resultados online. Elimina la necesidad de un proceso presencial, impresion de documentos desde el laboratorio o demoras del sistema.  </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-check-double-line"></i></div>
+              <h4><a href="">Facilita</a></h4>
+              <p>Facilita la gestion de tu negocio, muchas funcionalidades utiles para un buen funcionamiento en un solo sistema.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-error-warning-fill"></i></div>
+              <h4><a href="">Reportes</a></h4>
+              <p>  Reporte de fallas de los analisis de muestra  en modulo de enfermeria para lelvar un correcto control </p>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container-fluid">
@@ -282,25 +328,31 @@
             <div class="icon-box">
               <div class="icon"><i class='bx bx-slideshow' ></i></div>
               <h4 class="title"><a href="">Virtualidad</a></h4>
-              <p class="description">Con nuestro software de agendamientos puedes sacar tus citas desde donde estes y en el momento que mas te convenga, sin necesidad de desplazarte o buscar un espacio en tu agenda para hacerlo</p>
+              <p class="description">Con el software de agendamiento Dailylab se pueden gestionar citas sin necesidad de un ambiente presencial, con amplia disponibilidad de tiempos, lo que permite una gestion de trabajo no limitada a un espacio en particular. </p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class='bx bx-trending-up' ></i></div>
               <h4 class="title"><a href="">Agilidad</a></h4>
-              <p class="description">Evita las largas colas, demora del la prestación del servicio, errores de digitacion o sistemas demorados. Agenda tus citas en menos de 5 minutos con dailylab.</p>
+              <p class="description">Evita las largas filas, demora del la prestación del servicio, errores de digitacion o sistemas demorados. Agendamiento de citas en menos de 5 minutos que permiten una correcta y rapida visualizacion de fechas disponibles.</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class='bx bxs-calendar'></i></div>
               <h4 class="title"><a href="">Facilidad de agendamiento</a></h4>
-              <p class="description">Dailylab es el software mas intuitivo y facil de manejar que puedas encontrar, incluye un manual de usuario muy corto  sencilo que puedes ver en caso de tener dudas.</p>
+              <p class="description">Dailylab es el software mas intuitivo y facil de manejar que se puede encontrar en el mercado.Este permite un facil flujo de los procesos: agendamientos faciles y rapido, consultas. Todo esto se ve traducido tambien en un correcto funcionamiento de los procesos internos de la empresa.</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class='bx bx-tachometer'></i></div>
               <h4 class="title"><a href="">Incrementa la productividad</a></h4>
-              <p class="description">Con un sistema de agendamientos optimo, la prestación del servcio es mejor! mas beneficiosa para el lado del usuario como para el lado de la empresa prestadora del servicio.</p>
+              <p class="description">Con un sistema de agendamientos optimo, la prestación del servicio es mejor, permite generar estrategias de mejora! produce beneficios empresa-usuario final, menos carga de trabajo que mejora el desmpeño de las funciones mas importantes.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class='bx bx-tachometer'></i></div>
+              <h4 class="title"><a href="">Fidelizacion</a></h4>
+              <p class="description">Se genera una fidelizacion de los usuarios finales al encontrar un optimo servicio por parte del laboratorio clinico, lo que incrementa la percepcion positiva de este e incrementa las prestaciones de servicio.</p>
             </div>
 
           </div>
@@ -311,56 +363,7 @@
 
    
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Funcionalidades</h2>
-          <p>Conoce lo que vas a encontrar en nuestro software de agendamiento de citas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-heartbeat"></i></div>
-              <h4><a href="">Gestióna</a></h4>
-              <p>Gestión de agendamiento, cancelación y reagendamiento de citas</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-pills"></i></div>
-              <h4><a href="">Analiza</a></h4>
-              <p>Análisis personaliado a cada muestra que se toma dentro del laboratorio, asociado a cada una de las citas agendadas mediante este.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-hospital-user"></i></div>
-              <h4><a href="">Consulta</a></h4>
-              <p>Consulta de historiales, resultados y citas de forma muy intutiva, facil y sin demoras</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-dna"></i></div>
-              <h4><a href="">Facilita</a></h4>
-              <p>Facilita la gestion de tu negocio, muchas funcionalidades utiles para un buen funcionamiento en un solo sistema.</p>
-            </div>
-          </div>
-
-
-
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-
+    
 
     
 
@@ -380,13 +383,11 @@
 
         <div class="section-title">
           <h2>Contáctanos</h2>
-          <p>Conoce nuestras sedes y agenda en la más cercana </p>
+         
         </div>
       </div>
 
-      <div>
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/d/u/0/embed?mid=1w-4lWGobcPVC0rCxOOXJCHhgvorGkXLO&ehbc=2E312F" frameborder="0" allowfullscreen></iframe>
-      </div>
+    
 
       <div class="container">
         <div class="row mt-5">
@@ -458,22 +459,18 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>Dailylab</span></strong>. Todos los derechos reservados
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+         diseñado por <a href="">Dailylab</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
       </div>
     </div>
   </footer><!-- End Footer -->
