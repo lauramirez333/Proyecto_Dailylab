@@ -49,7 +49,7 @@ function recuPass()// aparentemente todo esta bien pero no envia nada
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true; 
             $mail->Username   = 'dailylabt@gmail.com';                     //SMTP username
-            $mail->Password   = '2184573Dailylab';                               //SMTP password
+            $mail->Password   = '2184573.Dailylab';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
@@ -186,7 +186,7 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true; 
         $mail->Username   = 'dailylabt@gmail.com';                     //SMTP username
-        $mail->Password   = '2184573Dailylab';                               //SMTP password
+        $mail->Password   = '2184573.Dailylab';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     

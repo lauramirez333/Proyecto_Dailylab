@@ -114,7 +114,7 @@ class CitasController
   function TomasEnf() // lista de las citas de hoy que ve la enfermera
   {
     $cita = new Cita(); //?
-    $citas = $this->model->list(); //lista de los que les tiene que tomar muestra hoy
+    $citas = $this->model->listEnf(); //lista de los que les tiene que tomar muestra hoy
 
     $sucursal = new Sucursal();
     $usuario = new Usuario(); //
@@ -161,16 +161,18 @@ class CitasController
   function viewHistorial()
   {
     $cita = new Cita();
-    $citas = $this->model->listHistorial();
+    $citas = $this->model->listHistorialEnf();
     $sucursal = new Sucursal();
     $sucursales = $sucursal->list();
     $examen = new Examen();
     $examenes = $examen->list();
     $usuario = new Usuario();
     $usuarios = $usuario->list();
+    $muestra_examen = new Muestra_Examen();
+    $citas = $muestra_examen ->listHistorialEnf();
 
-    require "Views/empleado/header.php";
-    require "Views/empleado/viewHistorial.php";
+    require "Views/enfermero/header.php";
+    require "Views/enfermero/viewHistorial.php";
     // require "Views/footer.php";
   }
 

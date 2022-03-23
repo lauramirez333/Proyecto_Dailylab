@@ -84,6 +84,17 @@ public function insert()
                     }
                         
 }
+
+public function listHistorialEnf()
+{
+    try{
+        $query = $this->connection->prepare("SELECT * FROM muestra_examen");
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+    }catch (Exception $e){
+        die ($e->getMessage());
+    }
+}
 /*
 public function update()
 {
