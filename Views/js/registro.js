@@ -23,12 +23,12 @@ var lower = new RegExp("^(?=.*[a-z])");
 
 var numeros = new RegExp("^(?=.*[0-9])");
 var special = new RegExp("^(?=.*[!@#$&*])");
-var len = new RegExp("^(?=.{13,})");
+var len = new RegExp("^(?=.{8,})");
 
 $("#Contrasena_Usuario").on ("keyup", function(){
     var pass =$("#Contrasena_Usuario").val();
 
-    if(mayus.test(pass)&& special.test(pass)&& numeros.test(pass) && lower.test(pass) && len.test(pass)){
+    if(mayus.test(pass)&& special.test(pass)&& numeros.test(pass) && lower.test(pass)  && len.test(pass) ){
 
         mensaje.style.color ='green';
         $("#mensaje").text("segura");
@@ -193,10 +193,6 @@ swalWithBootstrapButtons.fire({
   
       
 
-
-
-
-  
 
   
 

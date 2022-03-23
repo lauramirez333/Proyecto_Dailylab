@@ -26,15 +26,8 @@
   <link href="Views/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="Views/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="Views/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Medilab - v4.7.1
-  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -44,7 +37,7 @@
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">dailylab@gamil.com</a>
-        <i class="bi bi-phone"></i> +numero
+        <i class="bi bi-phone"></i> +57 525252525
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
         <a href="#" class="twitter"><i class="bi bi-Gmail"></i></a>
@@ -129,7 +122,7 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class='bx bx-test-tube' ></i>
                     <h4>Análisis</h4>
-                    <p>Análisis de tomas de muestra optimas, sin demoras ni errores</p>
+                    <p>analisis de tomas de muestra en tiempos optimos, sistematizado, sin errores, con control de novedades</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
@@ -156,89 +149,122 @@
     </section><!-- End Why Us Section -->
 
 
-    <!-- ======= Departments Section ======= -->
-    <section id="departments" class="departments">
-      <div class="container">
 
-        <div class="section-title">
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+      <div class="container-fluid">
 
-        <br>
-        <br>
-          <h2>¿Qué es Dailylab?</h2>
-          <br>
-          <p>Dailylab es un software de agendamiento de citas enfocado en el área de la salud como los laboratorios clínicos, eps, entre otros. En él podrás encontrar diferentes módulos que te ayudaran en el proceso de gestión de tiempo de tu empresa, organizando tu agenda. Su objetivo es evoluciona e innovar a la vez que el mundo de la tecnologia y el area de la salud lo hacen, se puede hacer un rastreo de rendimiento con el que se busca una constante planeacion y desarrollo de soluciones que faciliten la gestion de las funciones de los laboratorios clinicos.</p>
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 acerca-box d-flex justify-content-center align-items-stretch position-relative">
+    <img src="Views/multimedia/removebg.jpg" width="400" height="600" alt="">
+          </div>
+
+          <div class="col-xl-7   ">
+          <div class="container">
+
+<div class="section-title">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="left" >
+  <div class="col-xl-9 col-lg-8 acerca-box   ">
+           <center>
+            <h2>Acerca de Dailylab</h2>
+            </center>
+            
+
+         
+            
+             
+              <p >Dailylab es un software de agendamiento de citas enfocado en el área de la salud como los laboratorios clínicos, eps, entre otros.
+                 En él podrás encontrar diferentes módulos que te ayudaran en el proceso de gestión de tiempo de tu empresa, organizando tu agenda. Su objetivo es evoluciona e innovar a la vez que el mundo de la tecnologia y el area de la salud lo hacen, se puede hacer un rastreo de rendimiento con el que se busca una constante planeacion y desarrollo de soluciones que faciliten la gestion de las funciones de los laboratorios clinicos. </p>
+       
+                 </div>
+</div>
+
+  <div class="col-lg-9">
+    <div class="tab-content">
+      <div class="tab-pane active show" id="tab-1">
+        <div class="row gy-4">
+          <div class="col-lg-8 details order-2 order-lg-1">
+            <h3></h3>
+            <p class="fst-italic"></p>
+            <p></p>
+          </div>
+          <div class="col-lg-4 text-center order-1 order-lg-2">
+
+          
+           
+          </div>
         </div>
+      </div>
+      <div class="tab-pane" id="tab-2">
+        <div class="row gy-4">
+          <div class="col-lg-8 details order-2 order-lg-1">
+            <h3>Glucosa</h3>
+            <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+            <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+          </div>
+          <div class="col-lg-4 text-center order-1 order-lg-2">
+            <img src="Views/multimedia/departments-2.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-3">
+        <div class="row gy-4">
+          <div class="col-lg-8 details order-2 order-lg-1">
+            <h3>Nivel de pH</h3>
+            <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
+            <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+          </div>
+          <div class="col-lg-4 text-center order-1 order-lg-2">
+            <img src="Views/multimedia/departments-3.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-4">
+        <div class="row gy-4">
+          <div class="col-lg-8 details order-2 order-lg-1">
+            <h3>Perfil bioquímico</h3>
+            <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+            <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+          </div>
+          <div class="col-lg-4 text-center order-1 order-lg-2">
+            <img src="Views/multimedia/departments-4.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-5">
+        <div class="row gy-4">
+          <div class="col-lg-8 details order-2 order-lg-1">
+            <h3>Perfil lipídico</h3>
+            <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+            <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+          </div>
+          <div class="col-lg-4 text-center order-1 order-lg-2">
+            <img src="Views/multimedia/departments-5.jpg" alt=""  class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="col-lg-9">
-            <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3></h3>
-                    <p class="fst-italic"></p>
-                    <p></p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-  
-                  
-                   
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-2">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Glucosa</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Views/multimedia/departments-2.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Nivel de pH</h3>
-                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Views/multimedia/departments-3.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Perfil bioquímico</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Views/multimedia/departments-4.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-5">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Perfil lipídico</h3>
-                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Views/multimedia/departments-5.jpg" alt=""  class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
+</div>
+
           </div>
         </div>
 
       </div>
-    </section><!-- End Departments Section -->
+    </section><!-- End About Section -->
+
+
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -264,11 +290,11 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-hospital-user"></i></div>
               <h4><a href="">Informes</a></h4>
-              <p>Informe de historiales y  citas de forma muy intutiva, facil y sin demoras.</p>
+              <p>Informe de historiales y  citas de forma muy intutiva, Informe de historial de todas las citas gestionadas (virtual y presencialmente) por paciente, fecha o examen. </p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="ri-login-circle-line"></i></div>
               <h4><a href="">Registra</a></h4>
@@ -289,7 +315,7 @@
             <div class="icon-box">
               <div class="icon"><i class="ri-check-double-line"></i></div>
               <h4><a href="">Facilita</a></h4>
-              <p>Facilita la gestion de tu negocio, muchas funcionalidades utiles para un buen funcionamiento en un solo sistema.</p>
+              <p>Facilita la gestion de tu negocio, genera informacion en tiempo real muchas funcionalidades utiles para un buen funcionamiento en un solo sistema.</p>
             </div>
           </div>
 
@@ -297,7 +323,7 @@
             <div class="icon-box">
               <div class="icon"><i class="ri-error-warning-fill"></i></div>
               <h4><a href="">Reportes</a></h4>
-              <p>  Reporte de fallas de los analisis de muestra  en modulo de enfermeria para lelvar un correcto control </p>
+              <p>  Reporte de fallas de los analisis de muestra  en modulo de enfermeria para lelvar un correcto control y notificación de las novedades </p>
             </div>
           </div>
 
@@ -323,7 +349,7 @@
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h3>Ventajas</h3>
-<br>
+                 <br>
 
             <div class="icon-box">
               <div class="icon"><i class='bx bx-slideshow' ></i></div>
@@ -361,23 +387,7 @@
       </div>
     </section><!-- End About Section -->
 
-   
-
-    
-
-    
-
-    
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-   
-    
-
-
-    <!-- ======= Gallery Section ======= -->
-    
-
-    <!-- ======= Contact Section ======= -->
+  
     <section id="contact" class="contact">
       <div class="container">
 
@@ -397,19 +407,19 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Ubicación:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>Bogotá D.C</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>dailylabteam@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>LLamanos:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>+57 5589 55488 55</p>
               </div>
 
             </div>
@@ -446,26 +456,27 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section><
 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
+  </main>
   <footer id="footer">
 
 
 
-    <div class="container d-md-flex py-4">
+    <div class="container  py-4">
 
-      <div class="me-md-auto text-center text-md-start">
+      <div class="  ">
+  
+     <div class="logofooter">
+<center>
+     <img  src="Views/multimedia/logo2.png" alt="" width="120" height="55" >
+     </center>
+     </div>
         <div class="copyright">
           &copy; Copyright <strong><span>Dailylab</span></strong>. Todos los derechos reservados
+          
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
          diseñado por <a href="">Dailylab</a>
         </div>
       </div>
@@ -473,7 +484,7 @@
 
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
 
 </body>

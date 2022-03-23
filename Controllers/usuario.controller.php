@@ -389,7 +389,7 @@ function registroPac()
 
 function login()
 {
-    require "Views/usuario/login.php";
+    require "Views/usuario/registro.php";
 }
 
 function validate()
