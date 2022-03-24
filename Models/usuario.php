@@ -24,11 +24,24 @@ class Usuario
 public function list()
 {
     try{
-        $query = $this->connection->prepare("SELECT * FROM usuario");
+        $query = $this->connection->prepare("SELECT * FROM usuario where Id_Rol=3");
         $query->execute();
        return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
     }catch (Exception $e){
         die ($e->getMessage());
+    }
+}
+
+public function buscarCorreo($Id_Usuario){
+    try{
+    $query= "SELECT Correo_Electronico FROM usuario where Id_Usuario=?;";
+    $query= $this-> connection-> prepare($query);
+    $query->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
+    $query->execute(array($Id_Usuario));
+    return $query->fetch();
+
+}catch(Exception $e){
+    die($e->getMessage());
     }
 }
 

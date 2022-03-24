@@ -297,6 +297,116 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
     }
     
     }
+
+    function envioError($Correo_Electronico,$error){
+    
+        //$Correo_Electronico= $_POST['Correo_Electronico'];
+        $mail = new PHPMailer(true);
+        
+        try {
+        
+            $mail->SMTPDebug=0; 
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true; 
+            $mail->Username   = 'dailylabt@gmail.com';                     //SMTP username
+            $mail->Password   = '2184573.Dailylab';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        
+            
+        
+            $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de registrarte en www.dailylab.com";      
+           
+           
+           // HTML email starts here
+           
+           $message  = "<html><body>";
+           
+           $message .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
+           
+           $message .= "<tr><td>";
+           
+           $message .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
+            
+           $message .= "<thead>
+              <tr height='80'>
+               <th colspan='4' style='background-color:#f5f5f5; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#333; font-size:34px;' >Bienvenido a Dailylab</th>
+              </tr>
+              </thead>";
+            
+           $message .= "<tbody>
+        
+              <tr>
+               <td colspan='4' style='padding:15px;'>
+                <p style='font-size:20px;'>Hola' ".$Correo_Electronico.",</p>
+                <hr />
+                <p style='font-size:25px;'>Estamos muy felices de que ahora seas parte de dailylab. A continuacion, te recordamos tu contraseña: ".$error." no olvides guardarla en un lugar seguro y no compartirla con nadie</p>
+                <img src='https://4.bp.blogspot.com/-rt_1MYMOzTs/VrXIUlYgaqI/AAAAAAAAAaI/c0zaPtl060I/s1600/Image-Upload-Insert-Update-Delete-PHP-MySQL.png' alt='Sending HTML eMail using PHPMailer in PHP' title='Sending HTML eMail using PHPMailer in PHP' style='height:auto; width:100%; max-width:100%;' />
+                <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
+               </td>
+              </tr>
+              
+              </tbody>";
+            
+           $message .= "</table>";
+           
+           $message .= "</td></tr>";
+           $message .= "</table>";
+           
+           $message .= "</body></html>";
+           
+           // HTML email ends here
+        
+                //Recipients
+                $mail->setFrom('dailylabt@gmail.com', 'Mailer');
+                $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
+                $mail->isHTML(true);
+                $mail->Subject = 'Bienvenido a dailylab';
+                $mail->Body    = $message;
+                $mail->AltBody    = $message;
+                 
+                $mail->send();
+            echo 'Message has been sent';
+            header("location:?c=usuario&a=login");
+        }catch(Exception $exception){
+            echo 'algo salio mal', $exception->getMessage();
+        
+        }
+        
+        }
+    
+
+    function reportarError()
+    {
+        $usuario=New Usuario(); 
+        $error= $_POST['error'];
+
+        $Id_Usuario= $_GET['Id_Usuario'];
+        $Correo_Electronico= $usuario->buscarCorreo($Id_Usuario);
+
+        if($Correo_Electronico){
+        $this->envioError($Correo_Electronico,$error);
+        }
+
+        $this->errorCambioEstado($Id_Usuario);
+
+      require "Views/Enfermero/header.php";
+      require "Views/Enfermero/reportarError.php";
+    }
+  
+    function errorCambioEstado($Id_Usuario)
+    {
+        $muestra_examen= New Muestra_Examen();
+      $muestra_examen -> changeState($Id_Usuario);
+  
+     
+      //header("Refresh:20");
+      require "Views/Enfermero/header.php";
+      require "Views/Enfermero/subirResult.php";
+    //}
+    }
+
     function save()//aqui se insertan los datos del registro
 {
     $Correo_Electronico= $_POST['Correo_Electronico'];
@@ -411,9 +521,23 @@ function registro()
         $usuario = $usuario->getById($_GET['Id_Usuario']); 
     }
     
-    require "Views/usuario/registro.php";
+    require "Views/usuario/login.php";
   //  require "Views/usuario/registroPrueba.php";
 
+}
+function login()
+{
+    $usuario = new Usuario();
+    $rol = new Rol();
+    $RH = new RH();
+    $barrio=new Barrio();
+    $usuarios=$usuario->list();
+    $RH=$RH->list();
+    $roles=$rol->list();
+    if(isset($_GET['Id_Usuario'])){
+        $usuario = $usuario->getById($_GET['Id_Usuario']); 
+    }
+    require "Views/usuario/registro.php";
 }
 
 function registroPac()
@@ -435,10 +559,7 @@ function registroPac()
 
 }
 
-function login()
-{
-    require "Views/usuario/registro.php";
-}
+
 
 function validate()
 {

@@ -11,7 +11,7 @@
     <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="?c=citas&a=TomasEnf">Inicio</a></li>
-        <li class="breadcrumb-item active"><a href="c=citas&a=resulEnf">Resultados</a>Resultados</li>
+        <li class="breadcrumb-item active"><a href="c=citas&a=resulEnf">Resultados</a></li>
         <li class="breadcrumb-item active">Subir resultados</li>
         
     </ol>
@@ -96,12 +96,25 @@
                 <i class="fas fa-user"></i>
                 <input name="URL_Resultado" type="link" placeholder="Usuario" />
             </div>
-            <button type="submit"> Guardar</button>
             <br>
-            <a id="sign-up-btn" href="?c=usuario&a=recuperarPass">
-                <br> Reportar <br>Problema
-            </a>
-
+            <button type="submit"  class= "btn btn-primary "> Guardar</button>
+            <br>
+            <br>
+            
+  <div class="card-header">
+    En caso de tener algún problema con la muestra, por favor llena este espacio con la descripcion del error.<br>
+     Esta sera notificada al paciente.Si es necesario tomar la muestra de nuevo por favor especificar. 
+  </div>
+  <form action="?c=usuario&a=reportarError" method="post">
+  <div class="card-body">
+    <textarea class="card-title" rows="10" cols="60" name="error"></textarea>
+    
+    <input class= "btn btn-primary btn-block" type="submit" value="Reportar error" />
+                      
+    
+    </form>
+  </div>
+</div>
 
         </form>
     </div>

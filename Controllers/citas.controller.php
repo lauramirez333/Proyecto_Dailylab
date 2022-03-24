@@ -27,11 +27,11 @@ class CitasController
     // require "Views/footer.php";
   }
 
+ 
+
   function resulEnf()
   {
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1); //con estas 2 lineas se supone que reporta los errores o warnings que encuentre y avisa, hay que ponerlas al inicio de los codigos 
-
+  
     $cita = new Cita(); //?
     $cital = $this->model->listAnalisis(); //lista de los que les tiene que subir resultado
 

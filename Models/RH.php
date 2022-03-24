@@ -76,7 +76,7 @@ class RH
             $query= "DELETE FROM RH WHERE Id_RH=?;";
             $this-> connection->prepare($query)
                             ->execute(array($this->Id_RH));
-        }catch(Excepcion $e){
+        }catch(Exception $e){
             die($e->getMessage());
 
         }

@@ -40,20 +40,29 @@
                     <input  name="Contrasena_Usuario" id="Contrasena_Usuario3" type="password" placeholder="contrasena" maxlength="11" oninput="maxlengthNumber(this);" class="form-control" required/>
                     
                   </div>
-                  
+             <br>     
    
 
-  <div class="icon"> 
-  <div class="form-row">
-  <div class="col">
-    <center>
-<input type="checkbox" onclick="mostrar3()" value="ver" >
+ 
 
-<label for="">Mostrar contraseña</label>
-</center>
-</div>
-</div>
-    </div>
+    <style>
+       
+          
+       input[type=checkbox] {
+           vertical-align: middle;
+           position: relative;
+           bottom: 1px;
+       }
+         
+       label {
+           display: block;
+       }
+   </style>
+   <center>
+ <div>
+       <label><input class ="" type="checkbox"  id="exampleCheck1"  onclick="mostrar3()" value="ver"> Ver contraseña</label>
+   </div>
+   </center>
 
               
               
@@ -164,20 +173,18 @@
         
        <label for="">RH</label>
     
-       <select   class="form-control" name="Id_RH" id="Id_RH" class="selectpicker show-tick" p>
-                                <option  class="font-weight-bold" >A+ </option>
-                                <option  class="font-weight-bold" >A- </option>
-                                <option  class="font-weight-bold" >B+ </option>
-                                <option  class="font-weight-bold" >B- </option>
-                                <option  class="font-weight-bold" >O- </option>
-                                <option  class="font-weight-bold" >O+ </option>
-                                <option  class="font-weight-bold" >AB+ </option>
-                                <option  class="font-weight-bold" >AB-</option>
-                               
-                              </select>
+
                            
                             
-                       
+                              <select   class="form-control" name="Id_RH" id="Id_RH" class="selectpicker show-tick" p>
+                                <option  class="font-weight-bold" > </option>
+                                <?php foreach ($RH as $RH) : ?>
+                                  <option value="<?= $RH->getId_RH() ?>" <?= $RH->getId_RH() == $usuario->getId_RH() ?
+                                                                          'selected' : '' ?>>
+                                    <?= $RH->getTipo_RH() ?> </option>
+                                <?php endforeach; ?>
+                              </select>
+
        
      </div>
      <div class="col">
@@ -240,9 +247,24 @@
   <div class="icon"  > 
  
   
-  <input type="button" class="btnenviar" id="exampleCheck1" onclick="mostrar2()" value="ver contraseña"> 
- 
+  <style>
+       
+          
+        input[type=checkbox] {
+            vertical-align: middle;
+            position: relative;
+            bottom: 1px;
+        }
+          
+        label {
+            display: block;
+        }
+    </style>
+  <div>
+        <label><input class ="" type="checkbox"  id="exampleCheck1" onclick="mostrar2()" value="ver contraseña"> Ver contraseña</label>
+    </div>
 
+    
 
   
   
@@ -336,24 +358,19 @@ tipo.type ='password';
       <div class="panels-containers">
         <div class="panel left-panel">
           <div class="content">
-            <h3>¿ No tienes cuenta? ?</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
-            </p>
+           
+            <h3>¿No tienes cuenta?</h3>
+  <br>
             <button class="btn transparent" id="sign-up-btn">
-              Registrate
+              Registrar
             </button>
           </div>
           <img src="Views/multimedia/logo.png" class="image" alt="" />
         </div>
         <div class="panel right-panel">
           <div class="content">
-            <h3>¿ Ya tienes una cuenta ?</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
-            </p>
+            <h3>¿Ya tienes una cuenta?</h3>
+           
             <button class="btn transparent" id="sign-in-btn">
               Ingresa
             </button>

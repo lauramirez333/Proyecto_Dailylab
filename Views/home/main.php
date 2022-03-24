@@ -79,7 +79,7 @@
     <div class="container">
       <h1>Bienvenido a Dailylab</h1>
       <h2>El software de agendamiento de citas mas eficiente del mercado </h2>
-      <a href="#about" class="btn-get-started scrollto">Iingresa</a>
+      <a href="?c=usuario&a=login&Start=1" class="btn-get-started scrollto">Iingresa</a>
     </div>
   </section><!-- End Hero -->
 

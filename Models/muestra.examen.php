@@ -131,6 +131,20 @@ public function getById($Id_Examen){
     die($e->getMessage());
     }
 }
+
+public function changeState($Id_Usuario)//para cancelar
+{
+    try{
+        $query="UPDATE muestra_examen SET Estado =2 WHERE Id_Usuario = ?;";
+        $this->connection->prepare($query)
+        ->execute(array(
+            $this->Id_Usuario
+        ));
+     return $this;
+    }catch(Exception $e){
+        die($e->getMessage());
+    }
+}
 public function delete(){
     try{
         $query= "DELETE FROM muestra_examen WHERE Id_Empleado=?;";
