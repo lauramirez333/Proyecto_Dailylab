@@ -165,7 +165,7 @@ gg
             </li>
 
             <li id="historial">
-            <a href="?c=citas&a=viewHistRolPac&&Id_Usuario=<?= $usuario->getId_Usuario() ?>">
+            <a href="?c=citas&a=viewHistRolPac&&Id_Usuario=<?= $_SESSION['user']->getId_Usuario() ?>">
         
                     <span class="icon"><i class='far fa-clock' ></i></span>
                     <span class="item:active">historial general</span>

@@ -1,5 +1,4 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -46,6 +45,10 @@
             <td>URL_Resultado</td>
             <td>Estado</td>
             <td>Id_Usuario</td>
+            <td>Examen</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Documento de identificacion</td>
             <td> </td>
 
 
@@ -56,7 +59,7 @@
         <tr>
         <td> <?= $cita->getId_Muestra() ?> </td>
         <td> <?= $cita->getId_Examen() ?></td>
-        <td> <?= $cita->getURL_Resultado() ?></td>
+        <td><a href="<?= $cita->getURL_Resultado() ?>" target="_blank" ><?= $cita->getURL_Resultado() ?> </a> </td>
         <td> <?= $cita->getEstado() ?></td>
         <td> <?= $cita->getId_Usuario() ?></td>
         
@@ -64,7 +67,7 @@
         <td> <?= $usuario->getById($cita->getId_Usuario())->getNombres_Usuario() ?></td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getApellidos_Usuario() ?></td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getDocumento_Identificacion() ?></td>
-        <td> <?= $sucursal->getById($cita->getId_Sucursal())->getNombre_Sucursal() ?></td>
+
     </tr>
     <?php endforeach; ?>
 </tbody>

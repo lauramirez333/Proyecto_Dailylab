@@ -43,7 +43,7 @@ class Cita
     public function listEnf()
     {
         try{
-            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita = NOW() AND Estado_Cita=1;");//con esto solo mostramos las citas que no estan vencidas
+            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita = CURDATE() AND Estado_Cita=1;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute();
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
         }catch (Exception $e){

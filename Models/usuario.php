@@ -43,6 +43,28 @@ public function updatePass($passAlea,$Correo_Electronico){
     }
 }
 
+public function editarPerfil($Correo_Electronico,$Telefono_Usuario,$Nombres_Usuario,$Apellidos_Usuario,$Id_Usuario){
+    try{
+        $query = $this->connection->prepare("UPDATE usuario
+        SET Correo_Electronico=?,Telefono_Usuario=?,Nombres_Usuario=?,Apellidos_Usuario=? WHERE Id_Usuario=?");
+        $query->execute(array($Correo_Electronico,$Telefono_Usuario,$Nombres_Usuario,$Apellidos_Usuario,$Id_Usuario));
+       return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+    }catch (Exception $e){
+        die ($e->getMessage());
+    }
+}
+
+public function editarPass($Contrasena_Usuario,$Id_Usuario){
+    try{
+        $query = $this->connection->prepare("UPDATE usuario
+        SET Contrasena_Usuario=? WHERE Id_Usuario=?");
+        $query->execute(array($Contrasena_Usuario,$Id_Usuario));
+       return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
+    }catch (Exception $e){
+        die ($e->getMessage());
+    }
+}
+
 public function recuPass($Correo_Electronico){
     try{
         $query = $this->connection->prepare("SELECT Contrasena_Usuario FROM usuario WHERE Correo_Electronico=?;");

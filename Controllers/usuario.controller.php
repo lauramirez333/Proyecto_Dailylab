@@ -157,6 +157,52 @@ function verPerfil()//
     // require "Views/footer.php";
 }
 
+function editarPerfil()// 
+{
+
+    $usuario = new Usuario(); //?
+    $rol = new Rol();//empleado es role
+    $RH = new RH();
+    $usuarios= $this->model->verPerfil();//$usuarios = $usuario->list();//objet de tipo list
+    
+    $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
+
+    $Correo_Electronico= $_POST['Correo_Electronico'];
+    $Telefono_Usuario= $_POST['Telefono_Usuario'];
+    $Nombres_Usuario= $_POST['Nombres_Usuario'];
+    $Apellidos_Usuario= $_POST['Apellidos_Usuario'];
+
+
+    $usuario->editarPerfil($Correo_Electronico,$Telefono_Usuario,$Nombres_Usuario,$Apellidos_Usuario,$Id_Usuario);
+
+    require "Views/paciente/header.php";
+    require "Views/paciente/verPerfil.php";
+    
+    // require "Views/footer.php";
+}
+
+function editarPass()// 
+{
+
+    $usuario = new Usuario(); //?
+    $rol = new Rol();//empleado es role
+    $RH = new RH();
+    $usuarios= $this->model->verPerfil();//$usuarios = $usuario->list();//objet de tipo list
+    
+    $Id_Usuario=$_SESSION['user']->getId_Usuario();//prueba
+
+    
+    $Contrasena_Usuario= $_POST['Contrasena_Usuario'];
+    $Contrasena_Usuario2= $_POST['Contrasena_Usuario2'];
+
+    $usuario->editarPass($Contrasena_Usuario,$Id_Usuario);
+
+    require "Views/paciente/header.php";
+    require "Views/paciente/verPerfil.php";
+    
+    // require "Views/footer.php";
+}
+
 
 
 public function agendar(){
@@ -309,6 +355,7 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
 function savePac()
 {
     $Correo_Electronico= $_POST['Correo_Electronico'];
+    $Contrasena_Usuario= $_POST['Contrasena_Usuario'];
     $Documento_Identificacion= $_POST['Documento_Identificacion'];
 
      if($this->model-> dupli($Correo_Electronico,$Documento_Identificacion))
@@ -341,8 +388,9 @@ function savePac()
     $usuario->setApellidos_Usuario($_POST['Apellidos_Usuario']);
     $usuario->setId_Rol(3);
     $Id_Usuario?$usuario->update(): $usuario->insertPac();
+    $this->envioMail($Correo_Electronico,$Contrasena_Usuario);
     header("location:?c=usuario&a=registroPac");
-
+    
     echo "<script>alert('Registro exitoso');</script>";
     die("registro exitoso"); 
    
@@ -423,7 +471,7 @@ function validate()
     }else{ 
        // header('location: index.php?error');
         require "Views/alertas/nousuario.php";
-        require "Views/usuario/login.php";
+        require "Views/usuario/registro.php";
         ?> 
 <script type="text/javascript">
   jsFunction();

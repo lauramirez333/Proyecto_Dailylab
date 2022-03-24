@@ -25,10 +25,7 @@
     </style>
    
 <!--stilos -->
-  
-  <link rel="stylesheet" href="Views/css/style.css" />
-    
- 
+
     
 </head>
 
@@ -116,7 +113,7 @@
 
             
             <li id="usuarios">
-            <a href="Views/usuario/registrsobre.php" >
+            <a href="?c=usuario&a=registroPac" >
                     <span class="icon-lg"><i class='bx bx-band-aid'></i></span>
                     <span  class="item">Registrar</span>
                 </a>
@@ -130,7 +127,7 @@
             </li>
 
             <li id="historial">
-                <a href="?c=citas&a=viewHistorial" >
+                <a href="?c=citas&a=viewHistorialEmp" >
                     <span class="icon-lg"><i class='bx bxs-calendar-check' ></i></span>
                     <span class="item">Historial</span>
                 </a>

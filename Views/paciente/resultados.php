@@ -57,8 +57,7 @@
                     <tr>
                         <td> <?= $muestra->getById($mye->getId_Muestra())->getReferencia() ?> </td>
                         <td> <?= $examen->getById($mye->getId_Examen())->getNombre_Examen() ?> </td>
-                        <td> <a href="URL"> <?= $mye->getURL_Resultado() ?> </a></td>
-                        <td> <?= $mye->getEstado() ?> </td>
+                        <td> <a href="<?= $mye->getURL_Resultado() ?>" target="_blank"> <?= $mye->getURL_Resultado() ?> </a></td>  <td> <?= $mye->getEstado() ?> </td>
 
                         </td>
                     </tr>

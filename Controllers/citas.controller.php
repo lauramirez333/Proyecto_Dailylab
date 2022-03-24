@@ -176,6 +176,24 @@ class CitasController
     // require "Views/footer.php";
   }
 
+  function viewHistorialEmp()
+  {
+    $cita = new Cita();
+    $citas = $this->model->listHistorial();
+    $sucursal = new Sucursal();
+    $sucursales = $sucursal->list();
+    $examen = new Examen();
+    $examenes = $examen->list();
+    $usuario = new Usuario();
+    $usuarios = $usuario->list();
+    $muestra_examen = new Muestra_Examen();
+   
+
+    require "Views/empleado/header.php";
+    require "Views/empleado/viewHistorial.php";
+    // require "Views/footer.php";
+  }
+
   function viewHistRolPac()
   { //esta es la vista del historial que se ve en rol paciente
     $cita = new Cita();
