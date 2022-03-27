@@ -51,11 +51,11 @@ class Cita
         }
     }
 
-    public function ValidacionCitas($Fecha_Cita)
+    public function ValidacionCitas($Fecha_Cita, $Id_Sucursal,$Id_Examen,$Hora_Cita)
     {
         try{
-            $query = $this->connection->prepare("SELECT COUNT(fecha_cita) FROM cita WHERE fecha_cita=?;");
-            $query->execute(intval(array($Fecha_Cita)));
+            $query = $this->connection->prepare("SELECT COUNT(fecha_cita) FROM cita WHERE fecha_cita=? AND Id_Sucursal=? AND Id_Examen=? AND Hora_Cita=?;");
+            $query->execute(array($Fecha_Cita, $Id_Sucursal,$Id_Examen,$Hora_Cita));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);//con este mapea los registros que vienen de product y los convierte en objeto de tipo podruct y permite usar todos los metodos que estan ahi metidos 
         }catch (Exception $e){
             die ($e->getMessage());
@@ -142,13 +142,39 @@ if ($query >= 330 ){
         try{
             $Id_Usuario=$_GET['Id_Usuario'];
            // =$_SESSION['user']->getId_Usuario();
-            $query = $this->connection->prepare("SELECT * FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=?;");//con esto solo mostramos las citas que no estan vencidas
+            $query = $this->connection->prepare("SELECT referencia FROM cita WHERE Fecha_Cita < NOW() AND Id_Usuario=?;");//con esto solo mostramos las citas que no estan vencidas
             $query->execute(array($Id_Usuario));
             return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
         }catch (Exception $e){
             die ($e->getMessage());
         }
     }
+
+    public function buscarReferencia($Id_Cita)
+    {
+        try{
+           
+            $query = $this->connection->prepare("SELECT Referencia FROM muestra WHERE Id_Cita = ?; ");
+            $query->execute(array($Id_Cita));
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+    public function buscarFecha($Id_Cita)
+    {
+        try{
+           
+            $query = $this->connection->prepare("SELECT Fecha_Cita FROM cita WHERE  Id_Cita=?;");//con esto solo mostramos las citas que no estan vencidas
+            $query->execute(array($Id_Cita));
+            return $query->fetchAll(PDO::FETCH_CLASS,__CLASS__);
+        }catch (Exception $e){
+            die ($e->getMessage());
+        }
+    }
+
+
     public function listUnic()
     {
         try{ 

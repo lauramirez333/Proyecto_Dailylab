@@ -55,7 +55,7 @@
 
  <div  class="form-group col-md-6" >
 <label  class=" text-dark font-weight-bold" for="Hora_Cita"> Hora: </label>
-<input id="hora" class="form-control" type="time" require name="Hora_Cita"  min='06:00:00' max='18:00:00' value="<?=$cita->getHora_Cita() ?>" >
+<input id="hora" class="form-control" type="time" require name="Hora_Cita"  min='06:00:00' max='18:00:00' step="300" value="<?=$cita->getHora_Cita() ?>" >
 
 <script src='Views/js/hora.js'></script>
 </div>

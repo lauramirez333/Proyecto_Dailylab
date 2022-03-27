@@ -86,11 +86,9 @@
 
 <div  class="form-group col-md-6" >
 <label class=" text-dark font-weight-bold" for="Hora_Cita"> Hora: </label>
-<input class="form-control" id="hora"  type="time"  name="Hora_Cita" min='06:00:00' max='18:00:00' >
+<input class="form-control" id="hora"  type="time"  name="Hora_Cita" step="300" min='06:00:00' max='18:00:00'  >
 <div id="info"></div>
 <script src='Views/js/hora.js'></script>
- 
-
 
 </div>
 </div>
@@ -131,6 +129,7 @@
                        <div  class="error" id="error"></div>
                        <script src='Views/js/agendar.js'></script>
                        </div>
+<label value="<?$var?>"></label>
 </form>
 </div>
 </div>
@@ -138,6 +137,7 @@
 </div>
 </div>
 </section>
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                       
 </body>

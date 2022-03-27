@@ -54,7 +54,7 @@ function recuPass()// aparentemente todo esta bien pero no envia nada
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
         
-            $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de registrarte en www.dailylab.com";      
+            $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de solicitar recuperacion de tu contraseña";      
            
            
            // HTML email starts here
@@ -77,10 +77,9 @@ function recuPass()// aparentemente todo esta bien pero no envia nada
         
               <tr>
                <td colspan='4' style='padding:15px;'>
-                <p style='font-size:20px;'>Hola' ".$Correo_Electronico.",</p>
+                <p style='font-size:20px;'>Hola ".$Correo_Electronico.",</p>
                 <hr />
-                <p style='font-size:25px;'>Estamos muy felices de que ahora seas parte de dailylab. A continuacion, te recordamos tu contraseña: ".$passAlea.", no olvides guardarla en un lugar seguro y no compartirla con nadie</p>
-                <img src='https://4.bp.blogspot.com/-rt_1MYMOzTs/VrXIUlYgaqI/AAAAAAAAAaI/c0zaPtl060I/s1600/Image-Upload-Insert-Update-Delete-PHP-MySQL.png' alt='Sending HTML eMail using PHPMailer in PHP' title='Sending HTML eMail using PHPMailer in PHP' style='height:auto; width:100%; max-width:100%;' />
+                <p style='font-size:25px;'>Te recordamos tu nueva contraseña: ".$passAlea.", no olvides guardarla en un lugar seguro y no compartirla con nadie. Te invitamos a que te dirijas a la pagina de dailylab, selecciones la opcion Perfil y restablezcas tu contraseña.</p>
                 <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
                </td>
               </tr>
@@ -96,7 +95,7 @@ function recuPass()// aparentemente todo esta bien pero no envia nada
            
            // HTML email ends here
                 //Recipients
-                $mail->setFrom('dailylabt@gmail.com', 'Mailer');
+                $mail->setFrom('dailylabt@gmail.com', 'Dailylab');
                 $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
                 $mail->isHTML(true);
                 $mail->Subject = 'Restablecimiento de contraseña';
@@ -238,7 +237,7 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
     
         
     
-        $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de registrarte en www.dailylab.com";      
+        $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de registrarte en el sistema de agendamiento de cita Dailylab";      
        
        
        // HTML email starts here
@@ -261,10 +260,9 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
     
           <tr>
            <td colspan='4' style='padding:15px;'>
-            <p style='font-size:20px;'>Hola' ".$Correo_Electronico.",</p>
+            <p style='font-size:20px;'>Hola ".$Correo_Electronico.",</p>
             <hr />
             <p style='font-size:25px;'>Estamos muy felices de que ahora seas parte de dailylab. A continuacion, te recordamos tu contraseña: $Contrasena_Usuario, no olvides guardarla en un lugar seguro y no compartirla con nadie</p>
-            <img src='https://4.bp.blogspot.com/-rt_1MYMOzTs/VrXIUlYgaqI/AAAAAAAAAaI/c0zaPtl060I/s1600/Image-Upload-Insert-Update-Delete-PHP-MySQL.png' alt='Sending HTML eMail using PHPMailer in PHP' title='Sending HTML eMail using PHPMailer in PHP' style='height:auto; width:100%; max-width:100%;' />
             <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
            </td>
           </tr>
@@ -281,7 +279,7 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
        // HTML email ends here
     
             //Recipients
-            $mail->setFrom('dailylabt@gmail.com', 'Mailer');
+            $mail->setFrom('dailylabt@gmail.com', 'Dailylab');
             $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
             $mail->isHTML(true);
             $mail->Subject = 'Bienvenido a dailylab';
@@ -316,7 +314,7 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
         
             
         
-            $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de registrarte en www.dailylab.com";      
+            $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque se ha presentado un error con tu toma de muestra ";      
            
            
            // HTML email starts here
@@ -339,11 +337,10 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
         
               <tr>
                <td colspan='4' style='padding:15px;'>
-                <p style='font-size:20px;'>Hola' ".$Correo_Electronico.",</p>
+                <p style='font-size:20px;'>Hola ".$Correo_Electronico.",</p>
                 <hr />
-                <p style='font-size:25px;'>Estamos muy felices de que ahora seas parte de dailylab. A continuacion, te recordamos tu contraseña: ".$error." no olvides guardarla en un lugar seguro y no compartirla con nadie</p>
-                <img src='https://4.bp.blogspot.com/-rt_1MYMOzTs/VrXIUlYgaqI/AAAAAAAAAaI/c0zaPtl060I/s1600/Image-Upload-Insert-Update-Delete-PHP-MySQL.png' alt='Sending HTML eMail using PHPMailer in PHP' title='Sending HTML eMail using PHPMailer in PHP' style='height:auto; width:100%; max-width:100%;' />
-                <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
+                <p style='font-size:25px;'>El erro que se ha presentado con tu muestra es : ".$error." Por favor comunicate con nuestro laboratorio para mas informacion</p>
+               <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
                </td>
               </tr>
               
@@ -359,16 +356,16 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
            // HTML email ends here
         
                 //Recipients
-                $mail->setFrom('dailylabt@gmail.com', 'Mailer');
+                $mail->setFrom('dailylabt@gmail.com', 'Dailylab');
                 $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
                 $mail->isHTML(true);
-                $mail->Subject = 'Bienvenido a dailylab';
+                $mail->Subject = 'Error de toma de muestra';
                 $mail->Body    = $message;
                 $mail->AltBody    = $message;
                  
                 $mail->send();
             echo 'Message has been sent';
-            header("location:?c=usuario&a=login");
+            header("location:?c=enfermero&a=subirResul");
         }catch(Exception $exception){
             echo 'algo salio mal', $exception->getMessage();
         
@@ -417,7 +414,7 @@ function envioMail($Correo_Electronico,$Contrasena_Usuario){
     {
         header('location:?c=usuario&a=login');
         die("ya existes en la base de datos, logueate");
-        echo ' '; 
+       
         echo "<script>alert('ya existe este usuario en la base de datos');</script>";
        
        // require "Views/usuario/registro.php";
@@ -498,6 +495,7 @@ function savePac()
     $usuario->setApellidos_Usuario($_POST['Apellidos_Usuario']);
     $usuario->setId_Rol(3);
     $Id_Usuario?$usuario->update(): $usuario->insertPac();
+    $Contrasena_Usuario = $passAlea;
     $this->envioMail($Correo_Electronico,$Contrasena_Usuario);
     header("location:?c=usuario&a=registroPac");
     

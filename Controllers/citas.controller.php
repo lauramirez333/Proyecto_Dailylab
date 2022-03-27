@@ -9,6 +9,12 @@ require_once "Models/muestra.examen.php";
 require_once "Models/muestra.php";
 require_once "Models/tipo_muestra.php";
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+
+require 'vendor/autoload.php';
+
 
 class CitasController
 {
@@ -19,15 +25,116 @@ class CitasController
     $this->model = new Cita();
   }
 
-  function index() // este es el index que ve el paciente
-  {
+  // function index() // este es el index que ve el paciente
+  // {
 
-    require "Views/paciente/header.php";
-    require "Views/paciente/indexPac.php";
-    // require "Views/footer.php";
-  }
+  //   require "Views/paciente/header.php";
+  //   require "Views/paciente/indexPac.php";
+  //   // require "Views/footer.php";
+  // }
 
  
+  function recordCita()// aparentemente todo esta bien pero no envia nada
+  {
+    $Id_Usuario = $_GET['Id_Usuario'];
+    $usuario=New Usuario(); 
+    $Correo_Electronico= $usuario->buscarCorreo($Id_Usuario);
+      $Fecha_Cita= $_POST['Fecha_Cita'];
+      $Hora_Cita= $_POST['Hora_Cita'];
+      $Id_Examen = $_POST['Id_Examen'];
+      $Id_Sucursal = $_POST['Id_Sucursal'];
+      
+      
+  
+
+      $usuario = new Usuario(); //?
+  
+       if($Correo_Electronico)
+      {
+  
+          $mail = new PHPMailer(true);
+  
+          try {
+          
+              $mail->SMTPDebug=0; 
+              $mail->isSMTP();
+              $mail->Host = 'smtp.gmail.com';
+              $mail->SMTPAuth = true; 
+              $mail->Username   = 'dailylabt@gmail.com';                     //SMTP username
+              $mail->Password   = '2184573.Dailylab';                               //SMTP password
+              $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+              $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+          
+          
+              $text_message    = "Hola $Correo_Electronico, <br /><br /> Estas recibiendo este correo porque acabas de agendar una cita de toma de muestra en Dailylab";      
+             
+             
+             // HTML email starts here
+             
+             $message  = "<html><body>";
+             
+             $message .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
+             
+             $message .= "<tr><td>";
+             
+             $message .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
+              
+             $message .= "<thead>
+                <tr height='80'>
+                 <th colspan='4' style='background-color:#f5f5f5; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#333; font-size:34px;' >Bienvenido a Dailylab</th>
+                </tr>
+                </thead>";
+              
+             $message .= "<tbody>
+          
+                <tr>
+                 <td colspan='4' style='padding:15px;'>
+                  <p style='font-size:20px;'>Hola ".$Correo_Electronico.",</p>
+                  <hr />
+                  <p style='font-size:25px;'>Te recordamos los detalles de tu cita: ".$Fecha_Cita.$Hora_Cita.$Id_Examen.$Id_Sucursal.", no olvides que si deseas cancelar la cita, debes hacerlo minimo 3 horas antes.</p>
+                  <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
+                 </td>
+                </tr>
+                
+                </tbody>";
+              
+             $message .= "</table>";
+             
+             $message .= "</td></tr>";
+             $message .= "</table>";
+             
+             $message .= "</body></html>";
+             
+             // HTML email ends here
+                  //Recipients
+                  $mail->setFrom('dailylabt@gmail.com', 'Dailylab');
+                  $mail->addAddress($Correo_Electronico, 'Mailer');     //Add a recipient
+                  $mail->isHTML(true);
+                  $mail->Subject = 'Restablecimiento de contraseña';
+                  $mail->Body    = $message;
+                  $mail->AltBody    = $message;
+                   
+          
+                  
+                  $mail->send();
+              echo 'Message has been sent';
+              echo "<script>alert('Revisa tu correo para encontrar la nueva contraseña');</script>";
+              header("location:?c=usuario&a=login"); 
+          }catch(Exception $exception){
+              echo 'algo salio mal', $exception->getMessage();
+              echo "<script>alert('No se pudo mandar correo');</script>";
+             
+          
+          }
+  
+      }else{
+          echo "<script>alert('Tu correo no esta registrado');</script>";
+         
+         
+      }
+      
+  
+  }
 
   function resulEnf()
   {
@@ -72,6 +179,10 @@ class CitasController
     var_dump($passAlea);*/ //para ver que # esta sacando
     echo "<script>alert($Id_Cita);</script>";
    
+    if($this->model->buscarReferencia($Id_Cita)){
+      echo "<script>alert('ya hay una muestra asociada');</script>";
+      header ("location:?c=citas&a=resulEnf");
+    }else{
     $muestra->setReferencia($referencia);
     $muestra->setId_Cita($_GET['Id_Cita']);
     $muestra->insert();
@@ -80,6 +191,7 @@ class CitasController
     require "Views/Enfermero/header.php";
     require "Views/Enfermero/subirResult.php";
     // require "Views/footer.php";
+    }
   }
 
   function guardarResult()
@@ -313,44 +425,32 @@ class CitasController
     $Id_Examen = $_POST['Id_Examen'];
     $Id_Usuario = $_GET['Id_Usuario'];
     $Fecha_Cita = $_POST['Fecha_Cita'];
+    $Id_Sucursal = $_POST['Id_Sucursal'];
+    $Id_Examen = $_POST['Id_Examen'];  
+    $Hora_Cita = $_POST['Hora_Cita'];
 
     $cita = new Cita();
     $hoy = date("d/m/Y");
 
     if ($this->model->dupliCitas($Id_Examen, $_GET['Id_Usuario'])) //esto evita que se pidan 2 citas de la misma especialidad si 1 de ella no se ha vencido todavia 
     {
-
+      echo "<script>alert('ya existe esta cita');</script>";
       header('location:?c=usuario&a=registroPac');
 
-      die("ya existe esta cita");
-      echo "ya existe esta cita";
-      echo "<script>alert('ya existe esta cita');</script>";
+    }else if ($this->model->ValidacionCitas($Fecha_Cita, $Id_Sucursal,$Id_Examen,$Hora_Cita) >= 5 ){ //esto hace que no se puedan agendar mas de 5 citas del mismo examen para la misma fecha y hora y para la misma sucursal
+      $var = "Por favor selecciona otra fecha u otra hora por favor";
+     
+     // header("Refresh:20");
+      header('location:?c=citas&a=viewAgendarPac&Id_Usuario='.$Id_Usuario.'');
+     echo "<script> alert('".$var."'); </script>";
+     // header('location:?c=citas&error');
 
-      /*   esto no funcinoa, siempre se va por este condicional aunque este bien    
-}else{ //evita que se pidan citas anteriores a hoy
-  if($Fecha_Cita < $hoy){
-    echo "<script>alert('elige una fecha mayor al dia de hoy')
-console.log('elige una fecha mayor al dia de hoy');</script>";
-    header('location:?c=citas&a=viewAgendarPac2');
-    die("elige una fecha mayor al dia de hoy"); 
-    echo "elige una fecha mayor al dia de hoy";
-    */
+   
+    
+    //echo date('H:i:s Y-m-d');
+    
+    
     } else {
-      /*  if($Fecha_Cita >= $hoy){*/
-        $Fecha_Cita = $_POST['Fecha_Cita'];
-        $result= $this->model->ValidacionCitas($Fecha_Cita);
-        if(intval($result) == 5 ){
-         // $cita->ValidacionCitas($Fecha_Cita);
-        return false;
-        var_dump($result);
-        echo "<script>alert($result);</script>";
-        echo ("No se pueden agendar mas de este tipo por hoy");
-
-        } else{
-          echo "<script>alert($result);</script>";
-
-          var_dump($result);
-        
       
       $usuario = new Usuario();
 
@@ -369,24 +469,12 @@ console.log('elige una fecha mayor al dia de hoy');</script>";
       $cita->agendarUnicPac();
 
       header("location:?c=citas&a=index2");
-      var_dump($result);
-      echo ("<script>alert($result);</script>");
 
     
-      ?>
-   <script>console.log(<?$result?>);</script>;
-
-      <?php 
-     
-      ?>
-      console.log(<?$result?>);
+    }
+    }
    
-         <?php 
-    }
-    }
-  }
-  //}
-  //}
+
 
   public function deleteCita()
   {
@@ -432,34 +520,40 @@ console.log('elige una fecha mayor al dia de hoy');</script>";
   }
   function changeState()
   {
-    /* FUNCION PARA QUE NO CANCELE SI YA PASARON MAS DE 24H ANTES DE LA CITA (EN PROCESO)
-    $ahora = time();
-    $unDiaEnSegundos = 24 * 60 * 60;
-    $ayer = $ahora - $unDiaEnSegundos;
-    $ayerLegible = date("Y-m-d", $ayer);
-    # ahoraLegible únicamente es para demostrar
-    $ahoraLegible = date("Y-m-d", $ahora);
-    echo "Hoy es $ahoraLegible y ayer es $ayerLegible";
+    date_default_timezone_set("America/Bogota");
+    $ahora= date('h:i');
+   // echo $ahora;
+    
+   $Hora_Cita= $_GET['Hora_Cita'];
+   $Fecha_Cita= $_GET['Fecha_Cita'];
+   $Id_Cita= $_GET['Id_Cita'];
 
+   $ahora = time();
+$unDiaEnSegundos = 24 * 60 * 60;
+$ahoraLegible = date("Y-m-d", $ahora);
+ 
+if($Fecha_Cita >= $ahoraLegible){ //no esta funcionando
 
-    $cita = new Cita();
-    $Fecha_Cita= $cita->setFecha_Cita($_GET['Fecha_Cita']);
-    //$cita->setHora_Cita($_POST['Hora_Cita']);
-*/
+header('location:?c=citas&a=index2');
+echo "<script>alert('Ya no la puedes cancelar')
+console.log('Ya no la puedes cancelar');</script>";
+
+// } else if($Fecha_Cita == $ahoraLegible){
+// if($Hora_Cita >= $ahora){
+//   return false; 
+//   header('location:?c=citas&a=index2');
+//   echo "<script>alert('Ya no la puedes cancelar')
+// console.log('Ya no la puedes cancelar');</script>";
+// }
+//   }else{
     $cita = $this->model->getById($_GET['Id_Cita']);
-/*      
-    if($Fecha_Cita > $ayerLegible){
-      echo "<script>alert('La cita debe ser cancelada 24 horas antes')
-      console.log('La cita debe ser cancelada 24 horas antes');</script>";
-    return false;      
-    }else{
-      return true;*/
+
     $cita->updateState();
-    //header("Refresh:20");
     header('location:?c=citas&a=index2');
-    header("?c=citas&a=index2");
-  //}
+    //header("?c=citas&a=index2");
+  
   }
+}
   function asistido()
   {
 

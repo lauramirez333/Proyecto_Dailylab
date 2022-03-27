@@ -62,11 +62,6 @@
    </div>
   
 
-
-<div class="form-group " >
-<label for="">documento</label>
-<input name="Documento_Identificacion" type="text" readonly value="<?=$_SESSION['user']->getDocumento_Identificacion();?> ">
-</div>
 <div class="form-group " >
 <label for="">Correo</label>
 <input name="Correo_Electronico" type="text" value=<?=$_SESSION['user']->getCorreo_Electronico();?> "> 
@@ -120,7 +115,7 @@
     
   </div>
 
-//termina modal
+<!-- termina modal -->
 </div>
 
 
@@ -146,46 +141,47 @@
 
 
 
+            
             <div class="perfil-usuario-footer">
             
 
            
 
             <br>
+            <!-- <center> -->
                 <ul class="lista-datos">
                     <li><i class="icono fas fa-user-check""></i>Nombre :</li>
                     <li><i class="icono fas fa-user-check""></i>Apellido:</li>
-                    <li><i class="icono fas fa-briefcase"></i>Correo:</li>
-                    <li><i class="icono fas fa-phone-alt"></i>Telefono:</li>
+                    <li><i class="icono fas fa-user-check""></i> Documento:</li>
+                   
                 </ul>
                 <ul class="lista-datos">
                     <li><i class=""></i><?=$_SESSION['user']->getNombres_Usuario();?></li>
                     <li><i class=""></i><?=$_SESSION['user']->getApellidos_Usuario();?></li>
-                    <li><i class=""></i><?=$_SESSION['user']->getCorreo_Electronico();?></li>
-                    <li><i class=""></i><?=$_SESSION['user']->getTelefono_Usuario();?></li>
-                </ul>
+                    <li><i class=""></i> <?=$_SESSION['user']->getDocumento_Identificacion();?> </li>
+                   </ul>
 
             
 
-            
+                <!-- </center> -->
                
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-user-check""></i> Documento:</li>
-                    <li><i class="icono fas fa-user-check""></i> Apellido:</li>
-                    <li><i class="icono fas fa-briefcase"></i> Correo:</li>
-                    <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
+                <li><i class="icono fas fa-phone-alt"></i>RH:</li>
+                <li><i class="icono fas fa-briefcase"></i>Correo:</li>
+                    <li><i class="icono fas fa-phone-alt"></i>Telefono:</li>
                 </ul>
                 <ul class="lista-datos">
-                    <li><i class=""></i> <?=$_SESSION['user']->getDocumento_Identificacion();?> </li>
-                    <li><i class=""></i><?=$_SESSION['user']->getApellidos_Usuario();?></li>
-                    <li><i class=""></i> <?=$_SESSION['user']->getCorreo_Electronico();?></li>
-                    <li><i class=""></i> <?=$_SESSION['user']->getTelefono_Usuario();?></li>
-                </ul>
+                <li><i class=""></i><?=$_SESSION['user']->getId_RH();?></li>
+                <li><i class=""></i><?=$_SESSION['user']->getCorreo_Electronico();?></li>
+                    <li><i class=""></i><?=$_SESSION['user']->getTelefono_Usuario();?></li>
+                    
+               
+                   </ul>
               
             </div>
 
         </div>
-
+        
         <div>
             <br>
             <button class="agendar" id="open">Actualiza tus datos</button>

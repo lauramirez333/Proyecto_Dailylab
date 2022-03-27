@@ -59,7 +59,7 @@
         <td> <?= $usuario->getById($cita->getId_Usuario())->getApellidos_Usuario() ?></td>
         <td> <?= $usuario->getById($cita->getId_Usuario())->getDocumento_Identificacion() ?></td>
         <td> <?= $sucursal->getById($cita->getId_Sucursal())->getNombre_Sucursal() ?></td>
-        <td> <a  href="?c=citas&a=changeState&Id_Cita=<?= $cita->getId_Cita() ?>&Fecha_Cita=<?= $cita->getFecha_Cita() ?>"   type="submit" class= "btn btn-danger">Cancelar</a > </td>        
+        <td> <a  href="?c=citas&a=changeState&Id_Cita=<?= $cita->getId_Cita() ?>&Fecha_Cita=<?= $cita->getFecha_Cita() ?>&Hora_Cita=<?= $cita->getHora_Cita() ?>"   type="submit" class= "btn btn-danger">Cancelar</a > </td>        
 
         
     </td>

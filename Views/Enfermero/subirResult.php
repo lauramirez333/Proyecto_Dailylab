@@ -28,9 +28,9 @@
         <form action="?c=citas&a=guardarResult&Id_Usuario=<?= $usuario->getId_Usuario()?>&Id_Cita=<?= $cita = $_GET['Id_Cita'] ?>&Id_Muestra=<?= $muestra->getId_Muestra() ?>&Id_Examen=<?= $examen->getId_Examen() ?>" 
         method="post">
 
-            <input type="" name="Id_Usuario" value="<?= $usuario->getId_Usuario() ?>">
-            <input type="" name="Id_Cita" value="<?= $cita = $_GET['Id_Cita'] ?>">
-            <input type="" name="Id_Muestra" value="<?= $muestra->getId_Muestra() ?>">
+            <input type="hidden" name="Id_Usuario" value="<?= $usuario->getId_Usuario() ?>">
+            <input type="hidden" name="Id_Cita" value="<?= $cita = $_GET['Id_Cita'] ?>">
+            <input type="hidden" name="Id_Muestra" value="<?= $muestra->getId_Muestra() ?>">
  
        
             <table class="table table-hover table-striped">
@@ -100,12 +100,12 @@
             <button type="submit"  class= "btn btn-primary "> Guardar</button>
             <br>
             <br>
-            
+            </form>
   <div class="card-header">
     En caso de tener algún problema con la muestra, por favor llena este espacio con la descripcion del error.<br>
      Esta sera notificada al paciente.Si es necesario tomar la muestra de nuevo por favor especificar. 
   </div>
-  <form action="?c=usuario&a=reportarError" method="post">
+  <form action="?c=usuario&a=reportarError&Id_Usuario=<?= $cita->getId_Usuario() ?>" method="post">
   <div class="card-body">
     <textarea class="card-title" rows="10" cols="60" name="error"></textarea>
     
@@ -116,7 +116,7 @@
   </div>
 </div>
 
-        </form>
+        
     </div>
 </body>
 

@@ -128,7 +128,7 @@
   
 <div class="col-md-6">
 
-<label class="guia" for=""><b>Confirma tu correo*</b></label>
+<label class="guia" for=""><b>Confirma el correo*</b></label>
  
  <input  class="form-control" name="Correo_Electronico2" id="Correo_Electronico2" type="email" maxlength="40" oninput="maxlengthNumber(this);" required />
 

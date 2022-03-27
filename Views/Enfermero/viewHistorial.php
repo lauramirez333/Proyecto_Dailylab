@@ -49,7 +49,7 @@
             <td>Nombre</td>
             <td>Apellido</td>
             <td>Documento de identificacion</td>
-            <td> </td>
+            
 
 
 </tr>    

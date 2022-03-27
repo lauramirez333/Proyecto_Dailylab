@@ -108,7 +108,7 @@
                 </a>
             </li>
             <li id="perfil">
-                <a href="#" >
+                <a href="?c=usuario&a=verPerfil" >
                     <span class="icon"><i class='bx bx-user' ></i></span>
                     <span class="item">perfil</span>
                 </a>
